@@ -110,6 +110,7 @@ function initMap(center) {
     zoom: 15,
     attributionControl: { compact: true },
   });
+  window.__map = map; // exposed for debugging
 
   map.addControl(new maplibregl.NavigationControl({ showZoom: false, showCompass: true, visualizePitch: true }), "top-right");
 
@@ -134,6 +135,7 @@ function initMap(center) {
       layout: { "line-cap": "round" },
       paint: { "line-color": "#16a34a", "line-width": 5, "line-opacity": 0.9, "line-dasharray": [0.4, 2] },
     });
+    setupPois();
     placeHome();
     if (spot) {
       placeCar();
@@ -152,6 +154,79 @@ function routeData() {
 function drawLine() {
   const src = map.getSource("route");
   if (src) src.setData(routeData());
+}
+
+// Emoji icon for each POI category (Dunkin'=fast_food/cafe, bodega=convenience, YU=college, etc.)
+const POI_EMOJI = {
+  cafe: "☕", fast_food: "🍔", restaurant: "🍴", bar: "🍺", pub: "🍺",
+  convenience: "🏪", grocery: "🛒", supermarket: "🛒", greengrocer: "🥬", bakery: "🥐",
+  shop: "🛍️", clothing_store: "👕", department_store: "🏬", marketplace: "🛒",
+  parking: "🅿️", fuel: "⛽", bank: "🏦", atm: "🏧", pharmacy: "💊", hospital: "🏥",
+  college: "🎓", university: "🎓", school: "🏫", library: "📚",
+  place_of_worship: "🕍", post: "📮", police: "🚓", fire_station: "🚒", laundry: "🧺",
+  hairdresser: "💈", car: "🚙", car_repair: "🔧", hardware: "🛠️", books: "📚",
+};
+
+// Render an emoji into a small canvas → ImageData for map.addImage.
+function emojiImage(emoji) {
+  const size = 44;
+  const c = document.createElement("canvas");
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext("2d");
+  ctx.font = '34px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(emoji, size / 2, size / 2);
+  return ctx.getImageData(0, 0, size, size);
+}
+
+// Add a custom POI layer with emoji icons + names, surfaced from a normal zoom.
+function setupPois() {
+  // Hide the base style's own POI labels so we don't double them up.
+  ["poi_r1", "poi_r7", "poi_r20"].forEach((id) => {
+    if (map.getLayer(id)) { try { map.setLayoutProperty(id, "visibility", "none"); } catch (e) { /* ignore */ } }
+  });
+
+  Object.entries(POI_EMOJI).forEach(([cls, emoji]) => {
+    const id = "poi-" + cls;
+    if (!map.hasImage(id)) { try { map.addImage(id, emojiImage(emoji), { pixelRatio: 2 }); } catch (e) { /* ignore */ } }
+  });
+  if (!map.hasImage("poi-generic")) map.addImage("poi-generic", emojiImage("📍"), { pixelRatio: 2 });
+
+  const dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  map.addLayer({
+    id: "poi-emoji",
+    type: "symbol",
+    source: "openmaptiles",
+    "source-layer": "poi",
+    minzoom: 14,
+    filter: ["all",
+      ["match", ["geometry-type"], ["Point", "MultiPoint"], true, false],
+      ["!", ["match", ["get", "class"],
+        ["bus", "rail", "airport", "ferry_terminal", "bicycle_rental", "entrance", "pitch"], true, false]],
+      ["has", "name"],
+    ],
+    layout: {
+      "icon-image": ["coalesce", ["image", ["concat", "poi-", ["get", "class"]]], ["image", "poi-generic"]],
+      "icon-size": 0.9,
+      "icon-allow-overlap": false,
+      "text-field": ["get", "name"],
+      "text-font": ["Noto Sans Bold"],
+      "text-size": 11,
+      "text-anchor": "top",
+      "text-offset": [0, 0.7],
+      "text-optional": true,
+      "text-max-width": 9,
+      "symbol-sort-key": ["to-number", ["coalesce", ["get", "rank"], 100]],
+    },
+    paint: {
+      "text-color": dark ? "#e5e7eb" : "#111827",
+      "text-halo-color": dark ? "#000000" : "#ffffff",
+      "text-halo-width": 1.4,
+    },
+  });
 }
 
 function placeHome() {
