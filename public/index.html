@@ -6,7 +6,9 @@
   <title>Where's My Car</title>
   <meta name="theme-color" content="#0b3d2e" />
   <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/icon.svg" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
@@ -14,6 +16,8 @@
 </head>
 <body>
   <div id="map"></div>
+
+  <button id="recenter-btn" class="recenter hidden" aria-label="Recenter map">◎</button>
 
   <div class="panel">
     <!-- State A: no spot saved -->

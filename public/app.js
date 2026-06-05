@@ -14,18 +14,30 @@ const els = {
   noteDisplay: document.getElementById("note-display"),
   walkBtn: document.getElementById("walk-btn"),
   clearBtn: document.getElementById("clear-btn"),
+  recenterBtn: document.getElementById("recenter-btn"),
   error: document.getElementById("error"),
 };
 
 const map = L.map("map", { zoomControl: false }).setView(HOME, 16);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "© OpenStreetMap",
-  maxZoom: 19,
+
+// Clean, familiar street map (free, no API key). Retina-crisp via {r}.
+L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+  attribution: "&copy; OpenStreetMap &copy; CARTO",
+  subdomains: "abcd",
+  maxZoom: 20,
 }).addTo(map);
+
+// Big obvious car pin and a blue "you are here" dot.
+const carIcon = L.divIcon({ className: "pin pin-car", html: "🚗", iconSize: [52, 52], iconAnchor: [26, 26] });
+const youIcon = L.divIcon({ className: "pin pin-you", html: "", iconSize: [22, 22], iconAnchor: [11, 11] });
 
 let carMarker = null; // the parked-car pin
 let meMarker = null;  // user's live location dot
+let line = null;      // line connecting you -> car
 let pending = null;   // {lat,lng} being placed before save
+let carLatLng = null; // saved car location in find view
+let lastMe = null;    // last known user location
+let framedOnce = false; // have we auto-zoomed to fit yet?
 let watchId = null;   // geolocation watch handle
 
 function showError(msg) {
@@ -38,7 +50,7 @@ function clearError() {
 
 function setCarMarker(lat, lng, draggable) {
   if (carMarker) map.removeLayer(carMarker);
-  carMarker = L.marker([lat, lng], { draggable }).addTo(map);
+  carMarker = L.marker([lat, lng], { icon: carIcon, draggable }).addTo(map);
   if (draggable) {
     carMarker.on("dragend", () => {
       const p = carMarker.getLatLng();
@@ -66,6 +78,14 @@ function formatDistance(m) {
   return `${(m / 1609.34).toFixed(1)} mi away`;
 }
 
+function frameBoth() {
+  if (lastMe && carLatLng) {
+    map.fitBounds(L.latLngBounds([lastMe, carLatLng]).pad(0.35), { maxZoom: 18 });
+  } else if (carLatLng) {
+    map.setView(carLatLng, 17);
+  }
+}
+
 // ---- State A: parking ----
 els.parkBtn.addEventListener("click", () => {
   clearError();
@@ -81,7 +101,7 @@ els.parkBtn.addEventListener("click", () => {
     },
     () => {
       // GPS denied/unavailable: drop a draggable pin they can position by hand.
-      showError("Couldn't get GPS — drag the pin to where you parked.");
+      showError("Couldn't get GPS — drag the 🚗 to where you parked.");
       pending = { lat: HOME[0], lng: HOME[1] };
       map.setView(HOME, 17);
       setCarMarker(HOME[0], HOME[1], true);
@@ -130,12 +150,19 @@ els.clearBtn.addEventListener("click", async () => {
   renderParkView();
 });
 
+els.recenterBtn.addEventListener("click", frameBoth);
+
 function renderParkView() {
   if (carMarker) { map.removeLayer(carMarker); carMarker = null; }
   if (meMarker) { map.removeLayer(meMarker); meMarker = null; }
+  if (line) { map.removeLayer(line); line = null; }
   if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
   pending = null;
+  carLatLng = null;
+  lastMe = null;
+  framedOnce = false;
   els.findView.classList.add("hidden");
+  els.recenterBtn.classList.add("hidden");
   els.parkView.classList.remove("hidden");
   els.parkForm.classList.add("hidden");
   els.parkBtn.classList.remove("hidden");
@@ -148,9 +175,12 @@ function renderFindView(spot) {
   els.parkView.classList.add("hidden");
   els.saveBtn.textContent = "Save spot";
   els.findView.classList.remove("hidden");
+  els.recenterBtn.classList.remove("hidden");
 
+  carLatLng = [spot.lat, spot.lng];
+  framedOnce = false;
   setCarMarker(spot.lat, spot.lng, false);
-  map.setView([spot.lat, spot.lng], 18);
+  map.setView(carLatLng, 17);
 
   els.walkBtn.href = `https://maps.apple.com/?daddr=${spot.lat},${spot.lng}&dirflg=w`;
 
@@ -164,7 +194,7 @@ function renderFindView(spot) {
   renderMoveByBanner(spot.moveBy);
 
   els.distance.textContent = "Locating you…";
-  watchMyLocation(spot);
+  watchMyLocation();
 }
 
 function renderMoveByBanner(moveBy) {
@@ -183,15 +213,24 @@ function renderMoveByBanner(moveBy) {
   }
 }
 
-function watchMyLocation(spot) {
+function watchMyLocation() {
   if (watchId !== null) navigator.geolocation.clearWatch(watchId);
   watchId = navigator.geolocation.watchPosition(
     (pos) => {
-      const me = [pos.coords.latitude, pos.coords.longitude];
+      lastMe = [pos.coords.latitude, pos.coords.longitude];
+
       if (meMarker) map.removeLayer(meMarker);
-      meMarker = L.circleMarker(me, { radius: 8, color: "#2563eb" }).addTo(map);
-      const meters = haversineMeters(me, [spot.lat, spot.lng]);
+      meMarker = L.marker(lastMe, { icon: youIcon, interactive: false }).addTo(map);
+
+      if (line) map.removeLayer(line);
+      line = L.polyline([lastMe, carLatLng], {
+        color: "#16a34a", weight: 6, opacity: 0.8, dashArray: "2 12", lineCap: "round",
+      }).addTo(map);
+
+      const meters = haversineMeters(lastMe, carLatLng);
       els.distance.textContent = formatDistance(meters);
+
+      if (!framedOnce) { frameBoth(); framedOnce = true; }
     },
     () => { els.distance.textContent = "Tap 🧭 for directions"; },
     { enableHighAccuracy: true }
