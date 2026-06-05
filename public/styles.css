@@ -64,6 +64,7 @@ html, body {
 
 .hint { margin: 0; font-size: 13px; color: #64748b; text-align: center; }
 .distance { font-size: 32px; font-weight: 800; text-align: center; letter-spacing: -0.5px; }
+.subtle { font-size: 15px; color: #64748b; text-align: center; margin-top: -4px; }
 
 /* Map markers ------------------------------------------------------------- */
 /* Strip Leaflet's default white box so our custom pins show cleanly. */
@@ -81,6 +82,16 @@ html, body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 }
 
+.pin-home {
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  background: #fff;
+  border: 3px solid #f59e0b;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
 .pin-you {
   width: 22px;
   height: 22px;
@@ -90,11 +101,10 @@ html, body {
   box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25);
 }
 
-/* Floating recenter button (top-right, never overlaps the panel) */
-.recenter {
+/* Floating map buttons (top corners, never overlap the bottom panel) */
+.floatbtn {
   position: fixed;
   top: calc(14px + env(safe-area-inset-top));
-  right: 14px;
   z-index: 1100;
   width: 48px;
   height: 48px;
@@ -107,6 +117,8 @@ html, body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+.floatbtn-left { left: 14px; }
+.floatbtn-right { right: 14px; }
 
 .banner {
   padding: 12px;

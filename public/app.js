@@ -1,5 +1,7 @@
 /* global L */
-const HOME = [40.8506, -73.9300]; // 184th & Audubon fallback center
+// Default home near YU / Audubon Ave (between W 185th & W 186th). This is a
+// best-guess starting point — the user can fix it exactly with "set home".
+const DEFAULT_HOME = [40.8512, -73.9293];
 
 const els = {
   parkView: document.getElementById("park-view"),
@@ -10,35 +12,55 @@ const els = {
   movebyInput: document.getElementById("moveby-input"),
   saveBtn: document.getElementById("save-btn"),
   distance: document.getElementById("distance"),
+  fromHome: document.getElementById("from-home"),
   movebyBanner: document.getElementById("moveby-banner"),
   noteDisplay: document.getElementById("note-display"),
   walkBtn: document.getElementById("walk-btn"),
   clearBtn: document.getElementById("clear-btn"),
   recenterBtn: document.getElementById("recenter-btn"),
+  sethomeBtn: document.getElementById("sethome-btn"),
   error: document.getElementById("error"),
 };
 
-const map = L.map("map", { zoomControl: false }).setView(HOME, 16);
+const map = L.map("map", { zoomControl: false }).setView(DEFAULT_HOME, 16);
 
-// Clean, familiar street map (free, no API key). Retina-crisp via {r}.
-L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+// Minimal, near-blank basemap (free, no API key). Retina-crisp via {r}.
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   attribution: "&copy; OpenStreetMap &copy; CARTO",
   subdomains: "abcd",
   maxZoom: 20,
 }).addTo(map);
 
-// Big obvious car pin and a blue "you are here" dot.
 const carIcon = L.divIcon({ className: "pin pin-car", html: "🚗", iconSize: [52, 52], iconAnchor: [26, 26] });
+const homeIcon = L.divIcon({ className: "pin pin-home", html: "🏠", iconSize: [44, 44], iconAnchor: [22, 22] });
 const youIcon = L.divIcon({ className: "pin pin-you", html: "", iconSize: [22, 22], iconAnchor: [11, 11] });
 
-let carMarker = null; // the parked-car pin
-let meMarker = null;  // user's live location dot
-let line = null;      // line connecting you -> car
-let pending = null;   // {lat,lng} being placed before save
-let carLatLng = null; // saved car location in find view
-let lastMe = null;    // last known user location
-let framedOnce = false; // have we auto-zoomed to fit yet?
-let watchId = null;   // geolocation watch handle
+let carMarker = null;  // the parked-car pin
+let homeMarker = null; // the apartment pin (always shown)
+let meMarker = null;   // user's live location dot
+let line = null;       // line from home -> car
+let pending = null;    // {lat,lng} being placed before save
+let carLatLng = null;  // saved car location in find view
+let lastMe = null;     // last known user location
+let framedOnce = false;
+let watchId = null;
+
+// ---- Home (stored on this device) ----
+function getHome() {
+  try {
+    const h = JSON.parse(localStorage.getItem("home"));
+    if (Array.isArray(h) && Number.isFinite(h[0]) && Number.isFinite(h[1])) return h;
+  } catch (e) { /* fall through */ }
+  return DEFAULT_HOME;
+}
+function setHome(latlng) {
+  localStorage.setItem("home", JSON.stringify(latlng));
+}
+function renderHome() {
+  const home = getHome();
+  if (homeMarker) map.removeLayer(homeMarker);
+  homeMarker = L.marker(home, { icon: homeIcon, interactive: false }).addTo(map);
+}
 
 function showError(msg) {
   els.error.textContent = msg;
@@ -72,19 +94,52 @@ function haversineMeters(a, b) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
+// Returns just the magnitude, e.g. "930 ft" or "0.3 mi".
 function formatDistance(m) {
   const feet = m * 3.28084;
-  if (feet < 1000) return `${Math.round(feet)} ft away`;
-  return `${(m / 1609.34).toFixed(1)} mi away`;
+  if (feet < 1000) return `${Math.round(feet)} ft`;
+  return `${(m / 1609.34).toFixed(1)} mi`;
 }
 
-function frameBoth() {
-  if (lastMe && carLatLng) {
-    map.fitBounds(L.latLngBounds([lastMe, carLatLng]).pad(0.35), { maxZoom: 18 });
-  } else if (carLatLng) {
-    map.setView(carLatLng, 17);
+function frameAll() {
+  const pts = [getHome()];
+  if (carLatLng) pts.push(carLatLng);
+  if (lastMe) pts.push(lastMe);
+  if (pts.length === 1) map.setView(pts[0], 17);
+  else map.fitBounds(L.latLngBounds(pts).pad(0.3), { maxZoom: 18 });
+}
+
+function drawHomeLine() {
+  if (line) { map.removeLayer(line); line = null; }
+  if (carLatLng) {
+    line = L.polyline([getHome(), carLatLng], {
+      color: "#16a34a", weight: 6, opacity: 0.85, dashArray: "2 12", lineCap: "round",
+    }).addTo(map);
   }
 }
+
+function updateFromHome() {
+  if (!carLatLng) { els.fromHome.classList.add("hidden"); return; }
+  const m = haversineMeters(getHome(), carLatLng);
+  els.fromHome.textContent = `🏠 ${formatDistance(m)} from home`;
+  els.fromHome.classList.remove("hidden");
+}
+
+// ---- Set home ----
+els.sethomeBtn.addEventListener("click", () => {
+  if (!confirm("Set your home to your current location? (do this while standing at your building)")) return;
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      setHome([pos.coords.latitude, pos.coords.longitude]);
+      renderHome();
+      drawHomeLine();
+      updateFromHome();
+      frameAll();
+    },
+    () => showError("Couldn't get GPS to set home. Try again outside."),
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+});
 
 // ---- State A: parking ----
 els.parkBtn.addEventListener("click", () => {
@@ -100,11 +155,11 @@ els.parkBtn.addEventListener("click", () => {
       els.parkForm.classList.remove("hidden");
     },
     () => {
-      // GPS denied/unavailable: drop a draggable pin they can position by hand.
       showError("Couldn't get GPS — drag the 🚗 to where you parked.");
-      pending = { lat: HOME[0], lng: HOME[1] };
-      map.setView(HOME, 17);
-      setCarMarker(HOME[0], HOME[1], true);
+      const home = getHome();
+      pending = { lat: home[0], lng: home[1] };
+      map.setView(home, 17);
+      setCarMarker(home[0], home[1], true);
       els.parkBtn.classList.add("hidden");
       els.parkForm.classList.remove("hidden");
     },
@@ -150,7 +205,7 @@ els.clearBtn.addEventListener("click", async () => {
   renderParkView();
 });
 
-els.recenterBtn.addEventListener("click", frameBoth);
+els.recenterBtn.addEventListener("click", frameAll);
 
 function renderParkView() {
   if (carMarker) { map.removeLayer(carMarker); carMarker = null; }
@@ -163,12 +218,14 @@ function renderParkView() {
   framedOnce = false;
   els.findView.classList.add("hidden");
   els.recenterBtn.classList.add("hidden");
+  els.fromHome.classList.add("hidden");
   els.parkView.classList.remove("hidden");
   els.parkForm.classList.add("hidden");
   els.parkBtn.classList.remove("hidden");
   els.parkBtn.textContent = "📍 I parked here";
   els.noteInput.value = "";
   els.movebyInput.value = "";
+  map.setView(getHome(), 16);
 }
 
 function renderFindView(spot) {
@@ -180,6 +237,8 @@ function renderFindView(spot) {
   carLatLng = [spot.lat, spot.lng];
   framedOnce = false;
   setCarMarker(spot.lat, spot.lng, false);
+  drawHomeLine();
+  updateFromHome();
   map.setView(carLatLng, 17);
 
   els.walkBtn.href = `https://maps.apple.com/?daddr=${spot.lat},${spot.lng}&dirflg=w`;
@@ -218,27 +277,19 @@ function watchMyLocation() {
   watchId = navigator.geolocation.watchPosition(
     (pos) => {
       lastMe = [pos.coords.latitude, pos.coords.longitude];
-
       if (meMarker) map.removeLayer(meMarker);
       meMarker = L.marker(lastMe, { icon: youIcon, interactive: false }).addTo(map);
-
-      if (line) map.removeLayer(line);
-      line = L.polyline([lastMe, carLatLng], {
-        color: "#16a34a", weight: 6, opacity: 0.8, dashArray: "2 12", lineCap: "round",
-      }).addTo(map);
-
-      const meters = haversineMeters(lastMe, carLatLng);
-      els.distance.textContent = formatDistance(meters);
-
-      if (!framedOnce) { frameBoth(); framedOnce = true; }
+      els.distance.textContent = `${formatDistance(haversineMeters(lastMe, carLatLng))} away`;
+      if (!framedOnce) { frameAll(); framedOnce = true; }
     },
     () => { els.distance.textContent = "Tap 🧭 for directions"; },
     { enableHighAccuracy: true }
   );
 }
 
-// ---- Boot: decide which state to show ----
+// ---- Boot ----
 async function boot() {
+  renderHome();
   try {
     const res = await fetch("/api/spot");
     const spot = await res.json();

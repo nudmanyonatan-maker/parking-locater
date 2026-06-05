@@ -17,7 +17,8 @@
 <body>
   <div id="map"></div>
 
-  <button id="recenter-btn" class="recenter hidden" aria-label="Recenter map">◎</button>
+  <button id="sethome-btn" class="floatbtn floatbtn-left" aria-label="Set home to my location">🏠</button>
+  <button id="recenter-btn" class="floatbtn floatbtn-right hidden" aria-label="Recenter map">◎</button>
 
   <div class="panel">
     <!-- State A: no spot saved -->
@@ -40,6 +41,7 @@
     <!-- State B: spot saved -->
     <section id="find-view" class="view hidden">
       <div id="distance" class="distance"></div>
+      <div id="from-home" class="subtle hidden"></div>
       <div id="moveby-banner" class="banner hidden"></div>
       <div id="note-display" class="note hidden"></div>
       <a id="walk-btn" class="btn btn-primary btn-big" href="#">🧭 Walk to my car</a>
