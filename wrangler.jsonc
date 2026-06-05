@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "parking-locator",
+  "main": "src/index.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./public"
+  },
+  "kv_namespaces": [
+    { "binding": "PARKING_KV", "id": "<KV_NAMESPACE_ID>" }
+  ],
+  "triggers": {
+    "crons": ["* * * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}
