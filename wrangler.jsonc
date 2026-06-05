@@ -7,7 +7,7 @@
     "directory": "./public"
   },
   "kv_namespaces": [
-    { "binding": "PARKING_KV", "id": "<KV_NAMESPACE_ID>" }
+    { "binding": "PARKING_KV", "id": "22270a1e563f4423a5a1541383df77de" }
   ],
   "triggers": {
     "crons": ["* * * * *"]
