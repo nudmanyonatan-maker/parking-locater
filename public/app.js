@@ -20,6 +20,12 @@ const els = {
   sethomeBtn: document.getElementById("sethome-btn"),
   fitBtn: document.getElementById("fit-btn"),
   error: document.getElementById("error"),
+  placemapBtn: document.getElementById("placemap-btn"),
+  moveBtn: document.getElementById("move-btn"),
+  placeView: document.getElementById("place-view"),
+  placeSave: document.getElementById("place-save"),
+  placeCancel: document.getElementById("place-cancel"),
+  crosshair: document.getElementById("crosshair"),
 };
 
 let map = null;
@@ -216,7 +222,10 @@ function renderMoveByBanner() {
 // ---- Panels ----
 function showParkPanel() {
   els.findView.classList.add("hidden");
+  els.placeView.classList.add("hidden");
+  els.crosshair.classList.add("hidden");
   els.fitBtn.classList.add("hidden");
+  els.sethomeBtn.classList.remove("hidden");
   els.parkView.classList.remove("hidden");
   els.parkBtn.textContent = "📍 I parked here";
   els.editForm.classList.add("hidden");
@@ -224,8 +233,11 @@ function showParkPanel() {
 
 function showFindPanel() {
   els.parkView.classList.add("hidden");
+  els.placeView.classList.add("hidden");
+  els.crosshair.classList.add("hidden");
   els.findView.classList.remove("hidden");
   els.fitBtn.classList.remove("hidden");
+  els.sethomeBtn.classList.remove("hidden");
   els.editForm.classList.add("hidden");
   updateWalkLink();
   updateDistances();
@@ -316,6 +328,60 @@ els.sethomeBtn.addEventListener("click", () => {
     { enableHighAccuracy: true, timeout: 10000 }
   );
 });
+
+// ---- Placing mode (drag the map under the center crosshair) ----
+let placingMode = null; // 'new' | 'move'
+
+function setCarMarkerVisible(visible) {
+  if (carMarker) carMarker.getElement().style.display = visible ? "" : "none";
+}
+
+function enterPlacing(mode) {
+  if (!mapReady) return;
+  clearError();
+  placingMode = mode;
+  if (mode === "move" && spot) {
+    map.easeTo({ center: [spot.lng, spot.lat], zoom: Math.max(map.getZoom(), 17) });
+  } else if (map.getZoom() < 15) {
+    map.easeTo({ zoom: 16 });
+  }
+  setCarMarkerVisible(false);
+  els.parkView.classList.add("hidden");
+  els.findView.classList.add("hidden");
+  els.placeView.classList.remove("hidden");
+  els.crosshair.classList.remove("hidden");
+  els.sethomeBtn.classList.add("hidden");
+  els.fitBtn.classList.add("hidden");
+}
+
+async function confirmPlacing() {
+  const c = map.getCenter();
+  const note = spot ? spot.note || "" : "";
+  const moveBy = spot ? spot.moveBy ?? null : null;
+  els.placeSave.textContent = "Saving…";
+  try {
+    spot = await saveSpot({ lat: c.lat, lng: c.lng, note, moveBy });
+    placeCar();
+    setCarMarkerVisible(true);
+    drawLine();
+    showFindPanel();
+    frameAll();
+  } catch (e) {
+    showError("Couldn't save the spot. Try again.");
+  } finally {
+    els.placeSave.textContent = "✓ Save here";
+  }
+}
+
+function cancelPlacing() {
+  if (spot) { setCarMarkerVisible(true); showFindPanel(); }
+  else { showParkPanel(); }
+}
+
+els.placemapBtn.addEventListener("click", () => enterPlacing("new"));
+els.moveBtn.addEventListener("click", () => enterPlacing("move"));
+els.placeSave.addEventListener("click", confirmPlacing);
+els.placeCancel.addEventListener("click", cancelPlacing);
 
 // ---- Boot ----
 async function boot() {

@@ -17,6 +17,11 @@
 <body>
   <div id="map"></div>
 
+  <div id="crosshair" class="crosshair hidden">
+    <div class="crosshair-pin">🚗</div>
+    <div class="crosshair-dot"></div>
+  </div>
+
   <button id="sethome-btn" class="floatbtn floatbtn-left" aria-label="Set home to my location">🏠</button>
   <button id="fit-btn" class="floatbtn floatbtn-left floatbtn-left-2 hidden" aria-label="Fit home and car">⤢</button>
 
@@ -24,7 +29,8 @@
     <!-- State A: no spot saved -->
     <section id="park-view" class="view">
       <button id="park-btn" class="btn btn-primary btn-big">📍 I parked here</button>
-      <p class="hint">Saves instantly — fine-tune after.</p>
+      <button id="placemap-btn" class="btn btn-secondary">✋ Set it on the map</button>
+      <p class="hint">Use GPS if you're at the car — or set it on the map from anywhere.</p>
     </section>
 
     <!-- State B: spot saved -->
@@ -34,7 +40,8 @@
       <div id="moveby-banner" class="banner hidden"></div>
       <a id="walk-btn" class="btn btn-primary btn-big" href="#">🧭 Walk to my car</a>
       <div class="actions">
-        <button id="edit-btn" class="btn btn-secondary">✏️ Note / time</button>
+        <button id="move-btn" class="btn btn-secondary">📍 Move</button>
+        <button id="edit-btn" class="btn btn-secondary">✏️ Note</button>
         <button id="clear-btn" class="btn btn-secondary">✓ Got it</button>
       </div>
       <div id="edit-form" class="hidden">
@@ -47,6 +54,15 @@
           <input id="moveby-input" type="datetime-local" />
         </label>
         <button id="save-edit-btn" class="btn btn-primary">Save</button>
+      </div>
+    </section>
+
+    <!-- Placing mode: drag the map under the center crosshair -->
+    <section id="place-view" class="view hidden">
+      <p class="place-hint">Drag the map so the 🚗 sits where you parked</p>
+      <div class="actions">
+        <button id="place-cancel" class="btn btn-secondary">Cancel</button>
+        <button id="place-save" class="btn btn-primary">✓ Save here</button>
       </div>
     </section>
 
