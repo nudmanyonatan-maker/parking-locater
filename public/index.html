@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>Where's My Car</title>
+  <meta name="theme-color" content="#0b3d2e" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="panel">
+    <!-- State A: no spot saved -->
+    <section id="park-view" class="view">
+      <button id="park-btn" class="btn btn-primary btn-big">📍 I parked here</button>
+      <div id="park-form" class="hidden">
+        <label class="field">
+          <span>Note (optional)</span>
+          <input id="note-input" type="text" placeholder="e.g. Audubon side, by the hydrant" />
+        </label>
+        <label class="field">
+          <span>Move by (optional)</span>
+          <input id="moveby-input" type="datetime-local" />
+        </label>
+        <button id="save-btn" class="btn btn-primary">Save spot</button>
+        <p class="hint">Drag the pin to fix the exact spot.</p>
+      </div>
+    </section>
+
+    <!-- State B: spot saved -->
+    <section id="find-view" class="view hidden">
+      <div id="distance" class="distance"></div>
+      <div id="moveby-banner" class="banner hidden"></div>
+      <div id="note-display" class="note hidden"></div>
+      <a id="walk-btn" class="btn btn-primary btn-big" href="#">🧭 Walk to my car</a>
+      <button id="clear-btn" class="btn btn-secondary">✓ Got my car</button>
+    </section>
+
+    <div id="error" class="error hidden"></div>
+  </div>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
