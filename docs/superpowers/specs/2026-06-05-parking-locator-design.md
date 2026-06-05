@@ -110,15 +110,17 @@ home screen and open full-screen like a native app.
 - `scheduled` handler:
   1. Read `spot` from KV. If absent, or `moveBy` is null, or `reminderSent` is
      true → do nothing.
-  2. If `moveBy - now <= 5 min` **and** `moveBy - now > -<grace>` (still relevant)
-     → POST to `DISCORD_WEBHOOK_URL`.
+  2. If `moveBy - now <= 5 min` **and** `moveBy - now > -2 min` (within the window,
+     not a long-past time) → POST to `DISCORD_WEBHOOK_URL`.
   3. Set `reminderSent = true` and write back to KV (fire once).
 - **Discord message:** car emoji + "Move your car by `<local time>`", the note,
   and an Apple Maps link to the spot.
 
-Edge handling: if the Worker missed the exact 5-min mark (e.g. the spot was saved
-with a move-by already inside the window), the next minute's run still catches it
-because the condition is a window (`<= 5 min`), not an exact equality.
+Edge handling: because cron runs every minute and the fire window is 5 minutes
+wide, there are always several runs inside the window before `moveBy` — the first
+one fires and sets `reminderSent`, the rest are no-ops. The small `-2 min` lower
+bound catches the rare case where a spot is saved with a `moveBy` less than one
+cron cycle away, while still ignoring spots saved with an already-long-past time.
 
 ## Error Handling
 
