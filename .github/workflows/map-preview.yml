@@ -1,0 +1,31 @@
+name: Map preview
+
+# Screenshots the live app in each map look (dark and light) to pick one.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: App URL
+        default: https://parking-locator.excel-capital.workers.dev
+
+permissions:
+  contents: read
+
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: |
+          mkdir -p /tmp/pw && cp scripts/map-preview.mjs /tmp/pw/
+          cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.2 && npx playwright install --with-deps chromium
+      - run: node /tmp/pw/map-preview.mjs "${{ inputs.url }}" "$GITHUB_WORKSPACE/map-preview"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: map-preview
+          path: map-preview

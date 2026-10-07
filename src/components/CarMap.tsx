@@ -29,7 +29,62 @@ const ll = (p: LatLng): [number, number] => [p.lng, p.lat];
 /** Keep framed pins clear of the top card and the bottom car card. */
 const PADDING = { top: 110, bottom: 250, left: 50, right: 70 };
 const dark = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-const styleUrl = () => `https://tiles.openfreemap.org/styles/${dark() ? 'dark' : 'liberty'}`;
+
+/** Map look. `?map=clean|satellite|3d` previews the other looks. */
+type Look = 'standard' | 'clean' | 'satellite' | '3d';
+const LOOKS: Look[] = ['standard', 'clean', 'satellite', '3d'];
+function mapLook(): Look {
+  const q = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('map') : null;
+  return LOOKS.includes(q as Look) ? (q as Look) : 'standard';
+}
+const styleUrl = (look: Look) => `https://tiles.openfreemap.org/styles/${dark() ? 'dark' : look === 'clean' ? 'positron' : 'liberty'}`;
+const firstSymbol = (map: maplibregl.Map) => map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+
+/** Aerial photos under the street names. */
+function addSatellite(map: maplibregl.Map) {
+  map.addSource('satellite', {
+    type: 'raster',
+    tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+    tileSize: 256,
+    maxzoom: 19,
+    attribution: 'Imagery © Esri',
+  });
+  map.addLayer({ id: 'satellite', type: 'raster', source: 'satellite' }, firstSymbol(map));
+}
+
+/** Buildings in 3D (the map is tilted for this look). */
+function add3dBuildings(map: maplibregl.Map) {
+  if (map.getStyle().layers.some((l) => l.type === 'fill-extrusion') || !map.getSource('openmaptiles')) return;
+  map.addLayer(
+    {
+      id: 'buildings-3d',
+      type: 'fill-extrusion',
+      source: 'openmaptiles',
+      'source-layer': 'building',
+      minzoom: 14,
+      paint: {
+        'fill-extrusion-color': dark() ? '#2b303b' : '#e4e0da',
+        'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 10],
+        'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
+        'fill-extrusion-opacity': 0.9,
+      },
+    },
+    firstSymbol(map),
+  );
+}
+
+/** OpenStreetMap credits must stay, but as a small ⓘ: MapLibre opens them at first, so close them once. */
+function collapseAttribution(map: maplibregl.Map) {
+  const el = map.getContainer().querySelector('.maplibregl-ctrl-attrib');
+  const collapse = () => {
+    if (!el?.classList.contains('maplibregl-compact')) return;
+    el.classList.remove('maplibregl-compact-show');
+    map.off('styledata', collapse);
+    map.off('sourcedata', collapse);
+  };
+  map.on('styledata', collapse);
+  map.on('sourcedata', collapse);
+}
 
 function pin(className: string, text: string) {
   const el = document.createElement('div');
@@ -62,10 +117,14 @@ function emojiImage(emoji: string): ImageData {
   return ctx.getImageData(0, 0, size, size);
 }
 
-function addPoiLayer(map: maplibregl.Map) {
-  for (const id of ['poi_r1', 'poi_r7', 'poi_r20']) {
+function hidePois(map: maplibregl.Map) {
+  for (const id of ['poi_r1', 'poi_r7', 'poi_r20', 'poi']) {
     if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
   }
+}
+
+function addPoiLayer(map: maplibregl.Map) {
+  hidePois(map);
   if (!map.getSource('openmaptiles')) return;
   for (const [cls, emoji] of Object.entries(POI_EMOJI)) if (!map.hasImage(`poi-${cls}`)) map.addImage(`poi-${cls}`, emojiImage(emoji), { pixelRatio: 2 });
   if (!map.hasImage('poi-generic')) map.addImage('poi-generic', emojiImage('📍'), { pixelRatio: 2 });
@@ -155,8 +214,17 @@ const CarMap = forwardRef<CarMapHandle, Props>(function CarMap({ home, car, plac
   useEffect(() => {
     if (!container.current) return;
     const start = latest.current.car ?? latest.current.home;
-    const map = new maplibregl.Map({ container: container.current, style: styleUrl(), center: ll(start), zoom: 16, attributionControl: { compact: true } });
+    const look = mapLook();
+    const map = new maplibregl.Map({
+      container: container.current,
+      style: styleUrl(look),
+      center: ll(start),
+      zoom: 16,
+      pitch: look === '3d' ? 55 : 0,
+      attributionControl: { compact: true },
+    });
     mapRef.current = map;
+    collapseAttribution(map);
     const geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserLocation: true });
     geolocate.current = geo;
     map.addControl(geo, 'top-right');
@@ -174,9 +242,12 @@ const CarMap = forwardRef<CarMapHandle, Props>(function CarMap({ home, car, plac
         paint: { 'line-color': '#16a34a', 'line-width': 5, 'line-opacity': 0.9, 'line-dasharray': [0.4, 2] },
       });
       try {
-        addPoiLayer(map);
+        if (look === 'satellite') addSatellite(map);
+        if (look === '3d') add3dBuildings(map);
+        if (look === 'clean') hidePois(map);
+        else addPoiLayer(map);
       } catch (e) {
-        console.warn('POI layer failed', e);
+        console.warn('Map layers failed', e);
       }
       if (latest.current.car) frame();
       try {

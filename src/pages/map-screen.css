@@ -1,15 +1,23 @@
 /* One-screen car map: full-bleed map, frosted top card (map-page.css), bottom car card, Find parking sheet. */
 
-/* MapLibre's own buttons are replaced by ours; the attribution sits under the top card. */
+/* MapLibre's own buttons are replaced by ours; the map credits are a small ⓘ under them. */
 .map-page .maplibregl-ctrl-top-right {
   display: none;
 }
 
 .map-page .maplibregl-ctrl-bottom-right {
-  top: calc(var(--safe-top) + 82px);
+  top: calc(var(--safe-top) + 82px + 92px + 10px);
   bottom: auto;
-  left: max(12px, var(--safe-left));
-  right: auto;
+  right: calc(max(12px, var(--safe-right)) + 11px);
+}
+
+.map-page .maplibregl-ctrl-attrib.maplibregl-compact {
+  margin: 0;
+  opacity: 0.6;
+}
+
+.map-page .maplibregl-ctrl-attrib.maplibregl-compact-show {
+  opacity: 1;
 }
 
 .status-pill {
