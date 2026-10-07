@@ -113,6 +113,20 @@ jobs:
             echo "Generated VAPID keys and stored them as Worker secrets."
           fi
 
+      - name: Smoke test the live app
+        if: env.HAS_CF == 'true' && steps.deploy.outcome == 'success'
+        env:
+          DEPLOY_URL: ${{ steps.deploy.outputs.url }}
+        run: |
+          # A fresh workers.dev deployment can take a few seconds to answer.
+          for i in 1 2 3 4 5 6; do
+            curl -fsS "$DEPLOY_URL/api/health" -o health.json && break
+            sleep 5
+          done
+          python3 -c "import json;d=json.load(open('health.json'));print('health:',d['ok'],{k:v['ok'] for k,v in d['checks'].items()})"
+          curl -fsS "$DEPLOY_URL/" | grep -q '<div id="root">' && echo "app page: ok"
+          curl -fsS "$DEPLOY_URL/api/spot" > /dev/null && echo "car spot API: ok"
+
       - name: Summary
         if: always()
         env:
