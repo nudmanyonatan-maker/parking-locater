@@ -5,7 +5,7 @@ name: Camera discovery
 # frame sequences from cameras near 403 Audubon Ave, runs DETR / YOLOv8n over
 # them, and commits the report + contact sheets to feasibility/.
 #
-# Re-run: Actions tab -> "Run workflow", or edit feasibility/RUN_REQUEST.
+# Run it from the Actions tab -> "Run workflow" (manual only).
 
 on:
   workflow_dispatch:
@@ -25,12 +25,6 @@ on:
       focus_interval:
         description: "Seconds between time-series frames"
         default: "30"
-  push:
-    paths:
-      - "scripts/discover-cameras.mjs"
-      - "scripts/detect_vehicles.py"
-      - "feasibility/RUN_REQUEST"
-      - ".github/workflows/camera-discovery.yml"
 
 permissions:
   contents: write
