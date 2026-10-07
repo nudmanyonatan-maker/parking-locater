@@ -1,0 +1,15 @@
+name: Copy car spot from the old app
+# One-off: reads the saved spot from the old Where's My Car app and saves it here.
+on: workflow_dispatch
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx esbuild scripts/copy-spot.ts --bundle --platform=node --format=esm --outfile=copy-spot.mjs --log-level=warning
+      - run: node copy-spot.mjs https://parking-locator.yonatan-17d.workers.dev https://parking-locator.excel-capital.workers.dev
