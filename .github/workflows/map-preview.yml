@@ -9,7 +9,7 @@ on:
         default: https://parking-locator.excel-capital.workers.dev
 
 permissions:
-  contents: read
+  contents: write # pushes the screenshots to the map-preview branch
 
 jobs:
   shots:
@@ -25,7 +25,11 @@ jobs:
           mkdir -p /tmp/pw && cp scripts/map-preview.mjs /tmp/pw/
           cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.2 && npx playwright install --with-deps chromium
       - run: node /tmp/pw/map-preview.mjs "${{ inputs.url }}" "$GITHUB_WORKSPACE/map-preview"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: map-preview
-          path: map-preview
+      - name: Push screenshots to the map-preview branch
+        run: |
+          cd map-preview
+          git init -q -b map-preview
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Map preview" --allow-empty
+          git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Map preview screenshots"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" map-preview
