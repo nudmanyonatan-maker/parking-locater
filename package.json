@@ -22,7 +22,8 @@
     "discover": "node scripts/discover-cameras.mjs",
     "typegen": "wrangler types",
     "eval": "esbuild scripts/eval-pipeline.ts --bundle --platform=node --format=esm --outfile=node_modules/.tmp/eval.mjs --log-level=warning && node node_modules/.tmp/eval.mjs",
-    "db:ensure": "node scripts/ensure-d1.mjs"
+    "db:ensure": "node scripts/ensure-d1.mjs",
+    "kv:ensure": "node scripts/ensure-kv.mjs"
   },
   "dependencies": {
     "@block65/webcrypto-web-push": "^2.0.0",

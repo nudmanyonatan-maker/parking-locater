@@ -3,9 +3,8 @@ name: CI / deploy
 # Always: typecheck, lint, test, build.
 # Deploy to Cloudflare (pushes to main, or run by hand) only when the
 # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets exist
-# (see README.md). Optional secrets: PARKNEARME_ADMIN_TOKEN,
-# VAPID_PUBLIC_KEY + VAPID_PRIVATE_KEY. DISCORD_WEBHOOK_URL is already a
-# secret on the Worker and is left alone.
+# (see README.md). Optional secrets: DISCORD_WEBHOOK_URL (move-by reminders),
+# PARKNEARME_ADMIN_TOKEN, VAPID_PUBLIC_KEY + VAPID_PRIVATE_KEY.
 
 on:
   push:
@@ -54,9 +53,11 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Find or create the D1 database
+      - name: Find or create the D1 database and the KV namespace
         if: env.HAS_CF == 'true'
-        run: npm run db:ensure
+        run: |
+          npm run db:ensure
+          npm run kv:ensure
 
       - name: Build
         run: npm run build
@@ -78,6 +79,7 @@ jobs:
         if: env.HAS_CF == 'true'
         env:
           ADMIN_TOKEN: ${{ secrets.PARKNEARME_ADMIN_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
         run: |
@@ -95,6 +97,11 @@ jobs:
             printf %s "$ADMIN_TOKEN" | npx wrangler secret put ADMIN_TOKEN
           elif ! has ADMIN_TOKEN; then
             echo "::warning::No PARKNEARME_ADMIN_TOKEN secret and no ADMIN_TOKEN on the Worker: calibration/admin routes stay locked."
+          fi
+          if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+            printf %s "$DISCORD_WEBHOOK_URL" | npx wrangler secret put DISCORD_WEBHOOK_URL
+          elif ! has DISCORD_WEBHOOK_URL; then
+            echo "::warning::No DISCORD_WEBHOOK_URL secret (repo or Worker): move-by reminders are off."
           fi
           if [ -n "$VAPID_PUBLIC_KEY" ] && [ -n "$VAPID_PRIVATE_KEY" ]; then
             printf '{"VAPID_PUBLIC_KEY":"%s","VAPID_PRIVATE_KEY":"%s"}' "$VAPID_PUBLIC_KEY" "$VAPID_PRIVATE_KEY" > /tmp/vapid.json

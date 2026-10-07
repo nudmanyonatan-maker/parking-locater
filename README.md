@@ -140,16 +140,17 @@ npm run eval         # run the gap analysis over recorded real frames (feasibili
 
 ### Option 1: GitHub Actions (recommended)
 
-`.github/workflows/deploy.yml` runs typecheck, lint, tests and build on every push and pull request. Pushes to `main` (and manual runs) also deploy when these repository secrets exist (Settings → Secrets and variables → Actions). Use the Cloudflare account that already has the `parking-locator` Worker and its KV namespace:
+`.github/workflows/deploy.yml` runs typecheck, lint, tests and build on every push and pull request. Pushes to `main` (and manual runs) also deploy when these repository secrets exist (Settings → Secrets and variables → Actions). Any Cloudflare account works; the app's link is `parking-locator.<that account's workers.dev subdomain>.workers.dev`, so use a personal account (set its subdomain once under Workers & Pages before the first deploy):
 
 | Secret | Required | Notes |
 |---|---|---|
 | `CLOUDFLARE_API_TOKEN` | yes | Start from the "Edit Cloudflare Workers" template and **add Account → D1 → Edit**. Add Account → Workers AI → Read if a deploy complains about the AI binding. |
 | `CLOUDFLARE_ACCOUNT_ID` | yes | Dashboard → Workers & Pages → right sidebar |
+| `DISCORD_WEBHOOK_URL` | recommended | The Discord webhook for "move your car" pings (Discord channel → Edit → Integrations → Webhooks → Copy URL). Set on the Worker at each deploy. |
 | `PARKNEARME_ADMIN_TOKEN` | recommended | Any random string of 16+ characters (e.g. `openssl rand -base64 32`). Unlocks calibration, camera labels and settings. |
 | `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` | optional | From `npm run vapid`. If absent, the workflow generates a pair once and stores it on the Worker. |
 
-What the workflow does: `npm run db:ensure` finds or creates the `parknearme` D1 database and writes its id into `wrangler.jsonc`, then it builds, runs `wrangler d1 migrations apply parknearme --remote` and `wrangler deploy`, sets the secrets, and prints the `*.workers.dev` URL in the run summary.
+What the workflow does: `npm run db:ensure` finds or creates the `parknearme` D1 database and `npm run kv:ensure` the car-spot KV namespace (keeps the configured one if it's in the account, else finds or creates `parking-locator-spot`), writing their ids into `wrangler.jsonc`. Then it builds, runs `wrangler d1 migrations apply parknearme --remote` and `wrangler deploy`, sets the secrets, and prints the `*.workers.dev` URL in the run summary.
 
 ### Option 2: from your machine
 
