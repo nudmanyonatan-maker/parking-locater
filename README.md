@@ -1,9 +1,9 @@
 # Parking Locator
 
-A personal parking app for around 403 Audubon Ave (Washington Heights), installable as a PWA. Two tabs:
+A personal parking app for around 403 Audubon Ave (Washington Heights), installable as a PWA. One full-screen map with your car, plus:
 
-- **Find parking**: looks at public NYC DOT traffic cameras and answers: is there an open spot my 2016 Ford Escape fits in, at least 5 ft from a hydrant? The live camera is right there to check, with tabs for every street camera within ~5 blocks. Below it: **street cleaning** on the blocks around home, and which side you can stay on the longest.
-- **My car**: "I parked here" (GPS) or set it on the map, then find it again (distance, walking directions in Apple Maps). The **move-by time is set automatically from the block's street-cleaning signs**, and a Discord message reminds you 5 minutes before.
+- **Find parking** (one button on the map): looks at public NYC DOT traffic cameras and answers: is there an open spot my 2016 Ford Escape fits in, at least 5 ft from a hydrant? The live camera is right there to check, with tabs for every street camera within ~5 blocks. Below it: **street cleaning** on the blocks around home, and which side you can stay on the longest.
+- **My car** (the map itself): "I parked here" (GPS) or set it on the map, then find it again (distance, walking directions in Apple Maps). The **move-by time is set automatically from the block's street-cleaning signs**, and a Discord message reminds you 5 minutes before.
 
 > Shows **possible parking**, never "legal parking guaranteed". A visibly empty curb can be a driveway, bus stop or a no-parking zone, and alternate-side rules are suspended on holidays. Always check the signs.
 
@@ -75,7 +75,7 @@ Detections older than 5 minutes, or taken from a frame that wasn't live, never c
 ## Repository layout
 
 ```
-src/                 React app: Find parking (/), My car (/car), /calibrate/:id (fix a camera's curb outline)
+src/                 React app: the car map (/), Find parking sheet (/find), /calibrate/:id (fix a camera's curb outline)
   data/              street-cleaning.json (NYC DOT signs near home)
 public/              manifest, icons, service worker (sw.js)
 worker/              Cloudflare Worker: Hono API, car spot + Discord reminder (car.ts), D1 repository, cron, analysis
@@ -178,9 +178,10 @@ The `DISCORD_WEBHOOK_URL` secret from the original app stays on the Worker acros
 
 ## Using it
 
-1. Open the app on your phone → Share → **Add to Home Screen**. It opens on **My car** while the car is parked, else on **Find parking**.
-2. **Find parking**: the answer (spot / fits your Escape / hydrant distance), the live camera with the spot and hydrants outlined, and **Check again**. Tabs above the camera (**W 181st · Amsterdam · St Nicholas**) show every street camera within ~5 blocks; only W 181st is checked for parking. Below: street cleaning around home.
-3. **My car**: tap **I parked here** at the car (or **Set it on the map**). The app finds the block side, its cleaning schedule and sets **Move by** to the next cleaning; Discord pings you 5 minutes before. Wrong side? Tap "Parked on the … side instead?". **Note** lets you add a note or set the time by hand, **Move** re-places the pin, **Got it** clears it when you take the car. The 🏠 button sets home to where you are (kept on this phone).
+1. Open the app on your phone → Share → **Add to Home Screen**.
+2. It's one map. At the car, tap **I parked here** (or **Set it on the map instead** and drag the map under the 🚗). The app finds the block side, its street-cleaning schedule, and shows **Move by** in the top card. Wrong side? Tap "… side instead?".
+3. Later: the top card says how far the car is; **Walk to car** opens Apple Maps walking directions. **Move pin** re-places it, **Got my car** clears it.
+4. **Find parking** (top right) opens the camera check (open spot that fits the Escape, 5 ft from hydrants, live camera with tabs for the three street cameras at 181st) and street cleaning around home.
 
 The camera TMC calls "Audobon Ave @ W 181 ST" comes pre-set: it looks east along W 181st St at the north curb between Audubon and Amsterdam, with that curb lane and its hydrants already marked (`seed/calibrations.json`, migrations `0002` and `0007`). If the camera gets re-aimed, fix the outline at `/calibrate/1ccb8d7c-43d4-450e-b40c-79527766db75` (desktop recommended; it asks for the admin token, the `PARKNEARME_ADMIN_TOKEN` secret).
 

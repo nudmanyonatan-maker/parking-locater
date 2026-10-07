@@ -26,6 +26,8 @@ interface Props {
 }
 
 const ll = (p: LatLng): [number, number] => [p.lng, p.lat];
+/** Keep framed pins clear of the top card and the bottom car card. */
+const PADDING = { top: 110, bottom: 250, left: 50, right: 70 };
 const dark = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches;
 const styleUrl = () => `https://tiles.openfreemap.org/styles/${dark() ? 'dark' : 'liberty'}`;
 
@@ -120,24 +122,31 @@ const CarMap = forwardRef<CarMapHandle, Props>(function CarMap({ home, car, plac
     const map = mapRef.current;
     if (!map) return;
     const pts = [latest.current.home, latest.current.car, me.current].filter((p): p is LatLng => !!p);
-    if (pts.length === 1) return void map.easeTo({ center: ll(pts[0]!), zoom: 16 });
+    if (pts.length === 1) return void map.easeTo({ center: ll(pts[0]!), zoom: 16, padding: PADDING });
     const b = new maplibregl.LngLatBounds();
     for (const p of pts) b.extend(ll(p));
-    map.fitBounds(b, { padding: 60, maxZoom: 17, duration: 600 });
+    map.fitBounds(b, { padding: PADDING, maxZoom: 17, duration: 600 });
   };
 
   useImperativeHandle(ref, () => ({
     center: () => {
-      const c = mapRef.current?.getCenter();
-      return c ? { lat: c.lat, lng: c.lng } : null;
+      // The point under the on-screen crosshair (the container's middle). Not getCenter(),
+      // which is the middle of the padded area and sits above it.
+      const map = mapRef.current;
+      if (!map) return null;
+      const el = map.getContainer();
+      const c = map.unproject([el.clientWidth / 2, el.clientHeight / 2]);
+      return { lat: c.lat, lng: c.lng };
     },
     frame,
     flyTo: (p, zoom = 18) => mapRef.current?.easeTo({ center: ll(p), zoom: Math.max(zoom, mapRef.current.getZoom()) }),
     locate: () => {
+      const map = mapRef.current;
+      if (me.current && map) return void map.easeTo({ center: ll(me.current), zoom: Math.max(17, map.getZoom()), padding: PADDING });
       try {
         geolocate.current?.trigger();
       } catch {
-        // The user can tap the locate button.
+        // Location permission not granted yet; the browser will ask.
       }
     },
   }));
@@ -148,7 +157,6 @@ const CarMap = forwardRef<CarMapHandle, Props>(function CarMap({ home, car, plac
     const start = latest.current.car ?? latest.current.home;
     const map = new maplibregl.Map({ container: container.current, style: styleUrl(), center: ll(start), zoom: 16, attributionControl: { compact: true } });
     mapRef.current = map;
-    map.addControl(new maplibregl.NavigationControl({ showZoom: false, showCompass: true, visualizePitch: true }), 'top-right');
     const geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserLocation: true });
     geolocate.current = geo;
     map.addControl(geo, 'top-right');

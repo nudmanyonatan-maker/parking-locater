@@ -1,38 +1,23 @@
-import { lazy, Suspense, useEffect, useRef } from 'react';
+import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'wouter';
-import { TabBar } from './components/TabBar';
 import { Toaster } from './components/Toaster';
 import { useSpot } from './hooks/useSpot';
-import { CarPage } from './pages/CarPage';
-import { HomePage } from './pages/HomePage';
+import { MapScreen } from './pages/MapScreen';
 
 // Calibration (fixing a camera's curb outline) is a rarely used desktop tool; keep it out of the main bundle.
 const CalibratePage = lazy(() => import('./pages/CalibratePage'));
 
 export function App() {
   const spotState = useSpot();
-  const [location, navigate] = useLocation();
-
-  // Opening the app with the car parked lands on "My car"; otherwise on "Find parking".
-  const decided = useRef(false);
-  useEffect(() => {
-    if (decided.current || spotState.spot === undefined) return;
-    decided.current = true;
-    if (spotState.spot && location === '/') navigate('/car', { replace: true });
-  }, [spotState.spot, location, navigate]);
-
-  const tabbed = location === '/' || location === '/car';
-  // Don't start camera checks on "/" before we know whether to show "My car" instead.
-  const waiting = location === '/' && spotState.spot === undefined;
-
+  const [location] = useLocation();
+  // The map is the app; /find opens the Find parking sheet over it (same map, not a new one).
+  const onMap = location === '/' || location === '/find';
   return (
     <>
-      <div className={tabbed ? 'tabbed' : undefined}>
+      {onMap ? (
+        <MapScreen spotState={spotState} />
+      ) : (
         <Switch>
-          <Route path="/">{waiting ? <div className="page" aria-busy="true" /> : <HomePage />}</Route>
-          <Route path="/car">
-            <CarPage spotState={spotState} />
-          </Route>
           <Route path="/calibrate/:cameraId">
             {(params) => (
               <Suspense fallback={<div className="page" aria-busy="true" />}>
@@ -44,8 +29,7 @@ export function App() {
             <Redirect to="/" replace />
           </Route>
         </Switch>
-      </div>
-      {tabbed && <TabBar />}
+      )}
       <Toaster />
     </>
   );
