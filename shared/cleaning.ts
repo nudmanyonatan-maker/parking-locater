@@ -175,6 +175,7 @@ export function prettyStreet(name: string): string {
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/\bSAINT\b/, 'ST')
+    .replace(/\bAUDOBON\b/, 'AUDUBON') // a common misspelling in DOT's sign data
     .replace(/\b(WEST|EAST) (\d+) STREET\b/, (_m, dir: string, n: string) => `${dir[0]} ${ordinal(Number(n))} St`)
     .replace(/\bAVENUE\b/, 'Ave')
     .replace(/\bSTREET\b/, 'St')

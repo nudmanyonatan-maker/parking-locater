@@ -103,6 +103,12 @@
   font-size: 14px;
 }
 
+.car-note {
+  margin: 0;
+  padding: 0 4px;
+  font-size: 15px;
+}
+
 .car-error {
   margin: 0;
   font-size: 14px;

@@ -81,6 +81,7 @@ describe('block faces near home', () => {
     expect(prettyStreet('WEST 185 STREET')).toBe('W 185th St');
     expect(prettyStreet('ST NICHOLAS AVENUE')).toBe('St Nicholas Ave');
     expect(prettyStreet('SAINT NICHOLAS AVENUE')).toBe('St Nicholas Ave');
+    expect(prettyStreet('AUDOBON AVENUE')).toBe('Audubon Ave');
     expect(prettyStreet('WADSWORTH TERRACE')).toBe('Wadsworth Ter');
   });
 });

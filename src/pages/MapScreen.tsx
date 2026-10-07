@@ -68,9 +68,10 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
   };
 
   /** Save the car here; the move-by time comes from this block's street cleaning. */
-  const park = (p: LatLng, faceId?: string | null) => {
+  const park = (p: LatLng, faceId?: string | null, keepNote = true) => {
     const auto = moveByFor(p, Date.now(), faceId);
-    return save({ lat: p.lat, lng: p.lng, note: '', moveBy: auto.moveBy, faceId: auto.faceId });
+    // Moving the pin or switching sides keeps the note; a fresh "I parked here" clears it.
+    return save({ lat: p.lat, lng: p.lng, note: keepNote ? (spot?.note ?? '') : '', moveBy: auto.moveBy, faceId: auto.faceId });
   };
 
   const parkHere = () =>
@@ -84,7 +85,7 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
           setPlacing(true);
           throw new Error('Drag the map so the 🚗 sits where you parked.');
         }
-        await park(p);
+        await park(p, null, false);
         map.current?.frame();
       },
       "Couldn't get your location.",
@@ -193,6 +194,7 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
                 </span>
               </div>
             )}
+            {spot.note && <p className="car-note">📝 {spot.note}</p>}
             <a className="btn btn-primary btn-block btn-big" href={walkUrl(car)}>
               <Footprints size={22} aria-hidden="true" /> Walk to car
             </a>
