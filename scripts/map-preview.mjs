@@ -13,7 +13,7 @@ const LOOKS = [
   ['3d', '4. 3D'],
 ];
 mkdirSync(out, { recursive: true });
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: 'chrome', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 
 for (const scheme of ['dark', 'light']) {
   const shots = [];

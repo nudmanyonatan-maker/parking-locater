@@ -20,10 +20,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install Playwright
+      - name: Install Playwright (uses the runner's Chrome)
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
         run: |
           mkdir -p /tmp/pw && cp scripts/map-preview.mjs /tmp/pw/
-          cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.2 && npx playwright install --with-deps chromium
+          cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.2
       - run: node /tmp/pw/map-preview.mjs "${{ inputs.url }}" "$GITHUB_WORKSPACE/map-preview"
       - name: Push screenshots to the map-preview branch
         run: |
