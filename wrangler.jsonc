@@ -33,7 +33,7 @@
   "vars": {
     "DETECTOR": "auto",
     "APP_VERSION": "0.1.0",
-    "VAPID_SUBJECT": "mailto:parknearme@example.com"
+    "VAPID_SUBJECT": "https://parking-locator.excel-capital.workers.dev"
   },
   "observability": { "enabled": true }
 }

@@ -20,6 +20,8 @@ export interface PushMessage {
   /** Path inside the app to open, e.g. "/?camera=abc". */
   path: string;
   tag?: string;
+  /** Seconds the push service keeps it for an offline phone (default 10 min). */
+  ttl?: number;
 }
 
 export interface PushResult {
@@ -95,7 +97,7 @@ export async function sendPush(env: Env, sub: StoredSubscription, msg: PushMessa
       authorization: await authorization(subscription, env),
       'content-encoding': 'aes128gcm',
       'content-type': 'application/octet-stream',
-      ttl: '600', // a parking spot is stale after ~10 min
+      ttl: String(msg.ttl ?? 600), // a parking spot is stale after ~10 min
       urgency: 'high',
     };
     if (msg.tag && /^[A-Za-z0-9_-]{1,32}$/.test(msg.tag)) headers.topic = msg.tag;

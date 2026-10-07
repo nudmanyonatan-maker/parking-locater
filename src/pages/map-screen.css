@@ -21,7 +21,60 @@
 }
 
 .status-pill {
-  padding-right: 10px;
+  gap: 10px;
+  padding: 8px 10px 8px 8px;
+}
+
+/* Alerts bell, coloured like the move-by status; filled when alerts are on. */
+.bell-btn {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--fill);
+  color: var(--label-2);
+  cursor: pointer;
+}
+
+.bell-btn.tone-green {
+  color: var(--green-text);
+}
+
+.bell-btn.tone-orange {
+  color: var(--orange-text);
+}
+
+.bell-btn.tone-red {
+  color: var(--red-text);
+}
+
+.bell-btn.is-on {
+  background: var(--blue);
+  color: #fff;
+}
+
+.bell-btn.is-on.tone-green {
+  background: var(--green);
+}
+
+.bell-btn.is-on.tone-orange {
+  background: var(--orange);
+}
+
+.bell-btn.is-on.tone-red {
+  background: var(--red);
+}
+
+.bell-btn:disabled {
+  opacity: 0.6;
+}
+
+.bell-btn:active {
+  transform: scale(0.94);
 }
 
 .find-btn {

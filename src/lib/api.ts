@@ -238,3 +238,7 @@ export const saveSpot = (spot: Pick<CarSpot, 'lat' | 'lng' | 'note' | 'moveBy'> 
   json<CarSpot>('/spot', { method: 'PUT', body: spot });
 
 export const clearSpot = () => json<{ ok: boolean }>('/spot', { method: 'DELETE' });
+
+export const carAlertsOn = (sub: PushSubscriptionJSON) => json<{ ok: boolean }>('/spot/alerts', { method: 'POST', body: sub });
+
+export const carAlertsOff = (endpoint: string) => json<{ ok: boolean }>('/spot/alerts', { method: 'DELETE', body: { endpoint } });

@@ -1,9 +1,10 @@
 // The app: one full-screen map with your car. A frosted card on top says how
-// far the car is and when to move it (street cleaning); a small card at the
-// bottom has "Walk to car". "Find parking" (cameras + street cleaning near
-// home) opens as a sheet from the button on top.
+// far the car is and when to move it (street cleaning), with a bell for a
+// phone alert an hour before; a small card at the bottom has "Walk to car".
+// "Find parking" (cameras + street cleaning near home) opens as a sheet from
+// the button on top.
 
-import { Brush, Check, Crosshair, Footprints, LocateFixed, MapPin, Maximize2, SquareParking, X } from 'lucide-react';
+import { Bell, BellOff, BellRing, Brush, Check, Crosshair, Footprints, LocateFixed, MapPin, Maximize2, SquareParking, X } from 'lucide-react';
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'wouter';
 import { sideWord } from '../../shared/cleaning';
@@ -11,6 +12,8 @@ import type { CarMapHandle } from '../components/CarMap';
 import type { SpotState } from '../hooks/useSpot';
 import { toApiError } from '../lib/api';
 import { cleaningAt, formatDistance, getHome, haversineMeters, moveByFor, moveByStatus, walkUrl, whenText, type LatLng } from '../lib/car';
+import { alertsState, turnOffAlerts, turnOnAlerts, type AlertsState } from '../lib/carAlerts';
+import { toast } from '../lib/toast';
 import { HomePage } from './HomePage';
 import './map-page.css';
 import './map-screen.css';
@@ -50,6 +53,13 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
   const [error, setError] = useState<string | null>(null);
   const now = useNow(30_000);
   const map = useRef<CarMapHandle>(null);
+  const [alerts, setAlerts] = useState<AlertsState | null>(null);
+
+  useEffect(() => {
+    alertsState()
+      .then(setAlerts)
+      .catch(() => setAlerts('off'));
+  }, []);
 
   const car = spot ? { lat: spot.lat, lng: spot.lng } : null;
   const cleaning = car ? cleaningAt(car, now, spot?.faceId) : null;
@@ -72,6 +82,26 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
     const auto = moveByFor(p, Date.now(), faceId);
     // Moving the pin or switching sides keeps the note; a fresh "I parked here" clears it.
     return save({ lat: p.lat, lng: p.lng, note: keepNote ? (spot?.note ?? '') : '', moveBy: auto.moveBy, faceId: auto.faceId });
+  };
+
+  const toggleAlerts = () => {
+    if (alerts === 'home-screen') return toast('For alerts on iPhone: tap Share, then "Add to Home Screen", and open the app from there.', 'info', 8000);
+    if (alerts === 'unsupported') return toast("This browser can't show alerts.", 'error');
+    void run(
+      'alerts',
+      async () => {
+        if (alerts === 'on') {
+          await turnOffAlerts();
+          setAlerts('off');
+          toast('Alerts off', 'info');
+        } else {
+          await turnOnAlerts();
+          setAlerts('on');
+          toast("Alerts on. You'll get one an hour before Move by.");
+        }
+      },
+      "Couldn't change alerts.",
+    );
   };
 
   const parkHere = () =>
@@ -105,7 +135,7 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
     );
 
   // Top card: where the car is and when to move it.
-  const headline = !spot ? "Where's your car?" : me && car ? `Your car is ${formatDistance(haversineMeters(me, car))} away` : 'Your car';
+  const headline = !spot ? "Where's your car?" : me && car ? `Car is ${formatDistance(haversineMeters(me, car))} away` : 'Your car';
   const sub = placing
     ? 'Drag the map under the 🚗'
     : !spot
@@ -123,7 +153,16 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
 
       <div className="map-top">
         <div className="status-pill glass">
-          <span className={`status-dot tone-${dot}`} aria-hidden="true" />
+          <button
+            type="button"
+            className={`bell-btn tone-${dot}${alerts === 'on' ? ' is-on' : ''}`}
+            onClick={toggleAlerts}
+            disabled={!alerts || busy === 'alerts'}
+            aria-pressed={alerts === 'on'}
+            aria-label={alerts === 'on' ? 'Alerts on. Tap to turn off.' : 'Alert me an hour before I have to move the car'}
+          >
+            {alerts === 'on' ? <BellRing size={19} aria-hidden="true" /> : alerts === 'off' || !alerts ? <Bell size={19} aria-hidden="true" /> : <BellOff size={19} aria-hidden="true" />}
+          </button>
           <div className="status-text" role="status" aria-live="polite">
             <div className="status-headline">{headline}</div>
             <div className="status-sub">{sub}</div>
