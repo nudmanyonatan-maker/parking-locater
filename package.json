@@ -1,15 +1,56 @@
 {
   "name": "parking-locator",
-  "version": "1.0.0",
   "private": true,
+  "version": "0.1.0",
   "type": "module",
+  "description": "Live parking near 403 Audubon Ave, from public NYC DOT traffic cameras.",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "test": "vitest run"
+    "dev": "vite",
+    "dev:fixtures": "node scripts/fixture-server.mjs",
+    "build": "npm run typegen && tsc -b && vite build",
+    "preview": "npm run build && vite preview",
+    "typecheck": "npm run typegen && tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "db:migrate:local": "wrangler d1 migrations apply parknearme --local",
+    "db:migrate:remote": "wrangler d1 migrations apply parknearme --remote",
+    "deploy": "npm run build && wrangler deploy",
+    "logs": "wrangler tail",
+    "vapid": "node scripts/generate-vapid-keys.mjs",
+    "discover": "node scripts/discover-cameras.mjs",
+    "typegen": "wrangler types",
+    "eval": "esbuild scripts/eval-pipeline.ts --bundle --platform=node --format=esm --outfile=node_modules/.tmp/eval.mjs --log-level=warning && node node_modules/.tmp/eval.mjs",
+    "db:ensure": "node scripts/ensure-d1.mjs"
+  },
+  "dependencies": {
+    "@block65/webcrypto-web-push": "^2.0.0",
+    "hono": "^4.13.13",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.52.0",
+    "maplibre-gl": "^5.24.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "wouter": "^3.13.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "vitest": "^2.1.9",
-    "wrangler": "^4.20.0"
+    "@cloudflare/vite-plugin": "^1.63.0",
+    "@eslint/js": "^10.0.1",
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.2",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^8.3.3",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.148.0"
   }
 }

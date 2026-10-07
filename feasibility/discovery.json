@@ -1,0 +1,4279 @@
+{
+  "generatedAt": "2026-10-07T11:56:50.261Z",
+  "runner": "github-actions",
+  "home": {
+    "address": "403 Audubon Ave, New York, NY 10033",
+    "lat": 40.851304,
+    "lon": -73.930153,
+    "label": "403 AUDUBON AVENUE, New York, NY, USA",
+    "bbl": "1021560035",
+    "source": "NYC GeoSearch (planninglabs)",
+    "attempts": [
+      {
+        "provider": "NYC GeoSearch (planninglabs)",
+        "ok": true,
+        "result": {
+          "lat": 40.851304,
+          "lon": -73.930153,
+          "label": "403 AUDUBON AVENUE, New York, NY, USA",
+          "bbl": "1021560035"
+        }
+      },
+      {
+        "provider": "US Census geocoder",
+        "ok": true,
+        "result": {
+          "lat": 40.851204325813,
+          "lon": -73.930445595045,
+          "label": "403 AUDUBON AVE, NEW YORK, NY, 10033"
+        }
+      },
+      {
+        "provider": "Nominatim (OSM)",
+        "ok": true,
+        "result": {
+          "lat": 40.8513025,
+          "lon": -73.9301574,
+          "label": "403, Audubon Avenue, Fort George, Manhattan Community Board 12, Manhattan, New York County, New York, 10033, United States"
+        }
+      }
+    ]
+  },
+  "radiusMi": 0.75,
+  "contextRadiusMi": 1.25,
+  "frameSequence": {
+    "frames": 5,
+    "intervalSeconds": 4
+  },
+  "focus": {
+    "cameraIds": [
+      "4d39d6d1-a009-480f-9851-2571a5df1174",
+      "1ccb8d7c-43d4-450e-b40c-79527766db75",
+      "3ad126cc-3f99-4626-a229-b9ba4d3f4b63"
+    ],
+    "frames": 30,
+    "intervalSeconds": 30
+  },
+  "catalog": {
+    "status": 200,
+    "ms": 471,
+    "count": 976,
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
+      "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+    },
+    "fieldNames": [
+      "area",
+      "id",
+      "imageUrl",
+      "isOnline",
+      "latitude",
+      "longitude",
+      "name"
+    ],
+    "fieldTypes": {
+      "area": [
+        "string"
+      ],
+      "id": [
+        "string"
+      ],
+      "imageUrl": [
+        "string"
+      ],
+      "isOnline": [
+        "string"
+      ],
+      "latitude": [
+        "number"
+      ],
+      "longitude": [
+        "number"
+      ],
+      "name": [
+        "string"
+      ]
+    },
+    "sample": [
+      {
+        "id": "8a6bc417-4877-4ebe-8052-88c1b261baf1",
+        "name": "Central Park West @ 86 St",
+        "latitude": 40.785302,
+        "longitude": -73.969353,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/8a6bc417-4877-4ebe-8052-88c1b261baf1/image"
+      },
+      {
+        "id": "0039e6bf-5244-4b4e-b7dc-d02056bbfdc9",
+        "name": "Atlantic Ave @ 111 St",
+        "latitude": 40.692157,
+        "longitude": -73.834927,
+        "area": "Brooklyn",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/0039e6bf-5244-4b4e-b7dc-d02056bbfdc9/image"
+      }
+    ]
+  },
+  "nearby": [
+    {
+      "id": "4d39d6d1-a009-480f-9851-2571a5df1174",
+      "name": "Amsterdam Ave @ 181 St",
+      "area": "Manhattan",
+      "lat": 40.84833,
+      "lon": -73.930868,
+      "distanceMi": 0.209,
+      "bearingDeg": 190,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "4d39d6d1-a009-480f-9851-2571a5df1174",
+        "name": "Amsterdam Ave @ 181 St",
+        "latitude": 40.84833,
+        "longitude": -73.930868,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/4d39d6d1-a009-480f-9851-2571a5df1174/image"
+      },
+      "fetchedOk": 35,
+      "attempted": 35,
+      "distinctFrames": 35,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 20874,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.184Z",
+          "status": 200,
+          "ms": 361,
+          "bytes": 21052,
+          "sha256": "982ec8c8889b9b598fbf2e6e87a5bbdc2a107e03faacda6ed1dedfbabe81cd1b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21052",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.469Z",
+          "status": 200,
+          "ms": 370,
+          "bytes": 21010,
+          "sha256": "05e965a24dd1f624c50103172fb20841dae335a17cc8a0e07e77526590b19db2",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21010",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:23 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.399Z",
+          "status": 200,
+          "ms": 267,
+          "bytes": 21124,
+          "sha256": "a62c8489120598edc451f4525927f47d101571741aba044bbd14be670b205a19",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21124",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.035Z",
+          "status": 200,
+          "ms": 176,
+          "bytes": 20871,
+          "sha256": "2ed73ab747c74bd935ac64aad7f37a74e7fd0491b636846ac46693e8e5a208a9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20871",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.562Z",
+          "status": 200,
+          "ms": 174,
+          "bytes": 20712,
+          "sha256": "e6857c4931bca869dfee6bd780914c7ba489299dd347134d213aacc47b4b5170",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20712",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        },
+        {
+          "n": 5,
+          "fetchedAt": "2026-10-07T11:42:08.375Z",
+          "status": 200,
+          "ms": 162,
+          "bytes": 21307,
+          "sha256": "45dc16f47b0a97d46e2983c34fdc570ae750a6b3e4a6b8e411e667857b849e57",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-5.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21307",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:08 GMT"
+          }
+        },
+        {
+          "n": 6,
+          "fetchedAt": "2026-10-07T11:42:38.546Z",
+          "status": 200,
+          "ms": 156,
+          "bytes": 20451,
+          "sha256": "07fd1397cccf92c08220352bed2a37e25b3ab7dc71609113267ace57bd48b109",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-6.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20451",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:38 GMT"
+          }
+        },
+        {
+          "n": 7,
+          "fetchedAt": "2026-10-07T11:43:08.706Z",
+          "status": 200,
+          "ms": 170,
+          "bytes": 20822,
+          "sha256": "a2a0bf74f5c890ed0b618196c59f0cf3b2403b26435f96b1763c09432520502d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-7.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20822",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:08 GMT"
+          }
+        },
+        {
+          "n": 8,
+          "fetchedAt": "2026-10-07T11:43:39.584Z",
+          "status": 200,
+          "ms": 176,
+          "bytes": 20817,
+          "sha256": "3f245b5cdc49b6225cde235a72b89173d3c51ad66b6467b94ed94c3e58f0f573",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-8.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20817",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:39 GMT"
+          }
+        },
+        {
+          "n": 9,
+          "fetchedAt": "2026-10-07T11:44:09.776Z",
+          "status": 200,
+          "ms": 169,
+          "bytes": 21254,
+          "sha256": "84a349d4a263d9f7e8df15beb82cd1b77b3cd3e3b24b5ded53274396edfaa023",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-9.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21254",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:09 GMT"
+          }
+        },
+        {
+          "n": 10,
+          "fetchedAt": "2026-10-07T11:44:39.961Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 20503,
+          "sha256": "18444b36098c22a5e6bda7ff4464fd5dc7ec7b5b14a30394e990014c52b20094",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-10.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20503",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:40 GMT"
+          }
+        },
+        {
+          "n": 11,
+          "fetchedAt": "2026-10-07T11:45:10.141Z",
+          "status": 200,
+          "ms": 153,
+          "bytes": 20804,
+          "sha256": "461486a427982b179c37c74139b643d6656dbc281634727f3a25cbe7165cbfc9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-11.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20804",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:10 GMT"
+          }
+        },
+        {
+          "n": 12,
+          "fetchedAt": "2026-10-07T11:45:40.325Z",
+          "status": 200,
+          "ms": 371,
+          "bytes": 20725,
+          "sha256": "d5869cb31bc7a5d3913f5a026ef23659b1386b96f7f605d86a2caf2f6a89be67",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-12.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20725",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:40 GMT"
+          }
+        },
+        {
+          "n": 13,
+          "fetchedAt": "2026-10-07T11:46:10.973Z",
+          "status": 200,
+          "ms": 300,
+          "bytes": 21229,
+          "sha256": "64105c80d8fc6b4b4a43df97fad11eedfc213d364faf969592a29ea4ddc98365",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-13.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21229",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:11 GMT"
+          }
+        },
+        {
+          "n": 14,
+          "fetchedAt": "2026-10-07T11:46:41.357Z",
+          "status": 200,
+          "ms": 166,
+          "bytes": 20820,
+          "sha256": "10cc3eab09464090a68617fd9a205d42a5b9bb7b42856706e3975421a316decb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-14.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20820",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:41 GMT"
+          }
+        },
+        {
+          "n": 15,
+          "fetchedAt": "2026-10-07T11:47:11.666Z",
+          "status": 200,
+          "ms": 195,
+          "bytes": 20652,
+          "sha256": "4fae771055068269ec778184c3dd00e95b1d0b7440de880833885747dd80d494",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-15.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20652",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:11 GMT"
+          }
+        },
+        {
+          "n": 16,
+          "fetchedAt": "2026-10-07T11:47:41.988Z",
+          "status": 200,
+          "ms": 364,
+          "bytes": 20924,
+          "sha256": "d08a06bbbac79733233795f39ae089ce3bed92682786cf75db907ba00255fd5c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-16.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20924",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:42 GMT"
+          }
+        },
+        {
+          "n": 17,
+          "fetchedAt": "2026-10-07T11:48:12.388Z",
+          "status": 200,
+          "ms": 262,
+          "bytes": 21331,
+          "sha256": "024b5b47f2a840c946f1764368aed75cab6e09d97d6e5773051705ee59920f17",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-17.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21331",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:12 GMT"
+          }
+        },
+        {
+          "n": 18,
+          "fetchedAt": "2026-10-07T11:48:42.810Z",
+          "status": 200,
+          "ms": 176,
+          "bytes": 21076,
+          "sha256": "bcc85d0c014b77762db3782c63576db13b6dac30367393cbdd5d69cda2e75470",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-18.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21076",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:42 GMT"
+          }
+        },
+        {
+          "n": 19,
+          "fetchedAt": "2026-10-07T11:49:13.354Z",
+          "status": 200,
+          "ms": 257,
+          "bytes": 21551,
+          "sha256": "f531bc7906c69abc6f59c5ce9664ac90bf4cafd8e9cb6258bb2867530be33d1d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-19.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21551",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:13 GMT"
+          }
+        },
+        {
+          "n": 20,
+          "fetchedAt": "2026-10-07T11:49:43.638Z",
+          "status": 200,
+          "ms": 290,
+          "bytes": 21486,
+          "sha256": "c67aab8b177387db24901faee9afae542854ca043f644a4387b8be2c73786dff",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-20.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21486",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:43 GMT"
+          }
+        },
+        {
+          "n": 21,
+          "fetchedAt": "2026-10-07T11:50:14.401Z",
+          "status": 200,
+          "ms": 356,
+          "bytes": 21338,
+          "sha256": "68ade60febfe170776f629b7dce86a328e7cee34e90ba22d5777249c255d8eed",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-21.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21338",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:14 GMT"
+          }
+        },
+        {
+          "n": 22,
+          "fetchedAt": "2026-10-07T11:50:44.905Z",
+          "status": 200,
+          "ms": 258,
+          "bytes": 19492,
+          "sha256": "67d9dd6f1138d959449a85dfc8f929efb5185a548d4f924d67a0b053188bb5ff",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-22.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19492",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:45 GMT"
+          }
+        },
+        {
+          "n": 23,
+          "fetchedAt": "2026-10-07T11:51:15.453Z",
+          "status": 200,
+          "ms": 286,
+          "bytes": 20825,
+          "sha256": "e763d06d88f03a92015d59e74108beffa7e5b133c7cca8081af0bb900bbc26c6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-23.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20825",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:15 GMT"
+          }
+        },
+        {
+          "n": 24,
+          "fetchedAt": "2026-10-07T11:51:45.778Z",
+          "status": 200,
+          "ms": 166,
+          "bytes": 21385,
+          "sha256": "66796dd24be74e97f1a0c1605ac6e9388976f577cbef5a265cea3cc9ee5f73a8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-24.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21385",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:45 GMT"
+          }
+        },
+        {
+          "n": 25,
+          "fetchedAt": "2026-10-07T11:52:16.072Z",
+          "status": 200,
+          "ms": 377,
+          "bytes": 20606,
+          "sha256": "c765f5abaf1577f28e53b5e88c958f3dd02cd6d19f0355c6ac6d37631cb9a7f4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-25.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20606",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:16 GMT"
+          }
+        },
+        {
+          "n": 26,
+          "fetchedAt": "2026-10-07T11:52:46.528Z",
+          "status": 200,
+          "ms": 360,
+          "bytes": 20718,
+          "sha256": "467c9c3baa529f416c422a8cab5155a94f70dc402b6f6dd96c79c14193d3def4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-26.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20718",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:46 GMT"
+          }
+        },
+        {
+          "n": 27,
+          "fetchedAt": "2026-10-07T11:53:17.023Z",
+          "status": 200,
+          "ms": 267,
+          "bytes": 20258,
+          "sha256": "25a16adb1758198c6f9d835579f829b71f4256b25749d53f0d79a10d2966a5cb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-27.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20258",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:17 GMT"
+          }
+        },
+        {
+          "n": 28,
+          "fetchedAt": "2026-10-07T11:53:47.545Z",
+          "status": 200,
+          "ms": 256,
+          "bytes": 20865,
+          "sha256": "49327fe22c6552495af36854ba47d0cc8fe65308213dcd68024221d6ece8c0c7",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-28.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20865",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:47 GMT"
+          }
+        },
+        {
+          "n": 29,
+          "fetchedAt": "2026-10-07T11:54:17.963Z",
+          "status": 200,
+          "ms": 283,
+          "bytes": 20414,
+          "sha256": "0572fb2b6be05ebd08c697dc3d2c6b24c36ae30e3a9c056a5e9fd937817fdeda",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-29.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20414",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:18 GMT"
+          }
+        },
+        {
+          "n": 30,
+          "fetchedAt": "2026-10-07T11:54:48.289Z",
+          "status": 200,
+          "ms": 390,
+          "bytes": 21274,
+          "sha256": "a32eecf79351b054d7a0d9970a8b89d0028371323c538043665455aec906859e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-30.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21274",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:48 GMT"
+          }
+        },
+        {
+          "n": 31,
+          "fetchedAt": "2026-10-07T11:55:18.755Z",
+          "status": 200,
+          "ms": 292,
+          "bytes": 20640,
+          "sha256": "dad48730117399ec6e053a6d06f9869f0cce9299589bead01c801c63671149a8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-31.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20640",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:19 GMT"
+          }
+        },
+        {
+          "n": 32,
+          "fetchedAt": "2026-10-07T11:55:49.201Z",
+          "status": 200,
+          "ms": 244,
+          "bytes": 20521,
+          "sha256": "714efda8710a4ddbd02ee2fb634f6073e008fe3a54ae9b97e054eb8beddee61c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-32.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20521",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:49 GMT"
+          }
+        },
+        {
+          "n": 33,
+          "fetchedAt": "2026-10-07T11:56:19.566Z",
+          "status": 200,
+          "ms": 188,
+          "bytes": 20772,
+          "sha256": "ee4aca1bbfd730a3d2ed010b4f740542eafc516d9f08aa7a6a7078699ad4f2c4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-33.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20772",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:19 GMT"
+          }
+        },
+        {
+          "n": 34,
+          "fetchedAt": "2026-10-07T11:56:50.098Z",
+          "status": 200,
+          "ms": 148,
+          "bytes": 20971,
+          "sha256": "5e91ed4809f3008ec9119a5788b9e360256593a487509ff2bef358c112f97989",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-34.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20971",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:50 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1ccb8d7c-43d4-450e-b40c-79527766db75",
+      "name": "Audobon Ave @ W 181 ST",
+      "area": "Manhattan",
+      "lat": 40.848738,
+      "lon": -73.932353,
+      "distanceMi": 0.211,
+      "bearingDeg": 213,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "1ccb8d7c-43d4-450e-b40c-79527766db75",
+        "name": "Audobon Ave @ W 181 ST",
+        "latitude": 40.848738,
+        "longitude": -73.932353,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/1ccb8d7c-43d4-450e-b40c-79527766db75/image"
+      },
+      "fetchedOk": 35,
+      "attempted": 35,
+      "distinctFrames": 35,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 25843,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.186Z",
+          "status": 200,
+          "ms": 365,
+          "bytes": 25307,
+          "sha256": "486ca2710330d234e05bb30624d574f2c616e975086e5a0db6795fac024279e0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25307",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.470Z",
+          "status": 200,
+          "ms": 354,
+          "bytes": 26005,
+          "sha256": "83d12e77f2752177ddf630da70e73aec36c0ddab5d614bee6e000b3e05d0d57c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26005",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:23 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.400Z",
+          "status": 200,
+          "ms": 279,
+          "bytes": 24496,
+          "sha256": "fc53cfebdfac74d7742bfffa2ecbf9fb12ceda2489be00b53d06017db5a67d89",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24496",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.036Z",
+          "status": 200,
+          "ms": 165,
+          "bytes": 25670,
+          "sha256": "fa60489d9e9d52f051578cd8e4039a5867ec05e7d98caba0884fd7b1d213cdc1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25670",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.563Z",
+          "status": 200,
+          "ms": 165,
+          "bytes": 25800,
+          "sha256": "897e958e47968ebe5fa518d5defb4f3ca95043ad687834893db226142aac42c6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25800",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        },
+        {
+          "n": 5,
+          "fetchedAt": "2026-10-07T11:42:08.376Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 25315,
+          "sha256": "84b506f008bcc4350121620d1dec1bb6dac6e7b763ef965c10c11ce6c01d2bdd",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-5.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25315",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:08 GMT"
+          }
+        },
+        {
+          "n": 6,
+          "fetchedAt": "2026-10-07T11:42:38.547Z",
+          "status": 200,
+          "ms": 157,
+          "bytes": 25806,
+          "sha256": "43df758910b4f954024799bbde112d81fdde6d3befe973b3576faecc7e8e3192",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-6.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25806",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:38 GMT"
+          }
+        },
+        {
+          "n": 7,
+          "fetchedAt": "2026-10-07T11:43:08.707Z",
+          "status": 200,
+          "ms": 861,
+          "bytes": 25895,
+          "sha256": "9ef595bb5ddc56879fdbfc3c68c86095d082fb0d5d48203de961db91b4d9d2ef",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-7.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25895",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:09 GMT"
+          }
+        },
+        {
+          "n": 8,
+          "fetchedAt": "2026-10-07T11:43:39.585Z",
+          "status": 200,
+          "ms": 159,
+          "bytes": 26047,
+          "sha256": "6c45f6c9e2f3fcba3f93083c0af49c2626c382fc9e0a196eb2f83733986e1e36",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-8.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26047",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:39 GMT"
+          }
+        },
+        {
+          "n": 9,
+          "fetchedAt": "2026-10-07T11:44:09.777Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 25798,
+          "sha256": "325cab59c43554d300f89e9d62324c913cbaa26f343a0fa16b2bf3dbd0974c4f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-9.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25798",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:09 GMT"
+          }
+        },
+        {
+          "n": 10,
+          "fetchedAt": "2026-10-07T11:44:39.962Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 25788,
+          "sha256": "52720c02653e7ec095c0f548b5f47bd4fe47cc3165f28b9c3e3ec7137dff516d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-10.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25788",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:40 GMT"
+          }
+        },
+        {
+          "n": 11,
+          "fetchedAt": "2026-10-07T11:45:10.142Z",
+          "status": 200,
+          "ms": 153,
+          "bytes": 26342,
+          "sha256": "55d1f0a94a7f5f638e6adbe69395974b4674888c54e13826e3187b1161d5a44b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-11.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26342",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:10 GMT"
+          }
+        },
+        {
+          "n": 12,
+          "fetchedAt": "2026-10-07T11:45:40.326Z",
+          "status": 200,
+          "ms": 370,
+          "bytes": 24727,
+          "sha256": "e8b4eeccae90996c8ac5cb0b83df172b729a7c9bfb2ab97951b25882c7de7ed4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-12.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24727",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:40 GMT"
+          }
+        },
+        {
+          "n": 13,
+          "fetchedAt": "2026-10-07T11:46:10.975Z",
+          "status": 200,
+          "ms": 300,
+          "bytes": 25909,
+          "sha256": "ff9b034268c85fcf70f03ec50d7d3763d83d19876dab6653f97182bf3ea1f7e1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-13.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25909",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:11 GMT"
+          }
+        },
+        {
+          "n": 14,
+          "fetchedAt": "2026-10-07T11:46:41.358Z",
+          "status": 200,
+          "ms": 162,
+          "bytes": 26123,
+          "sha256": "61fb862bcb4c2620f9637f32b1e2f6a634a609d4cb1be11ffe5275e3ab166ab9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-14.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26123",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:41 GMT"
+          }
+        },
+        {
+          "n": 15,
+          "fetchedAt": "2026-10-07T11:47:11.667Z",
+          "status": 200,
+          "ms": 172,
+          "bytes": 25944,
+          "sha256": "716e5ec5d5f2da569be12aa9eda6644a2888139592a8174368993f25c7a035b0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-15.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25944",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:11 GMT"
+          }
+        },
+        {
+          "n": 16,
+          "fetchedAt": "2026-10-07T11:47:41.989Z",
+          "status": 200,
+          "ms": 364,
+          "bytes": 25975,
+          "sha256": "5cf92fc678a9913896d3cacf6c09ccd79f5b8c3fd5348b2d66b63e7207e0e8e6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-16.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25975",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:42 GMT"
+          }
+        },
+        {
+          "n": 17,
+          "fetchedAt": "2026-10-07T11:48:12.389Z",
+          "status": 200,
+          "ms": 268,
+          "bytes": 25418,
+          "sha256": "ff91a6e2ee69ff15aa5d9d8e1f238b42f4e4d1e1832ae8d5f5f5e5e57d58452f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-17.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25418",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:12 GMT"
+          }
+        },
+        {
+          "n": 18,
+          "fetchedAt": "2026-10-07T11:48:42.811Z",
+          "status": 200,
+          "ms": 165,
+          "bytes": 25994,
+          "sha256": "7b52129a9c713409d2000b3f3d4878dbca283f870ac74201f739bf8bcf6ce7c0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-18.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25994",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:42 GMT"
+          }
+        },
+        {
+          "n": 19,
+          "fetchedAt": "2026-10-07T11:49:13.355Z",
+          "status": 200,
+          "ms": 257,
+          "bytes": 25009,
+          "sha256": "7a796efb827db7f45058fa47703aa336264fe156ec45f8c17365ab787d4666fb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-19.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25009",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:13 GMT"
+          }
+        },
+        {
+          "n": 20,
+          "fetchedAt": "2026-10-07T11:49:43.639Z",
+          "status": 200,
+          "ms": 289,
+          "bytes": 25754,
+          "sha256": "0ee281249eede499e08d71aee8215331ecfca362f464d0a6858582d46becca86",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-20.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25754",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:43 GMT"
+          }
+        },
+        {
+          "n": 21,
+          "fetchedAt": "2026-10-07T11:50:14.402Z",
+          "status": 200,
+          "ms": 354,
+          "bytes": 26139,
+          "sha256": "1bfae531b0bd4e24de7435699ba61765a6d2ad9043c4decda26419a123a19d9b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-21.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26139",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:14 GMT"
+          }
+        },
+        {
+          "n": 22,
+          "fetchedAt": "2026-10-07T11:50:44.906Z",
+          "status": 200,
+          "ms": 260,
+          "bytes": 26113,
+          "sha256": "eea06196ce70b2257bf9bdf09cc9a9ab2deb59d70735085c1d762f7ea8f3350e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-22.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26113",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:45 GMT"
+          }
+        },
+        {
+          "n": 23,
+          "fetchedAt": "2026-10-07T11:51:15.454Z",
+          "status": 200,
+          "ms": 267,
+          "bytes": 25863,
+          "sha256": "4ae1194fd46c59a48ddeddeb83d45c2d550cfb575258c2668842ac6cbdcb5e81",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-23.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25863",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:15 GMT"
+          }
+        },
+        {
+          "n": 24,
+          "fetchedAt": "2026-10-07T11:51:45.779Z",
+          "status": 200,
+          "ms": 151,
+          "bytes": 26070,
+          "sha256": "979292901053944dda9703b50beccd60e6951b3f4babe64fdc9acde9c12fbd41",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-24.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26070",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:45 GMT"
+          }
+        },
+        {
+          "n": 25,
+          "fetchedAt": "2026-10-07T11:52:16.074Z",
+          "status": 200,
+          "ms": 358,
+          "bytes": 26315,
+          "sha256": "9f58d417513ef28ea55473411073d922bf42163048627af5c14359e7eb2e0bbc",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-25.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26315",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:16 GMT"
+          }
+        },
+        {
+          "n": 26,
+          "fetchedAt": "2026-10-07T11:52:46.529Z",
+          "status": 200,
+          "ms": 351,
+          "bytes": 26266,
+          "sha256": "9637fe67f71f8883b4dcf545874b843a6df843332839dbb03a6c849e5217b04b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-26.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26266",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:46 GMT"
+          }
+        },
+        {
+          "n": 27,
+          "fetchedAt": "2026-10-07T11:53:17.024Z",
+          "status": 200,
+          "ms": 268,
+          "bytes": 26036,
+          "sha256": "1e4c710bfc56abf79ffdb746642352bfba452d87321ba5bb0cb5a2cf1f3880a4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-27.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26036",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:17 GMT"
+          }
+        },
+        {
+          "n": 28,
+          "fetchedAt": "2026-10-07T11:53:47.546Z",
+          "status": 200,
+          "ms": 257,
+          "bytes": 25709,
+          "sha256": "04818e4b2884522f9fcc6abbdf49dc449740237cc3bf1e87290193fbef2ae5b5",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-28.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25709",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:47 GMT"
+          }
+        },
+        {
+          "n": 29,
+          "fetchedAt": "2026-10-07T11:54:17.964Z",
+          "status": 200,
+          "ms": 293,
+          "bytes": 26588,
+          "sha256": "ace111ffbaced0e2ebd3bebb43bc540a75dbd26965e47ceac83859a69a13cc22",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-29.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26588",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:18 GMT"
+          }
+        },
+        {
+          "n": 30,
+          "fetchedAt": "2026-10-07T11:54:48.290Z",
+          "status": 200,
+          "ms": 403,
+          "bytes": 26203,
+          "sha256": "ceee047951e56ff106ca042eb380a520cca6b048c2611dc653e9468e4574c3de",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-30.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26203",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:48 GMT"
+          }
+        },
+        {
+          "n": 31,
+          "fetchedAt": "2026-10-07T11:55:18.756Z",
+          "status": 200,
+          "ms": 282,
+          "bytes": 26218,
+          "sha256": "9cceeb9bdd4057173a9d66b0d043f7ec2d63a522450cc2105df3f5ab71f290e1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-31.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26218",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:18 GMT"
+          }
+        },
+        {
+          "n": 32,
+          "fetchedAt": "2026-10-07T11:55:49.202Z",
+          "status": 200,
+          "ms": 241,
+          "bytes": 25790,
+          "sha256": "24e789a37f4a2bf543c28edd1d920b60abe1713df8cf9b1896559bf0fecb4630",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-32.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25790",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:49 GMT"
+          }
+        },
+        {
+          "n": 33,
+          "fetchedAt": "2026-10-07T11:56:19.567Z",
+          "status": 200,
+          "ms": 186,
+          "bytes": 26188,
+          "sha256": "462dc41961223d497cc8c53333c2421c0fe21afe5ceaf3cec3d20d9023f10f34",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-33.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26188",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:19 GMT"
+          }
+        },
+        {
+          "n": 34,
+          "fetchedAt": "2026-10-07T11:56:50.099Z",
+          "status": 200,
+          "ms": 161,
+          "bytes": 25892,
+          "sha256": "5a4e2d880dc5c3ae7782df5cc97ef520a7411bb5bcb4ec1cfa368b265834e80a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-34.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25892",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:50 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3ad126cc-3f99-4626-a229-b9ba4d3f4b63",
+      "name": "St Nicholas Ave @ 181 St",
+      "area": "Manhattan",
+      "lat": 40.849314,
+      "lon": -73.933739,
+      "distanceMi": 0.232,
+      "bearingDeg": 234,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "3ad126cc-3f99-4626-a229-b9ba4d3f4b63",
+        "name": "St Nicholas Ave @ 181 St",
+        "latitude": 40.849314,
+        "longitude": -73.933739,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/3ad126cc-3f99-4626-a229-b9ba4d3f4b63/image"
+      },
+      "fetchedOk": 35,
+      "attempted": 35,
+      "distinctFrames": 34,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 20155,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.187Z",
+          "status": 200,
+          "ms": 509,
+          "bytes": 19815,
+          "sha256": "4b9231eca2abeedb162e3a87e6b9d4f23bf517eeb8c8f66db696b4acb34b9f95",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19815",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.470Z",
+          "status": 200,
+          "ms": 659,
+          "bytes": 19982,
+          "sha256": "0b2c3c82163c86d532dc1b61226cd8c0ff790412f4c97cb8597a64e57c55b7d8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19982",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.401Z",
+          "status": 200,
+          "ms": 268,
+          "bytes": 19982,
+          "sha256": "0b2c3c82163c86d532dc1b61226cd8c0ff790412f4c97cb8597a64e57c55b7d8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19982",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.037Z",
+          "status": 200,
+          "ms": 329,
+          "bytes": 19942,
+          "sha256": "62534dc363e140b52eed2bd621c03a55eceb8f30dcc1bd26abe80fc873805561",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19942",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.563Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 19852,
+          "sha256": "acccd88c990f164d0d7bb397e908e21ff669bca7a59b5c55e6cc0915ea0f3835",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19852",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        },
+        {
+          "n": 5,
+          "fetchedAt": "2026-10-07T11:42:08.376Z",
+          "status": 200,
+          "ms": 155,
+          "bytes": 20136,
+          "sha256": "93f77dbb75be865e43098e0242da3878a0fd588c4bbd246f694a1be0f006ade2",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-5.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20136",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:08 GMT"
+          }
+        },
+        {
+          "n": 6,
+          "fetchedAt": "2026-10-07T11:42:38.548Z",
+          "status": 200,
+          "ms": 151,
+          "bytes": 20264,
+          "sha256": "48d1695cced5e9116b4787fe30704e7d1b82413f4680e2ffe767ab082c7fa67d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-6.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20264",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:42:38 GMT"
+          }
+        },
+        {
+          "n": 7,
+          "fetchedAt": "2026-10-07T11:43:08.708Z",
+          "status": 200,
+          "ms": 165,
+          "bytes": 20790,
+          "sha256": "71781f5994a8280a2a67395970797ff3e8e6d97aa757379b8e23b819f8a2f37b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-7.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20790",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:08 GMT"
+          }
+        },
+        {
+          "n": 8,
+          "fetchedAt": "2026-10-07T11:43:39.586Z",
+          "status": 200,
+          "ms": 153,
+          "bytes": 20542,
+          "sha256": "d59dbd94f0546bc0bf8014cd8bbe4db3453799ababf7dbaf2d95eca3ae198c40",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-8.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20542",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:43:39 GMT"
+          }
+        },
+        {
+          "n": 9,
+          "fetchedAt": "2026-10-07T11:44:09.778Z",
+          "status": 200,
+          "ms": 154,
+          "bytes": 20318,
+          "sha256": "37b7c7bdd4e717aee9fdff9f6b36f042a4a45fcdc25034965277b31a90ec96fb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-9.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20318",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:09 GMT"
+          }
+        },
+        {
+          "n": 10,
+          "fetchedAt": "2026-10-07T11:44:39.963Z",
+          "status": 200,
+          "ms": 162,
+          "bytes": 21078,
+          "sha256": "12b2a23668a5cb54af7d9acd99a5ce5ef809a4310b1ce311f2208a2d05938404",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-10.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21078",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:44:40 GMT"
+          }
+        },
+        {
+          "n": 11,
+          "fetchedAt": "2026-10-07T11:45:10.143Z",
+          "status": 200,
+          "ms": 167,
+          "bytes": 20687,
+          "sha256": "dc8554eea8536a90600e5fb3b84691d4b482eba36c186aeca79151d6de6cdbd3",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-11.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20687",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:10 GMT"
+          }
+        },
+        {
+          "n": 12,
+          "fetchedAt": "2026-10-07T11:45:40.327Z",
+          "status": 200,
+          "ms": 630,
+          "bytes": 20272,
+          "sha256": "2426886b024d897be9d7037b1cf6567ab07a768b1867190dbcb2a41d7800e3c1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-12.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20272",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:45:40 GMT"
+          }
+        },
+        {
+          "n": 13,
+          "fetchedAt": "2026-10-07T11:46:10.976Z",
+          "status": 200,
+          "ms": 366,
+          "bytes": 20379,
+          "sha256": "1b8be5dde6a955ea9cad8d8ec2106ed318ffd7eb7664ffa268864b31886e4759",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-13.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20379",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:11 GMT"
+          }
+        },
+        {
+          "n": 14,
+          "fetchedAt": "2026-10-07T11:46:41.359Z",
+          "status": 200,
+          "ms": 290,
+          "bytes": 20206,
+          "sha256": "e89c29190542efebad9e41403c0b87d295c247bc9bec3a26179b845de20b10bf",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-14.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20206",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:46:41 GMT"
+          }
+        },
+        {
+          "n": 15,
+          "fetchedAt": "2026-10-07T11:47:11.667Z",
+          "status": 200,
+          "ms": 304,
+          "bytes": 20074,
+          "sha256": "880393707f6ea64357ecff8955106e33449ff11b3f22b42ebdcc1db4e7a01ae5",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-15.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20074",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:11 GMT"
+          }
+        },
+        {
+          "n": 16,
+          "fetchedAt": "2026-10-07T11:47:41.990Z",
+          "status": 200,
+          "ms": 382,
+          "bytes": 20103,
+          "sha256": "3d37e6d026af577d3b812c84806cd8d9e2ccf8f8026417f893f9266ca9b5ea0e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-16.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20103",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:47:42 GMT"
+          }
+        },
+        {
+          "n": 17,
+          "fetchedAt": "2026-10-07T11:48:12.390Z",
+          "status": 200,
+          "ms": 403,
+          "bytes": 20033,
+          "sha256": "333e7e48277fd847e0d33092892dde34b4bcc7e85e443c03bc465dd5b70bfcd8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-17.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20033",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:12 GMT"
+          }
+        },
+        {
+          "n": 18,
+          "fetchedAt": "2026-10-07T11:48:42.812Z",
+          "status": 200,
+          "ms": 525,
+          "bytes": 19768,
+          "sha256": "5d445172a0da53d0b136ae5d66fefab7019bf6fc524976cbd4a15dd9cc6cf3d0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-18.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19768",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:48:43 GMT"
+          }
+        },
+        {
+          "n": 19,
+          "fetchedAt": "2026-10-07T11:49:13.355Z",
+          "status": 200,
+          "ms": 267,
+          "bytes": 20102,
+          "sha256": "04d32f8ce71f6f8e3be2d2dc03072c4c4d463677418848d99ebd3bc3b86411e7",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-19.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20102",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:13 GMT"
+          }
+        },
+        {
+          "n": 20,
+          "fetchedAt": "2026-10-07T11:49:43.640Z",
+          "status": 200,
+          "ms": 754,
+          "bytes": 20662,
+          "sha256": "5fc03c9e09a1f036afc9e4d248a1d0f792bdd383b7c02373dc0787c70d9f96b9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-20.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20662",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:49:44 GMT"
+          }
+        },
+        {
+          "n": 21,
+          "fetchedAt": "2026-10-07T11:50:14.403Z",
+          "status": 200,
+          "ms": 487,
+          "bytes": 19920,
+          "sha256": "58c6e227897ffb3c4b2947e00226b70e0d3c3fd7a75bb79731bf437e1907a861",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-21.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19920",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:14 GMT"
+          }
+        },
+        {
+          "n": 22,
+          "fetchedAt": "2026-10-07T11:50:44.907Z",
+          "status": 200,
+          "ms": 542,
+          "bytes": 20121,
+          "sha256": "de4f900fab72b9eba2e1913ac86dddba5ce5224080b272c0ef3a67e783384182",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-22.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20121",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:50:45 GMT"
+          }
+        },
+        {
+          "n": 23,
+          "fetchedAt": "2026-10-07T11:51:15.454Z",
+          "status": 200,
+          "ms": 310,
+          "bytes": 20355,
+          "sha256": "5cba7c558a49df4a2e3a2019fa470094bb2eb7643ddf83c6b6de1576cca0f5d9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-23.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20355",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:15 GMT"
+          }
+        },
+        {
+          "n": 24,
+          "fetchedAt": "2026-10-07T11:51:45.779Z",
+          "status": 200,
+          "ms": 277,
+          "bytes": 20155,
+          "sha256": "f8de4abcaa99340cbd213ad378723d5217ccd5698c560ba87ff1c8b8ad87f66d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-24.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20155",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:51:46 GMT"
+          }
+        },
+        {
+          "n": 25,
+          "fetchedAt": "2026-10-07T11:52:16.074Z",
+          "status": 200,
+          "ms": 439,
+          "bytes": 20403,
+          "sha256": "67c4444800f3654bdecdeadf3d72d3069fea56a2d11138174bfd8974ffd77664",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-25.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20403",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:16 GMT"
+          }
+        },
+        {
+          "n": 26,
+          "fetchedAt": "2026-10-07T11:52:46.529Z",
+          "status": 200,
+          "ms": 478,
+          "bytes": 20344,
+          "sha256": "a3977e1fc61094b17b54f3f16a01c3adc89fcb59adce5614c6273ff3aa04eb10",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-26.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20344",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:52:46 GMT"
+          }
+        },
+        {
+          "n": 27,
+          "fetchedAt": "2026-10-07T11:53:17.025Z",
+          "status": 200,
+          "ms": 514,
+          "bytes": 19999,
+          "sha256": "5c53b8ce777d7419126e6bd500ffdb9dbbc8ab77691570c984ab51b0a24f7b66",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-27.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19999",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:17 GMT"
+          }
+        },
+        {
+          "n": 28,
+          "fetchedAt": "2026-10-07T11:53:47.547Z",
+          "status": 200,
+          "ms": 400,
+          "bytes": 19623,
+          "sha256": "27b8d283e312069d99b9d2637e8da564acc063c1c5a1a70a3874d68131573902",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-28.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19623",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:53:47 GMT"
+          }
+        },
+        {
+          "n": 29,
+          "fetchedAt": "2026-10-07T11:54:17.965Z",
+          "status": 200,
+          "ms": 314,
+          "bytes": 20045,
+          "sha256": "47a44f66b16a137fa75d54912ec33beece674393a82db8a51b2f9c5cab1efa34",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-29.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20045",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:18 GMT"
+          }
+        },
+        {
+          "n": 30,
+          "fetchedAt": "2026-10-07T11:54:48.291Z",
+          "status": 200,
+          "ms": 449,
+          "bytes": 19561,
+          "sha256": "8e72c44270df154fd00833eab8d7c0737ced7f113abaaa8260789cc82ad66d4b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-30.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19561",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:54:48 GMT"
+          }
+        },
+        {
+          "n": 31,
+          "fetchedAt": "2026-10-07T11:55:18.756Z",
+          "status": 200,
+          "ms": 429,
+          "bytes": 20036,
+          "sha256": "020bf9cc3cd613e40a927d08f9016a10c3e44c8b40042f7b42212d5229e07990",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-31.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20036",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:19 GMT"
+          }
+        },
+        {
+          "n": 32,
+          "fetchedAt": "2026-10-07T11:55:49.203Z",
+          "status": 200,
+          "ms": 348,
+          "bytes": 19893,
+          "sha256": "bfbffd247c9d3ccc36ec807e5479238d5046537e6903edca17afb762a84534b8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-32.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19893",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:55:49 GMT"
+          }
+        },
+        {
+          "n": 33,
+          "fetchedAt": "2026-10-07T11:56:19.568Z",
+          "status": 200,
+          "ms": 518,
+          "bytes": 19910,
+          "sha256": "84b2fbb227b56f5d60d06bf30639af6c251bc3125aec7ca325435a2686f90d66",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-33.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19910",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:20 GMT"
+          }
+        },
+        {
+          "n": 34,
+          "fetchedAt": "2026-10-07T11:56:50.099Z",
+          "status": 200,
+          "ms": 162,
+          "bytes": 20077,
+          "sha256": "f754cd99bd7569c5cb9aa519d138084339e8ba1bc9cd0e793b5cfcb72c3e146b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-34.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20077",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:56:50 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "99bd1846-c0e4-4689-b077-63d2525bf1aa",
+      "name": "Amsterdam Ave @ W 180 st ",
+      "area": "Manhattan",
+      "lat": 40.84652,
+      "lon": -73.932073,
+      "distanceMi": 0.345,
+      "bearingDeg": 197,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "99bd1846-c0e4-4689-b077-63d2525bf1aa",
+        "name": "Amsterdam Ave @ W 180 st ",
+        "latitude": 40.84652,
+        "longitude": -73.932073,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/99bd1846-c0e4-4689-b077-63d2525bf1aa/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 21015,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.188Z",
+          "status": 200,
+          "ms": 513,
+          "bytes": 20269,
+          "sha256": "066d06c83b6e425558d55e409e577d21f1b8b206f46884e99e1234c679aca504",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20269",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.471Z",
+          "status": 200,
+          "ms": 649,
+          "bytes": 21134,
+          "sha256": "0461c4288b06c3cc8095cb3d7a52344aff29e7898ed61f294061fa2af92c153b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21134",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.402Z",
+          "status": 200,
+          "ms": 282,
+          "bytes": 21578,
+          "sha256": "d9413eccd716f597722f3f731e67d379f647216fde41f1bf614af45dc327afa4",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21578",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.037Z",
+          "status": 200,
+          "ms": 346,
+          "bytes": 21095,
+          "sha256": "f44d7dcf6d350cc0b978e9f2d161b4060c382b90ea0b3d4c53544f9674eeaa4f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21095",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.564Z",
+          "status": 200,
+          "ms": 165,
+          "bytes": 20998,
+          "sha256": "fe38d19722b550b876f8066dbffcc96dcf69834994cbf3dd1bf495279ee30eba",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20998",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "749f7d56-21e8-4716-8efc-624723f5b9a8",
+      "name": "C1-CBE-01_N_NB_at_Amsterdam_Ave-Ex-HRD",
+      "area": "Bronx",
+      "lat": 40.845935,
+      "lon": -73.931089,
+      "distanceMi": 0.374,
+      "bearingDeg": 188,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "749f7d56-21e8-4716-8efc-624723f5b9a8",
+        "name": "C1-CBE-01_N_NB_at_Amsterdam_Ave-Ex-HRD",
+        "latitude": 40.845935,
+        "longitude": -73.931089,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/749f7d56-21e8-4716-8efc-624723f5b9a8/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 21619,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.189Z",
+          "status": 200,
+          "ms": 513,
+          "bytes": 21624,
+          "sha256": "be3e91dfb894948dbb6a6d855ead8d077778a9d35631a216c1c559181225d252",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21624",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.471Z",
+          "status": 200,
+          "ms": 659,
+          "bytes": 22527,
+          "sha256": "802d3dd4ca952136f5eb7221a42a39583f51350a39519f8bf9af90055679b1d5",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22527",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.402Z",
+          "status": 200,
+          "ms": 378,
+          "bytes": 21707,
+          "sha256": "3fd5bd2f9d46a2b7c3abe9f658145db10263b0453738354fb14179573002cb49",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21707",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.038Z",
+          "status": 200,
+          "ms": 328,
+          "bytes": 21725,
+          "sha256": "a136d538a83578ca8c01f6779d310acb9759f510c6c31ad85c1f94a25cfdcc4c",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21725",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.565Z",
+          "status": 200,
+          "ms": 166,
+          "bytes": 20511,
+          "sha256": "7e1308d6d0fe74cd36df109809fb06a15bc94023eb28317dfe974287a40602eb",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20511",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6728d273-d20b-44b7-868a-d54c00e50fab",
+      "name": "Amsterdam @ 178 St",
+      "area": "Manhattan",
+      "lat": 40.846142,
+      "lon": -73.932426,
+      "distanceMi": 0.376,
+      "bearingDeg": 198,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "6728d273-d20b-44b7-868a-d54c00e50fab",
+        "name": "Amsterdam @ 178 St",
+        "latitude": 40.846142,
+        "longitude": -73.932426,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/6728d273-d20b-44b7-868a-d54c00e50fab/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 4,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 21165,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.190Z",
+          "status": 200,
+          "ms": 543,
+          "bytes": 21716,
+          "sha256": "48e7af6869a7271d40922a38e1fc1f3afe2916368aaa0e886dafbe7ae710394d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21716",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.472Z",
+          "status": 200,
+          "ms": 662,
+          "bytes": 21628,
+          "sha256": "5889899e574c295ab5328f8317e5c0f653f7f101e321fb15e3567d1c2f7f3bbb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21628",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.403Z",
+          "status": 200,
+          "ms": 365,
+          "bytes": 20687,
+          "sha256": "92c7abba65bd01e775972cb0305ff07faa43755766f9c0e5727fadd39f00ecd0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20687",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.038Z",
+          "status": 200,
+          "ms": 346,
+          "bytes": 20687,
+          "sha256": "92c7abba65bd01e775972cb0305ff07faa43755766f9c0e5727fadd39f00ecd0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20687",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.565Z",
+          "status": 200,
+          "ms": 174,
+          "bytes": 21105,
+          "sha256": "ad8461f027a74957e790e19601ca84109697231e27c9c55b1d94f76b9b50d843",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21105",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ad3df063-d5d6-458c-84e7-1242060649cf",
+      "name": "Ft Washington @ 179 St",
+      "area": "Manhattan",
+      "lat": 40.849349,
+      "lon": -73.93894,
+      "distanceMi": 0.479,
+      "bearingDeg": 254,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ad3df063-d5d6-458c-84e7-1242060649cf",
+        "name": "Ft Washington @ 179 St",
+        "latitude": 40.849349,
+        "longitude": -73.93894,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ad3df063-d5d6-458c-84e7-1242060649cf/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 26881,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.191Z",
+          "status": 200,
+          "ms": 595,
+          "bytes": 26689,
+          "sha256": "b4588fa3eca61834a82a252437c4ed42df8c31bd40d13e33ff9dfa8a3dd8d869",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26689",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.472Z",
+          "status": 200,
+          "ms": 669,
+          "bytes": 27281,
+          "sha256": "8d3e3eee7d0174e96c222cbe14a652f57d3f120c2e902ed26f3bca57d30bc019",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27281",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.403Z",
+          "status": 200,
+          "ms": 463,
+          "bytes": 26729,
+          "sha256": "71f5591a1838d643975eb594a009f203acc34aaade158db23758f4e6148f908a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26729",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.039Z",
+          "status": 200,
+          "ms": 444,
+          "bytes": 26507,
+          "sha256": "8f0793c738e3d2f8e2114420998320b0caeddcc11259d8c1d4dda7e6216e0452",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26507",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.566Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 27201,
+          "sha256": "d679047edced5000b8cac2874e9d28c134bb4d9e34bdef6c5a3a4faf356ca1e6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27201",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7d6c994-492d-4f3a-895e-745596825fb4",
+      "name": "SEDGWICK AVE @ CEDAR AVE",
+      "area": "Bronx",
+      "lat": 40.8521,
+      "lon": -73.9207,
+      "distanceMi": 0.497,
+      "bearingDeg": 84,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d7d6c994-492d-4f3a-895e-745596825fb4",
+        "name": "SEDGWICK AVE @ CEDAR AVE",
+        "latitude": 40.8521,
+        "longitude": -73.9207,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d7d6c994-492d-4f3a-895e-745596825fb4/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 27866,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.192Z",
+          "status": 200,
+          "ms": 607,
+          "bytes": 27971,
+          "sha256": "806bd6c1714a268e0303b40459ae7e80263671a68dc3d41eaf600cefbb55c6eb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27971",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.473Z",
+          "status": 200,
+          "ms": 674,
+          "bytes": 27900,
+          "sha256": "61a79efc5dacc8fd0f5d327ef9463b06fdfc5d2ed92c378203d5e501b88e9e8f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27900",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.404Z",
+          "status": 200,
+          "ms": 470,
+          "bytes": 27715,
+          "sha256": "51085a04f3579e450455e34d4ee3f12515744e319be7d8be461db449fcd938d3",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27715",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.039Z",
+          "status": 200,
+          "ms": 438,
+          "bytes": 28021,
+          "sha256": "8bcf59dd5f9d1b2771f36c073ef1d1c1d0ab0d50242484f560f45ebbb6eb457b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "28021",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.566Z",
+          "status": 200,
+          "ms": 181,
+          "bytes": 27722,
+          "sha256": "98952cce9139b576f8c6cef2f93c42a77aa5b00b2485a46fd03807a4fe4c2ea6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27722",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d8e022cc-c262-45ac-a939-8e86e20853fd",
+      "name": "Ft Washington @ 178 St",
+      "area": "Manhattan",
+      "lat": 40.848657,
+      "lon": -73.939207,
+      "distanceMi": 0.507,
+      "bearingDeg": 249,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d8e022cc-c262-45ac-a939-8e86e20853fd",
+        "name": "Ft Washington @ 178 St",
+        "latitude": 40.848657,
+        "longitude": -73.939207,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d8e022cc-c262-45ac-a939-8e86e20853fd/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 18399,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.192Z",
+          "status": 200,
+          "ms": 835,
+          "bytes": 18757,
+          "sha256": "b01c33e58c21e198a52371d76a5c8eb840fd6fd7285bb9bcd324e9b77f021343",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18757",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.473Z",
+          "status": 200,
+          "ms": 785,
+          "bytes": 18496,
+          "sha256": "533a047cfb863942636e0ac358e085d0c1c9b1d08b62d98eecfd088cea1079c6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18496",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.404Z",
+          "status": 200,
+          "ms": 574,
+          "bytes": 18399,
+          "sha256": "3c817104e2189cc023d51f80f2064d1f24cc4b21ff5b9f1c27d88ff6c51f2d76",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18399",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.040Z",
+          "status": 200,
+          "ms": 445,
+          "bytes": 18224,
+          "sha256": "9cdf5dc1128bc7728e48027461a83294e3d8f122fcf0d1d5079bff22af73d58d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18224",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.567Z",
+          "status": 200,
+          "ms": 384,
+          "bytes": 18121,
+          "sha256": "d82a637e436cebaed136c3c1d218b69d47d7c83ed726ef38139eb3b78019b735",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18121",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "936d479d-402f-468a-b1c6-b2c2a68a0b4c",
+      "name": "Harlem River Dr Ramp @ Before GWB & Amst_179St Exit",
+      "area": "Manhattan",
+      "lat": 40.84359,
+      "lon": -73.9315,
+      "distanceMi": 0.538,
+      "bearingDeg": 188,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "936d479d-402f-468a-b1c6-b2c2a68a0b4c",
+        "name": "Harlem River Dr Ramp @ Before GWB & Amst_179St Exit",
+        "latitude": 40.84359,
+        "longitude": -73.9315,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/936d479d-402f-468a-b1c6-b2c2a68a0b4c/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 20916,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.193Z",
+          "status": 200,
+          "ms": 828,
+          "bytes": 21147,
+          "sha256": "3b2b3fe34d3e81ddd34e2199353ca0aae2bdacdc5ca359d826748829f706b089",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21147",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:18 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.473Z",
+          "status": 200,
+          "ms": 787,
+          "bytes": 20684,
+          "sha256": "ad589b121bc9e961acc7620e5ca5b7ae106bc23ed08276570b4d0277a6b04ade",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20684",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.405Z",
+          "status": 200,
+          "ms": 548,
+          "bytes": 21593,
+          "sha256": "aeabcc1a1e514c58a5ea0604df26854ecd55a1722ea7592326ed029bc8fd32ac",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21593",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.040Z",
+          "status": 200,
+          "ms": 442,
+          "bytes": 20419,
+          "sha256": "e2d2c11406e71f315826a7ae4c0ccd2e72ade250e8ae602ed4c26895280680e8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20419",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.568Z",
+          "status": 200,
+          "ms": 381,
+          "bytes": 20737,
+          "sha256": "2607e2ab17fe3fed448b495fd1564587f9691d00f8f0ca13c5e45be9d198c268",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20737",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:37 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9f118098-cee3-4964-8630-b932c94f70a3",
+      "name": "Under Cliff Ave @ Boscobe Pl",
+      "area": "Bronx",
+      "lat": 40.844403,
+      "lon": -73.925012,
+      "distanceMi": 0.547,
+      "bearingDeg": 151,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "9f118098-cee3-4964-8630-b932c94f70a3",
+        "name": "Under Cliff Ave @ Boscobe Pl",
+        "latitude": 40.844403,
+        "longitude": -73.925012,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/9f118098-cee3-4964-8630-b932c94f70a3/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 22094,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.194Z",
+          "status": 200,
+          "ms": 1067,
+          "bytes": 22297,
+          "sha256": "63c7072974aa5236758670545ad8c7472db69deefc39e26dcabcb8143096e8a1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22297",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.474Z",
+          "status": 200,
+          "ms": 812,
+          "bytes": 21921,
+          "sha256": "36451f438fe528b8ce84ad818f7cf2b69d984913773d2761de373b5b0d2e817a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21921",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.405Z",
+          "status": 200,
+          "ms": 550,
+          "bytes": 22136,
+          "sha256": "504dbffabef1d3af133e7c98a2d191d681fd0d6641c33172d2b229fbd32e1197",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22136",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.040Z",
+          "status": 200,
+          "ms": 459,
+          "bytes": 22221,
+          "sha256": "7a947ee7da7da97bab0527e1c95f905fc596b37f95e09c4f868fbce32490aef9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22221",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.568Z",
+          "status": 200,
+          "ms": 591,
+          "bytes": 21893,
+          "sha256": "582ecdacc8ede49bee298d6e6f1cf0369e131c3fca09911af18b657bed9c4c20",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21893",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "db028e65-b4b4-4f83-a427-6be6cb3f2ace",
+      "name": "Riverside DR. @ Pedestrian Crossing NOF 181 St",
+      "area": "Manhattan",
+      "lat": 40.852383,
+      "lon": -73.941088,
+      "distanceMi": 0.576,
+      "bearingDeg": 277,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "db028e65-b4b4-4f83-a427-6be6cb3f2ace",
+        "name": "Riverside DR. @ Pedestrian Crossing NOF 181 St",
+        "latitude": 40.852383,
+        "longitude": -73.941088,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/db028e65-b4b4-4f83-a427-6be6cb3f2ace/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 15923,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.194Z",
+          "status": 200,
+          "ms": 1063,
+          "bytes": 15904,
+          "sha256": "9939328dcf09e7cc005cf28e6ad163628c0a25244c04326866c7382a7084c266",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15904",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.474Z",
+          "status": 200,
+          "ms": 773,
+          "bytes": 15814,
+          "sha256": "84be3313d66b61b7b2f663b0d112c04dc830ef5e89fa34d0c0cfcfbcdd19a9e3",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15814",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.406Z",
+          "status": 200,
+          "ms": 569,
+          "bytes": 16102,
+          "sha256": "050a3d736d20596c01fdc62f0158adeb90ab85d71cbf04cd9b909287a66a92a9",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16102",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.041Z",
+          "status": 200,
+          "ms": 458,
+          "bytes": 15924,
+          "sha256": "bdba40d5f88b259d20011da4696a6a215bf0bd36a8d39fa5f84a02b9810ca5ea",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15924",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.569Z",
+          "status": 200,
+          "ms": 598,
+          "bytes": 15872,
+          "sha256": "41ff0f6fb2c5b1485f2c099b4acdd6c401dbff2b2ab93653e65867e5f7bd8ebe",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15872",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e610bc71-9bfb-4a92-928d-ad33cd1b9afd",
+      "name": "Harlem River Dr @ Dyckman St /10 Av",
+      "area": "Manhattan",
+      "lat": 40.858893,
+      "lon": -73.923042,
+      "distanceMi": 0.643,
+      "bearingDeg": 35,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "e610bc71-9bfb-4a92-928d-ad33cd1b9afd",
+        "name": "Harlem River Dr @ Dyckman St /10 Av",
+        "latitude": 40.858893,
+        "longitude": -73.923042,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/e610bc71-9bfb-4a92-928d-ad33cd1b9afd/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 25612,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.195Z",
+          "status": 200,
+          "ms": 1233,
+          "bytes": 25658,
+          "sha256": "546b445930196f2c77bf9a6b3a712da7624beafda84d1b169eba4ec3a8a0ee39",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25658",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.474Z",
+          "status": 200,
+          "ms": 804,
+          "bytes": 25597,
+          "sha256": "543de25c879bc2ef927b8e1dfa5ed53a13c6172f10795e689527d8533f670ae6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25597",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.406Z",
+          "status": 200,
+          "ms": 556,
+          "bytes": 25885,
+          "sha256": "f51f2236058223eaeb7205938990ba7ecfaf6d26e0f672b0f8aab89741135b03",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25885",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.041Z",
+          "status": 200,
+          "ms": 472,
+          "bytes": 25699,
+          "sha256": "855ed1e1463d1a68663c89920e25ecf544e78ca14812224c782193092678b0b7",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25699",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.569Z",
+          "status": 200,
+          "ms": 583,
+          "bytes": 25222,
+          "sha256": "74a2c926f04ccb71ff55320c47487ac7f79e3d144668cb2ffbe9917d06c3a22a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25222",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4302c1d7-48aa-45a8-a9cc-93e3132c1530",
+      "name": "C1-CBE-03_N_NB_at_Nelson_Ave-Ex02A",
+      "area": "Bronx",
+      "lat": 40.844781,
+      "lon": -73.920574,
+      "distanceMi": 0.674,
+      "bearingDeg": 132,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "4302c1d7-48aa-45a8-a9cc-93e3132c1530",
+        "name": "C1-CBE-03_N_NB_at_Nelson_Ave-Ex02A",
+        "latitude": 40.844781,
+        "longitude": -73.920574,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/4302c1d7-48aa-45a8-a9cc-93e3132c1530/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 40451,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.195Z",
+          "status": 200,
+          "ms": 1242,
+          "bytes": 37937,
+          "sha256": "a11de4dd8fdc5c13bf16a5da912718a5a1dc550a9ba86a8c901a92f74f6f797a",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "37937",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.475Z",
+          "status": 200,
+          "ms": 786,
+          "bytes": 39846,
+          "sha256": "19b7067efafd767a7413ecab678dcd637650f9c3d34ca11ea5fda73185206d44",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "39846",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.407Z",
+          "status": 200,
+          "ms": 579,
+          "bytes": 36755,
+          "sha256": "3dc18e6ff2803ab6fb97e3260747615eced02f052ace312cd0d30ca50963b8c4",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "36755",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.041Z",
+          "status": 200,
+          "ms": 486,
+          "bytes": 43562,
+          "sha256": "d37cb4a6f9bcee677ab0496e56e43d4c9eef312dd62383d71d62029b9c5f4a25",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "43562",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.569Z",
+          "status": 200,
+          "ms": 598,
+          "bytes": 44153,
+          "sha256": "230e2924f11af3028bfb8edd44d5887b31639c6a9ff98dd4a91083b69be0a215",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "44153",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c8b15922-4262-459a-85d5-17442ec9c54f",
+      "name": "C1-MDE-09-SB_at_Depot_Pl-Ex7-CBX",
+      "area": "Bronx",
+      "lat": 40.84154,
+      "lon": -73.928612,
+      "distanceMi": 0.679,
+      "bearingDeg": 173,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "c8b15922-4262-459a-85d5-17442ec9c54f",
+        "name": "C1-MDE-09-SB_at_Depot_Pl-Ex7-CBX",
+        "latitude": 40.84154,
+        "longitude": -73.928612,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/c8b15922-4262-459a-85d5-17442ec9c54f/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 46915,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.196Z",
+          "status": 200,
+          "ms": 1225,
+          "bytes": 46073,
+          "sha256": "7365cdd71721a92ca40b99c181114d037d2dd52e0cbae69e39d596624164253f",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "46073",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.475Z",
+          "status": 200,
+          "ms": 894,
+          "bytes": 47345,
+          "sha256": "95c019911266ae14e9bb815eaa11a250cf363aa771d6e25292c6a59bc025c219",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "47345",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.407Z",
+          "status": 200,
+          "ms": 594,
+          "bytes": 46996,
+          "sha256": "84885730b6ad9f7512ef42c994a4bcd8360d039c3654d55d9c861189fa644c06",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "46996",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.042Z",
+          "status": 200,
+          "ms": 466,
+          "bytes": 47069,
+          "sha256": "670d753b43862c58c3a7cae2f11281a155667984de037ee793a5c725a90fee62",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "47069",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.570Z",
+          "status": 200,
+          "ms": 636,
+          "bytes": 47094,
+          "sha256": "d3c8fb9a75b84dcf0fe846f58c1e0a1737cf87555fbc23cc7f1a54ee3a18dbf2",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "47094",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864",
+      "name": "C1-MDE-11-NB_at_W.179th_St-Ex8",
+      "area": "Bronx",
+      "lat": 40.855126,
+      "lon": -73.918007,
+      "distanceMi": 0.688,
+      "bearingDeg": 67,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864",
+        "name": "C1-MDE-11-NB_at_W.179th_St-Ex8",
+        "latitude": 40.855126,
+        "longitude": -73.918007,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 46411,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:18.196Z",
+          "status": 200,
+          "ms": 1213,
+          "bytes": 44845,
+          "sha256": "1075e47e922301efb32c839f2fc30d3bb9a57a06645b65eacd57749b1a9f9de7",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "44845",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:19 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T11:41:23.475Z",
+          "status": 200,
+          "ms": 891,
+          "bytes": 46475,
+          "sha256": "f5ed4d7ab5c5b20740de9ae5ad00d427df231111d7d7194736faa80bb702fd73",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "46475",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:24 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T11:41:28.407Z",
+          "status": 200,
+          "ms": 567,
+          "bytes": 46569,
+          "sha256": "85665622a5638214f385686e25a1d8bd77be5259c980ed3a8298126db61f946d",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "46569",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:28 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T11:41:33.042Z",
+          "status": 200,
+          "ms": 458,
+          "bytes": 47144,
+          "sha256": "e834f8df81bd3eed27d21263529a45045643a585d448a80404b8dc2eecb13973",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "47144",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:33 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T11:41:37.571Z",
+          "status": 200,
+          "ms": 615,
+          "bytes": 47024,
+          "sha256": "f990c861fc54b2e4ef6f2b40c0850e024f0b2c5269bac8baa5417b2d6e2f52e3",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "47024",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    }
+  ],
+  "context": [
+    {
+      "id": "ded03849-7c56-43e5-8e82-05b61c175aca",
+      "name": "C1-CBE-04_N - NB_at_Macombs Rd-Ex2A",
+      "area": "Bronx",
+      "lat": 40.844926,
+      "lon": -73.917694,
+      "distanceMi": 0.786,
+      "bearingDeg": 124,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ded03849-7c56-43e5-8e82-05b61c175aca",
+        "name": "C1-CBE-04_N - NB_at_Macombs Rd-Ex2A",
+        "latitude": 40.844926,
+        "longitude": -73.917694,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ded03849-7c56-43e5-8e82-05b61c175aca/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 1080,
+        "width": 1920
+      },
+      "avgBytes": 143955,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.238Z",
+          "status": 200,
+          "ms": 69,
+          "bytes": 143955,
+          "sha256": "18bc00535f15688aab142224a1a732513b6549b9b2fdc9b843d1362149eaa234",
+          "jpeg": {
+            "height": 1080,
+            "width": 1920
+          },
+          "file": "frames/ded03849-7c56-43e5-8e82-05b61c175aca-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "143955",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7910856-9d2c-4142-b8cc-cbd6c4b3acac",
+      "name": "Broadway @ 169 Street",
+      "area": "Manhattan",
+      "lat": 40.841686,
+      "lon": -73.939347,
+      "distanceMi": 0.82,
+      "bearingDeg": 216,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d7910856-9d2c-4142-b8cc-cbd6c4b3acac",
+        "name": "Broadway @ 169 Street",
+        "latitude": 40.841686,
+        "longitude": -73.939347,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d7910856-9d2c-4142-b8cc-cbd6c4b3acac/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 14106,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.238Z",
+          "status": 200,
+          "ms": 62,
+          "bytes": 14106,
+          "sha256": "22f706752d1d919b5e8162cf45945fb2f304aa9c6ca80c1a1d5b027655532e49",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7910856-9d2c-4142-b8cc-cbd6c4b3acac-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14106",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a9b2501d-062f-43f8-9419-f89faa4f36ba",
+      "name": "Riverside Dr @ Washington Br ENT ramp",
+      "area": "Manhattan",
+      "lat": 40.84337,
+      "lon": -73.9444,
+      "distanceMi": 0.925,
+      "bearingDeg": 234,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "a9b2501d-062f-43f8-9419-f89faa4f36ba",
+        "name": "Riverside Dr @ Washington Br ENT ramp",
+        "latitude": 40.84337,
+        "longitude": -73.9444,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/a9b2501d-062f-43f8-9419-f89faa4f36ba/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 21875,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 56,
+          "bytes": 21875,
+          "sha256": "4a77bf8b4ab26b38c70b8e704a6c8a5c9ac8ad1b6ed695e9170d648bfbbb854e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/a9b2501d-062f-43f8-9419-f89faa4f36ba-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "21875",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d23ec5fd-f956-4283-975a-623514b001a3",
+      "name": "C1-CBE-05_S_SB_at_Walton_Ave-Ex2A",
+      "area": "Bronx",
+      "lat": 40.845346,
+      "lon": -73.911976,
+      "distanceMi": 1.035,
+      "bearingDeg": 113,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d23ec5fd-f956-4283-975a-623514b001a3",
+        "name": "C1-CBE-05_S_SB_at_Walton_Ave-Ex2A",
+        "latitude": 40.845346,
+        "longitude": -73.911976,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d23ec5fd-f956-4283-975a-623514b001a3/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 26235,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 62,
+          "bytes": 26235,
+          "sha256": "0712272f1cf8c57968f6c29a13bf934125f973d823b50b46ac6b8d563d6d51b2",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/d23ec5fd-f956-4283-975a-623514b001a3-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26235",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ffae5a99-c403-41aa-9985-0633aee4aeff",
+      "name": "Henry Hudson pkwy @ Exit 14 ,165 St/ GWB  ramp",
+      "area": "Manhattan",
+      "lat": 40.84148,
+      "lon": -73.9455,
+      "distanceMi": 1.051,
+      "bearingDeg": 230,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ffae5a99-c403-41aa-9985-0633aee4aeff",
+        "name": "Henry Hudson pkwy @ Exit 14 ,165 St/ GWB  ramp",
+        "latitude": 40.84148,
+        "longitude": -73.9455,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ffae5a99-c403-41aa-9985-0633aee4aeff/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 16124,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 61,
+          "bytes": 16124,
+          "sha256": "7ecf934330e3fb64764e8d2d53b6dda145c61ffc7898cb9825a9a60adf519cc5",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ffae5a99-c403-41aa-9985-0633aee4aeff-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16124",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b",
+      "name": "Harlem Rvr Dr (FDR) @ 166 St",
+      "area": "Manhattan",
+      "lat": 40.836133,
+      "lon": -73.934883,
+      "distanceMi": 1.077,
+      "bearingDeg": 193,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b",
+        "name": "Harlem Rvr Dr (FDR) @ 166 St",
+        "latitude": 40.836133,
+        "longitude": -73.934883,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 14024,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 66,
+          "bytes": 14024,
+          "sha256": "683d54604e96ae70f68baba2a585690792cae1e3fb78a917544fb7c1c31e858e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14024",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9cdf1f47-307d-48e8-8627-e77e189b5fed",
+      "name": "207 ST @ 9 Ave",
+      "area": "Manhattan",
+      "lat": 40.863685,
+      "lon": -73.917066,
+      "distanceMi": 1.095,
+      "bearingDeg": 39,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "9cdf1f47-307d-48e8-8627-e77e189b5fed",
+        "name": "207 ST @ 9 Ave",
+        "latitude": 40.863685,
+        "longitude": -73.917066,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/9cdf1f47-307d-48e8-8627-e77e189b5fed/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 18159,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 57,
+          "bytes": 18159,
+          "sha256": "690587fcb9f28c6a90be10c616085e4b07e0da083c83313d47c37a5ce820eaa3",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9cdf1f47-307d-48e8-8627-e77e189b5fed-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18159",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b591a4be-a1aa-4978-ab2c-be4a17eb190e",
+      "name": "Fordham Rd @ Major Deegan Expy",
+      "area": "Bronx",
+      "lat": 40.861906,
+      "lon": -73.912878,
+      "distanceMi": 1.163,
+      "bearingDeg": 51,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "b591a4be-a1aa-4978-ab2c-be4a17eb190e",
+        "name": "Fordham Rd @ Major Deegan Expy",
+        "latitude": 40.861906,
+        "longitude": -73.912878,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/b591a4be-a1aa-4978-ab2c-be4a17eb190e/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 27458,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 67,
+          "bytes": 27458,
+          "sha256": "612e817eaa4842394e17ea1195f9f7f3065e92102a5bcccbcdd0f7045f5a91f6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/b591a4be-a1aa-4978-ab2c-be4a17eb190e-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27458",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "572b1058-c33a-4de2-8f35-0f3e9e92bc33",
+      "name": "CBX @ Morris Ave & 174th ST",
+      "area": "Bronx",
+      "lat": 40.844785,
+      "lon": -73.909282,
+      "distanceMi": 1.18,
+      "bearingDeg": 112,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "572b1058-c33a-4de2-8f35-0f3e9e92bc33",
+        "name": "CBX @ Morris Ave & 174th ST",
+        "latitude": 40.844785,
+        "longitude": -73.909282,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/572b1058-c33a-4de2-8f35-0f3e9e92bc33/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 24128,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T11:41:38.239Z",
+          "status": 200,
+          "ms": 67,
+          "bytes": 24128,
+          "sha256": "5f7b48595da76c0016c2e47e963f18ae7899d1b5c0e35f459cf064402f790516",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/572b1058-c33a-4de2-8f35-0f3e9e92bc33-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24128",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 11:41:38 GMT"
+          }
+        }
+      ]
+    }
+  ],
+  "termsPages": [
+    {
+      "url": "https://webcams.nyctmc.org/",
+      "status": 200,
+      "finalUrl": "https://webcams.nyctmc.org/map",
+      "file": "raw/https_webcams_nyctmc_org_.html",
+      "bytes": 567
+    },
+    {
+      "url": "https://webcams.nyctmc.org/terms",
+      "status": 404,
+      "finalUrl": "https://webcams.nyctmc.org/terms",
+      "file": "raw/https_webcams_nyctmc_org_terms.html",
+      "bytes": 567
+    },
+    {
+      "url": "https://www.nyc.gov/main/terms-of-use",
+      "status": 403,
+      "finalUrl": "https://www.nyc.gov/main/terms-of-use",
+      "file": "raw/https_www_nyc_gov_main_terms_of_use.html",
+      "bytes": 392
+    },
+    {
+      "url": "https://www.nyc.gov/html/dot/html/motorist/atis.shtml",
+      "status": 403,
+      "finalUrl": "https://www.nyc.gov/html/dot/html/motorist/atis.shtml",
+      "file": "raw/https_www_nyc_gov_html_dot_html_motorist_atis_shtml.html",
+      "bytes": 416
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+.car-map {
+  position: absolute;
+  inset: 0;
+}
+
+.map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.map-pin-car {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  border: 3px solid #16a34a;
+  cursor: grab;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  animation: car-pulse 2s ease-out infinite;
+}
+
+.map-pin-home {
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  border: 3px solid #f59e0b;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes car-pulse {
+  0% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(22, 163, 74, 0.5);
+  }
+  70% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35), 0 0 0 16px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-pin-car {
+    animation: none;
+  }
+}

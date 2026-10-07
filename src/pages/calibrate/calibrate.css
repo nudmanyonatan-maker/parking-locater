@@ -1,0 +1,607 @@
+/* /calibrate/:cameraId — desktop-first editor */
+
+.cal-pad {
+  padding: 16px;
+}
+
+.cal-locked {
+  max-width: 420px;
+  margin: 40px auto 0;
+  padding: 28px 20px;
+}
+
+.unlock-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.unlock-error {
+  margin: 0;
+  color: var(--red-text);
+  font-size: 14px;
+}
+
+.cal-header .large-subtitle {
+  margin-bottom: 4px;
+}
+
+.cal-unsaved {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--orange-text);
+}
+
+.cal-unsaved .dot {
+  width: 8px;
+  height: 8px;
+}
+
+.cal-save-top {
+  margin-right: 8px;
+}
+
+.cal-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+  align-items: start;
+}
+
+@media (min-width: 980px) {
+  .cal-layout {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 24px;
+    padding: 16px 24px;
+  }
+
+  .cal-side {
+    position: sticky;
+    top: calc(64px + var(--safe-top));
+    max-height: calc(100vh - 80px - var(--safe-top));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: 16px;
+  }
+}
+
+.cal-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cal-frame-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.cal-freeze {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cal-frame-time {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+/* ---- Canvas ------------------------------------------------------------- */
+
+.cal-canvas-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cal-canvas {
+  /* Large but always fully visible: limited by width and by viewport height. */
+  width: min(100%, calc((100vh - 220px) * 1.4667));
+  min-width: min(100%, 320px);
+  margin: 0 auto;
+  border-radius: var(--r-12);
+  touch-action: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.cal-canvas.is-drawing {
+  cursor: crosshair;
+}
+
+.cal-canvas .frame-empty {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+}
+
+.cal-region polygon {
+  fill: color-mix(in srgb, currentColor 14%, transparent);
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.cal-ignore polygon {
+  stroke-dasharray: 5 4;
+}
+
+.cal-roadway polygon {
+  fill: color-mix(in srgb, currentColor 8%, transparent);
+  stroke-dasharray: 8 5;
+}
+
+.cal-region.is-selected polygon {
+  stroke-width: 3;
+  fill: color-mix(in srgb, currentColor 24%, transparent);
+}
+
+.cal-region.is-invalid polygon {
+  stroke: #ff3b30;
+  stroke-dasharray: 4 4;
+  fill: rgba(255, 59, 48, 0.12);
+}
+
+.cal-tick {
+  stroke: #fff;
+  stroke-width: 1.5;
+  stroke-opacity: 0.85;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+}
+
+/* The curb edge (corner 1 → 4) drawn heavier so curb vs traffic side is obvious. */
+.cal-curb {
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-opacity: 0.9;
+}
+
+.cal-draft {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-dasharray: 6 4;
+}
+
+.cal-draft.is-closing {
+  stroke-opacity: 0.6;
+}
+
+.cal-vertex {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  touch-action: none;
+}
+
+.cal-vertex.is-numbered,
+.cal-vertex.is-draft:not(:empty) {
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+}
+
+.cal-vertex.is-draft {
+  pointer-events: none;
+}
+
+/* Bigger touch target for handles. */
+button.cal-vertex::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+}
+
+button.cal-vertex:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+.cal-guide {
+  align-self: center;
+  max-width: 100%;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label-2);
+  background: var(--fill);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.cal-guide.is-active {
+  color: #fff;
+  background: var(--blue);
+}
+
+.cal-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cal-steps b {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  color: var(--label-2);
+  background: var(--fill);
+}
+
+.cal-steps li.is-current {
+  color: var(--label);
+  font-weight: 600;
+}
+
+.cal-steps li.is-current b {
+  color: #fff;
+  background: var(--green);
+}
+
+.cal-steps li.is-done b {
+  color: var(--green-text);
+  background: color-mix(in srgb, var(--green) 18%, transparent);
+}
+
+/* ---- Sidebar ------------------------------------------------------------ */
+
+.cal-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cal-card {
+  padding: 14px;
+}
+
+.cal-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cal-count {
+  padding: 1px 7px;
+  border-radius: 9px;
+  font-size: 12px;
+  color: var(--label-2);
+  background: var(--fill);
+}
+
+.cal-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cal-tool {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cal-tool:hover {
+  background: var(--fill);
+}
+
+.cal-tool[aria-checked='true'] {
+  background: color-mix(in srgb, var(--blue) 14%, transparent);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--blue) 55%, transparent);
+}
+
+.cal-tool > svg {
+  flex: none;
+  width: 16px;
+  color: var(--label-2);
+}
+
+.cal-tool-text,
+.cal-list-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cal-tool-text b,
+.cal-list-text b {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-tool-text small,
+.cal-list-text small {
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-swatch {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid currentColor;
+  background: color-mix(in srgb, currentColor 22%, transparent);
+}
+
+.cal-swatch-ignore {
+  border-style: dashed;
+  background: repeating-linear-gradient(45deg, color-mix(in srgb, currentColor 35%, transparent) 0 2px, transparent 2px 5px);
+}
+
+.cal-swatch-roadway {
+  border-style: dashed;
+}
+
+.cal-draw-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cal-draw-actions .btn {
+  flex: 1;
+}
+
+.cal-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cal-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cal-list-item:hover {
+  background: var(--fill);
+}
+
+.cal-list-item[aria-current='true'] {
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+}
+
+.cal-list-text {
+  flex: 1;
+}
+
+.cal-empty,
+.cal-warn {
+  font-size: 13px;
+  line-height: 1.38;
+  color: var(--label-2);
+}
+
+.cal-warn {
+  margin-top: 8px;
+  color: var(--orange-text);
+}
+
+.cal-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.cal-fields-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label-2);
+}
+
+.cal-fields .field-label {
+  margin-top: 12px;
+}
+
+.cal-fields .field-label small {
+  font-weight: 400;
+}
+
+.cal-problem {
+  font-size: 13px;
+}
+
+.cal-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cal-stepper .field {
+  width: 72px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.anchor-map.map {
+  position: relative;
+  inset: auto;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.anchor-map .leaflet-control-zoom a {
+  color: var(--label);
+  background: var(--surface);
+}
+
+.cal-anchor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 36px;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-anchor-row .btn-link {
+  min-height: 32px;
+  font-size: 15px;
+}
+
+.cal-delete {
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
+.cal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cal-actions .cal-warn {
+  margin: 0;
+  text-align: center;
+}
+
+/* ---- Results ------------------------------------------------------------ */
+
+.cal-save-error ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.cal-test {
+  padding: 14px;
+}
+
+.cal-test-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cal-test-head > .dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 6px;
+}
+
+.cal-test-head > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.cal-test h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cal-test p {
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-test .cal-test-reason {
+  margin-top: 4px;
+  color: var(--label);
+  font-size: 15px;
+}
+
+.cal-test-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-test .legend {
+  margin-top: 10px;
+}
+
+.cal-test-notes {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.cal-test-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cal-test-notes ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}

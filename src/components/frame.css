@@ -1,0 +1,178 @@
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--r-16);
+  background: #111;
+  isolation: isolate;
+}
+
+.frame-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* fill (not cover) so normalized overlay coordinates line up exactly */
+  object-fit: fill;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.frame-empty {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+
+.frame-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  background: #1c1c1e;
+}
+
+.frame-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.frame-overlay * {
+  vector-effect: non-scaling-stroke;
+}
+
+.ov-region {
+  fill: transparent;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.ov-parking {
+  fill: rgba(52, 199, 89, 0.12);
+}
+
+.ov-restricted {
+  fill: rgba(255, 59, 48, 0.16);
+}
+
+.ov-roadway {
+  fill: rgba(0, 122, 255, 0.08);
+  stroke-dasharray: 6 4;
+}
+
+.ov-sidewalk {
+  fill: rgba(175, 82, 222, 0.1);
+}
+
+.ov-gap {
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.ov-gap-likely_available {
+  fill: rgba(52, 199, 89, 0.35);
+  stroke: #34c759;
+}
+
+.ov-gap-possible {
+  fill: rgba(255, 204, 0, 0.35);
+  stroke: #ffcc00;
+}
+
+.ov-hydrant-zone {
+  fill: rgba(255, 59, 48, 0.3);
+  stroke: #ff3b30;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.ov-hydrant-post {
+  stroke: #ff3b30;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+}
+
+.ov-box {
+  fill: none;
+  stroke-width: 1.75;
+}
+
+.ov-role-parked {
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.8));
+}
+
+.ov-role-roadway {
+  stroke: #ff9500;
+}
+
+.ov-role-ignored,
+.ov-role-outside {
+  stroke: rgba(200, 200, 205, 0.85);
+  stroke-dasharray: 4 3;
+}
+
+/* Overlay key */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.lg-box {
+  border: 2px solid currentColor;
+}
+
+.lg-parked {
+  border-color: var(--label) !important;
+}
+
+.lg-roadway {
+  border-color: #ff9500 !important;
+}
+
+.lg-ignored {
+  border: 2px dashed var(--gray) !important;
+}
+
+.lg-gap {
+  background: rgba(52, 199, 89, 0.45);
+  border: 2px solid #34c759;
+}
+
+.lg-lane {
+  border-color: var(--green) !important;
+}
+
+.lg-restricted {
+  border-color: var(--red) !important;
+}

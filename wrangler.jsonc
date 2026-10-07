@@ -1,18 +1,39 @@
+// Cloudflare Worker config: React SPA (static assets) + API Worker + KV (car spot)
+// + D1 (cameras, detections) + Workers AI + cron. The name keeps the existing
+// parking-locator URL, KV data and DISCORD_WEBHOOK_URL secret.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "parking-locator",
-  "main": "src/index.js",
-  "compatibility_date": "2025-06-01",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
   "assets": {
-    "directory": "./public"
+    "not_found_handling": "single-page-application",
+    // API routes always hit the Worker; everything else is the SPA.
+    "run_worker_first": ["/api/*"],
+    "binding": "ASSETS"
   },
-  "kv_namespaces": [
-    { "binding": "PARKING_KV", "id": "22270a1e563f4423a5a1541383df77de" }
+  "kv_namespaces": [{ "binding": "PARKING_KV", "id": "22270a1e563f4423a5a1541383df77de" }],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "parknearme",
+      // Set by `npm run db:ensure` (finds or creates the "parknearme" D1 database).
+      // The placeholder only works for local development.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
   ],
+  // Workers AI always runs on Cloudflare (no local simulation); calls are billed.
+  "ai": { "binding": "AI", "remote": true },
   "triggers": {
+    // Every minute: move-by reminder. Even minutes: background camera analysis,
+    // skipped unless alerts are on or the app was opened recently (worker/cron.ts).
     "crons": ["* * * * *"]
   },
-  "observability": {
-    "enabled": true
-  }
+  "vars": {
+    "DETECTOR": "auto",
+    "APP_VERSION": "0.1.0",
+    "VAPID_SUBJECT": "mailto:parknearme@example.com"
+  },
+  "observability": { "enabled": true }
 }

@@ -1,0 +1,26 @@
+{
+  "_comment": "Starting calibrations drawn on real frames from the 2026-10-07 discovery run. Cameras get re-aimed; re-check in /calibrate/:id. Points are normalized [x, y]; parking lanes are [start-curb, start-traffic, end-traffic, end-curb]. hydrantsM: hydrants along a lane, in metres from its start (NYC DEP hydrant data; see migrations/0007).",
+  "cameras": {
+    "1ccb8d7c-43d4-450e-b40c-79527766db75": {
+      "referenceWidth": 352,
+      "referenceHeight": 240,
+      "regions": [
+        {
+          "id": "lane-181-south",
+          "kind": "parking",
+          "label": "North curb lane (left in view)",
+          "streetLabel": "W 181st St, Audubon → Amsterdam",
+          "capacity": 8,
+          "points": [[0.128, 1.0], [0.307, 1.0], [0.432, 0.533], [0.386, 0.533]],
+          "hydrantsM": [5, 31.4]
+        },
+        {
+          "id": "roadway-181",
+          "kind": "roadway",
+          "label": "Travel + bus lanes",
+          "points": [[0.307, 1.0], [0.9, 1.0], [0.52, 0.533], [0.432, 0.533]]
+        }
+      ]
+    }
+  }
+}

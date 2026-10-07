@@ -1,0 +1,2560 @@
+{
+  "generatedAt": "2026-10-07T04:26:49.539Z",
+  "runner": "github-actions",
+  "home": {
+    "address": "403 Audubon Ave, New York, NY 10033",
+    "lat": 40.851304,
+    "lon": -73.930153,
+    "label": "403 AUDUBON AVENUE, New York, NY, USA",
+    "bbl": "1021560035",
+    "source": "NYC GeoSearch (planninglabs)",
+    "attempts": [
+      {
+        "provider": "NYC GeoSearch (planninglabs)",
+        "ok": true,
+        "result": {
+          "lat": 40.851304,
+          "lon": -73.930153,
+          "label": "403 AUDUBON AVENUE, New York, NY, USA",
+          "bbl": "1021560035"
+        }
+      },
+      {
+        "provider": "US Census geocoder",
+        "ok": true,
+        "result": {
+          "lat": 40.851204325813,
+          "lon": -73.930445595045,
+          "label": "403 AUDUBON AVE, NEW YORK, NY, 10033"
+        }
+      },
+      {
+        "provider": "Nominatim (OSM)",
+        "ok": true,
+        "result": {
+          "lat": 40.8513025,
+          "lon": -73.9301574,
+          "label": "403, Audubon Avenue, Fort George, Manhattan Community Board 12, Manhattan, New York County, New York, 10033, United States"
+        }
+      }
+    ]
+  },
+  "radiusMi": 0.75,
+  "contextRadiusMi": 1.25,
+  "frameSequence": {
+    "frames": 5,
+    "intervalSeconds": 4
+  },
+  "catalog": {
+    "status": 200,
+    "ms": 372,
+    "count": 976,
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
+      "date": "Wed, 07 Oct 2026 04:26:30 GMT"
+    },
+    "fieldNames": [
+      "area",
+      "id",
+      "imageUrl",
+      "isOnline",
+      "latitude",
+      "longitude",
+      "name"
+    ],
+    "fieldTypes": {
+      "area": [
+        "string"
+      ],
+      "id": [
+        "string"
+      ],
+      "imageUrl": [
+        "string"
+      ],
+      "isOnline": [
+        "string"
+      ],
+      "latitude": [
+        "number"
+      ],
+      "longitude": [
+        "number"
+      ],
+      "name": [
+        "string"
+      ]
+    },
+    "sample": [
+      {
+        "id": "8a6bc417-4877-4ebe-8052-88c1b261baf1",
+        "name": "Central Park West @ 86 St",
+        "latitude": 40.785302,
+        "longitude": -73.969353,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/8a6bc417-4877-4ebe-8052-88c1b261baf1/image"
+      },
+      {
+        "id": "0039e6bf-5244-4b4e-b7dc-d02056bbfdc9",
+        "name": "Atlantic Ave @ 111 St",
+        "latitude": 40.692157,
+        "longitude": -73.834927,
+        "area": "Brooklyn",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/0039e6bf-5244-4b4e-b7dc-d02056bbfdc9/image"
+      }
+    ]
+  },
+  "nearby": [
+    {
+      "id": "4d39d6d1-a009-480f-9851-2571a5df1174",
+      "name": "Amsterdam Ave @ 181 St",
+      "area": "Manhattan",
+      "lat": 40.84833,
+      "lon": -73.930868,
+      "distanceMi": 0.209,
+      "bearingDeg": 190,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "4d39d6d1-a009-480f-9851-2571a5df1174",
+        "name": "Amsterdam Ave @ 181 St",
+        "latitude": 40.84833,
+        "longitude": -73.930868,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/4d39d6d1-a009-480f-9851-2571a5df1174/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 15938,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.753Z",
+          "status": 200,
+          "ms": 343,
+          "bytes": 16288,
+          "sha256": "b3fcf44c862e3d03fd9400f813572ad35e5d9f049f69817954a5c7f3699fa139",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16288",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.654Z",
+          "status": 200,
+          "ms": 130,
+          "bytes": 14943,
+          "sha256": "3c3064b6ee177a552f924ac0ed1987883681dfb9633853b9fcf16b49f3022baf",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14943",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.511Z",
+          "status": 200,
+          "ms": 394,
+          "bytes": 16136,
+          "sha256": "33385bd1c19c5746625ced7592bf55e062df8b80fc49e69940cc2a7972a48075",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16136",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.159Z",
+          "status": 200,
+          "ms": 137,
+          "bytes": 16447,
+          "sha256": "9d04d99343711b63c1058c68735f88614018cbdacd95c6beeb2e6dd45db623e1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16447",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.321Z",
+          "status": 200,
+          "ms": 154,
+          "bytes": 15877,
+          "sha256": "4db30f28b62c1ed8371b5fa4b4293d26292c5697d17c9d0d4651396abb055398",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/4d39d6d1-a009-480f-9851-2571a5df1174-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15877",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1ccb8d7c-43d4-450e-b40c-79527766db75",
+      "name": "Audobon Ave @ W 181 ST",
+      "area": "Manhattan",
+      "lat": 40.848738,
+      "lon": -73.932353,
+      "distanceMi": 0.211,
+      "bearingDeg": 213,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "1ccb8d7c-43d4-450e-b40c-79527766db75",
+        "name": "Audobon Ave @ W 181 ST",
+        "latitude": 40.848738,
+        "longitude": -73.932353,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/1ccb8d7c-43d4-450e-b40c-79527766db75/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 23042,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.755Z",
+          "status": 200,
+          "ms": 337,
+          "bytes": 20106,
+          "sha256": "6b2d1216a0f62552d8d5e08c978e9b12dfb8979b5b7fe357d2780af1bc18b28d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20106",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.655Z",
+          "status": 200,
+          "ms": 131,
+          "bytes": 23922,
+          "sha256": "398f6f5d87c3898a86916bd26d88362bea738a5f95ee386e78ade2c9dd776bb7",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23922",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.513Z",
+          "status": 200,
+          "ms": 393,
+          "bytes": 23987,
+          "sha256": "e71e8ca48857203f5756bcb3bdfb3888c60e6583fb68b30280f0cbf029d5ec93",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23987",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.160Z",
+          "status": 200,
+          "ms": 143,
+          "bytes": 23460,
+          "sha256": "3a8f7fdb10150e0d90921b549d4f3cdd79d82bb82648f3d69ee7e548f1dca2e6",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23460",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.321Z",
+          "status": 200,
+          "ms": 147,
+          "bytes": 23735,
+          "sha256": "cde3757a3cb9b9a8f6ff536ba16d7caf5eaa5d4ff3a0a6565cc8d730245bee8a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/1ccb8d7c-43d4-450e-b40c-79527766db75-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23735",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3ad126cc-3f99-4626-a229-b9ba4d3f4b63",
+      "name": "St Nicholas Ave @ 181 St",
+      "area": "Manhattan",
+      "lat": 40.849314,
+      "lon": -73.933739,
+      "distanceMi": 0.232,
+      "bearingDeg": 234,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "3ad126cc-3f99-4626-a229-b9ba4d3f4b63",
+        "name": "St Nicholas Ave @ 181 St",
+        "latitude": 40.849314,
+        "longitude": -73.933739,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/3ad126cc-3f99-4626-a229-b9ba4d3f4b63/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 16367,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.756Z",
+          "status": 200,
+          "ms": 418,
+          "bytes": 16057,
+          "sha256": "6d2a7ca6d8deb36847096cd13433c410fb6dda6afbd384d5aff1cdbfcc60c17e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16057",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.656Z",
+          "status": 200,
+          "ms": 201,
+          "bytes": 16214,
+          "sha256": "16ddbe894d0545b8b73c000081b5a6d68fe3404b50b06b59c1583a39b9fb34eb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16214",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.513Z",
+          "status": 200,
+          "ms": 393,
+          "bytes": 16483,
+          "sha256": "702716436f1d6d92d5fa05596b9f21c01f006058496bd9f4fe701c8af5589110",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16483",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.160Z",
+          "status": 200,
+          "ms": 121,
+          "bytes": 16460,
+          "sha256": "d6d5e6aa623e70cb36728f2d8a07d2e996a523a4e29d6e8f4ca329e8ecd6e064",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16460",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.322Z",
+          "status": 200,
+          "ms": 133,
+          "bytes": 16619,
+          "sha256": "35ad1da96b8d397649fac58e37260621436c74ed75f90969584ad53342130e01",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/3ad126cc-3f99-4626-a229-b9ba4d3f4b63-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16619",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "99bd1846-c0e4-4689-b077-63d2525bf1aa",
+      "name": "Amsterdam Ave @ W 180 st ",
+      "area": "Manhattan",
+      "lat": 40.84652,
+      "lon": -73.932073,
+      "distanceMi": 0.345,
+      "bearingDeg": 197,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "99bd1846-c0e4-4689-b077-63d2525bf1aa",
+        "name": "Amsterdam Ave @ W 180 st ",
+        "latitude": 40.84652,
+        "longitude": -73.932073,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/99bd1846-c0e4-4689-b077-63d2525bf1aa/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 16576,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.757Z",
+          "status": 200,
+          "ms": 406,
+          "bytes": 17758,
+          "sha256": "f5f0b10effcc18db028656b71f7b6b403221656f3062e65699aa794e5b20d941",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17758",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.657Z",
+          "status": 200,
+          "ms": 214,
+          "bytes": 16579,
+          "sha256": "37cad1b681f394af9e169d8fb2627182f87b8979a3e7a7d0d3bc34a36d1c1864",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16579",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.514Z",
+          "status": 200,
+          "ms": 393,
+          "bytes": 16217,
+          "sha256": "5371dd879e1383832d99106a24c1a699bccdb41a345a7000f35bef16c20b7ca0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16217",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.161Z",
+          "status": 200,
+          "ms": 136,
+          "bytes": 14441,
+          "sha256": "a8f9253db1f0dfe93c1598998010603d22e23730358a3c24bd32f7a7e3098282",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14441",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.323Z",
+          "status": 200,
+          "ms": 136,
+          "bytes": 17886,
+          "sha256": "513a126193f02654bee9fa563e448f815ede22f438b2917f9ac7f73bd162f466",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/99bd1846-c0e4-4689-b077-63d2525bf1aa-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17886",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "749f7d56-21e8-4716-8efc-624723f5b9a8",
+      "name": "C1-CBE-01_N_NB_at_Amsterdam_Ave-Ex-HRD",
+      "area": "Bronx",
+      "lat": 40.845935,
+      "lon": -73.931089,
+      "distanceMi": 0.374,
+      "bearingDeg": 188,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "749f7d56-21e8-4716-8efc-624723f5b9a8",
+        "name": "C1-CBE-01_N_NB_at_Amsterdam_Ave-Ex-HRD",
+        "latitude": 40.845935,
+        "longitude": -73.931089,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/749f7d56-21e8-4716-8efc-624723f5b9a8/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 37792,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.758Z",
+          "status": 200,
+          "ms": 407,
+          "bytes": 37633,
+          "sha256": "e0daef9b0841949f71febfdee473f0d17b388d008ef4c5a8b0c8502dcc55e37f",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "37633",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.657Z",
+          "status": 200,
+          "ms": 211,
+          "bytes": 38084,
+          "sha256": "2812ddfe058247d7b2d12d9a45c1aec4a149658f3d3ebb53eb2d763f9b0db3b0",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "38084",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.514Z",
+          "status": 200,
+          "ms": 394,
+          "bytes": 36257,
+          "sha256": "69e4ae920f2a821017505aea06ebecc82e9d449403fb4100116178d203917b84",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "36257",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.161Z",
+          "status": 200,
+          "ms": 137,
+          "bytes": 38924,
+          "sha256": "9f63df49f2f11bef64d44348432bd75a7d499f38c7de9f277ae8c106c42ac273",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "38924",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.323Z",
+          "status": 200,
+          "ms": 135,
+          "bytes": 38061,
+          "sha256": "3183b086732695ae2057ad63343e6062eb05c3d21e066a2b6243c7bb19b6bdd8",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/749f7d56-21e8-4716-8efc-624723f5b9a8-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "38061",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6728d273-d20b-44b7-868a-d54c00e50fab",
+      "name": "Amsterdam @ 178 St",
+      "area": "Manhattan",
+      "lat": 40.846142,
+      "lon": -73.932426,
+      "distanceMi": 0.376,
+      "bearingDeg": 198,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "6728d273-d20b-44b7-868a-d54c00e50fab",
+        "name": "Amsterdam @ 178 St",
+        "latitude": 40.846142,
+        "longitude": -73.932426,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/6728d273-d20b-44b7-868a-d54c00e50fab/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 17079,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.759Z",
+          "status": 200,
+          "ms": 417,
+          "bytes": 17153,
+          "sha256": "73bf16e74798ce12dd7509014a430517b42075419bb76dc4a5cb393c77e0196f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17153",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.658Z",
+          "status": 200,
+          "ms": 202,
+          "bytes": 17138,
+          "sha256": "85ef2f7b9b5bbe686a6e8b01b56005c97dca7099847103a5af2cac776ef87aeb",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17138",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.515Z",
+          "status": 200,
+          "ms": 405,
+          "bytes": 17376,
+          "sha256": "67820f5791d179a421c38c8f96d83c857448e65dcf47ae1ab3d14eb9da3a994c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17376",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.162Z",
+          "status": 200,
+          "ms": 135,
+          "bytes": 16794,
+          "sha256": "a32e3adcda8fc9ebea6a2596c67e12c7b49e304cec294aee90dd7105aca0c56c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16794",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.324Z",
+          "status": 200,
+          "ms": 133,
+          "bytes": 16932,
+          "sha256": "84db24d5f4c653673c8cc42a26adfe5208b98afaa8861783f53c79ac96a9c468",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/6728d273-d20b-44b7-868a-d54c00e50fab-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16932",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ad3df063-d5d6-458c-84e7-1242060649cf",
+      "name": "Ft Washington @ 179 St",
+      "area": "Manhattan",
+      "lat": 40.849349,
+      "lon": -73.93894,
+      "distanceMi": 0.479,
+      "bearingDeg": 254,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ad3df063-d5d6-458c-84e7-1242060649cf",
+        "name": "Ft Washington @ 179 St",
+        "latitude": 40.849349,
+        "longitude": -73.93894,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ad3df063-d5d6-458c-84e7-1242060649cf/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 20407,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.760Z",
+          "status": 200,
+          "ms": 407,
+          "bytes": 20628,
+          "sha256": "ae23d535024032c590198a0d714c68d25bf6f8770af430b0ada0852d0306d8e0",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20628",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.658Z",
+          "status": 200,
+          "ms": 204,
+          "bytes": 20510,
+          "sha256": "e046fb2973fd7886bd3e6a84aa708dba387bf94843f1a9431ac8b4b6795df72c",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20510",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.515Z",
+          "status": 200,
+          "ms": 411,
+          "bytes": 20619,
+          "sha256": "df8eb2288b0f0bc7c13e8614a35736286e8a7e0f89a8c13b762f359e792aa723",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20619",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.163Z",
+          "status": 200,
+          "ms": 136,
+          "bytes": 20603,
+          "sha256": "b220b2b3ba4097babe49c2058a44366e6182367d794a74287b1b13bf13eeecb8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20603",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.324Z",
+          "status": 200,
+          "ms": 131,
+          "bytes": 19674,
+          "sha256": "00cbde20bc5855631281f069399d7881e0c069720c8dfa5847a62e94de182a2f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ad3df063-d5d6-458c-84e7-1242060649cf-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "19674",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7d6c994-492d-4f3a-895e-745596825fb4",
+      "name": "SEDGWICK AVE @ CEDAR AVE",
+      "area": "Bronx",
+      "lat": 40.8521,
+      "lon": -73.9207,
+      "distanceMi": 0.497,
+      "bearingDeg": 84,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d7d6c994-492d-4f3a-895e-745596825fb4",
+        "name": "SEDGWICK AVE @ CEDAR AVE",
+        "latitude": 40.8521,
+        "longitude": -73.9207,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d7d6c994-492d-4f3a-895e-745596825fb4/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 24691,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.761Z",
+          "status": 200,
+          "ms": 405,
+          "bytes": 24551,
+          "sha256": "772f64ece3c7a23298eb7f9ff377df8f0ae0395beac871e6b7a660fc46830a9f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24551",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.659Z",
+          "status": 200,
+          "ms": 217,
+          "bytes": 24640,
+          "sha256": "6f080f6ebaaa77aef450b69001fc1922a0bb8439da8d3a3cfd1370001f8236e8",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24640",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.516Z",
+          "status": 200,
+          "ms": 394,
+          "bytes": 25739,
+          "sha256": "04fb114f63a8978233950e207c8193dd4eaaaa54e18b4508c4a84e4aee4f3030",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "25739",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.163Z",
+          "status": 200,
+          "ms": 136,
+          "bytes": 24429,
+          "sha256": "c7e7eed1f7fbe656fff85655547a3586a4858b7ac3a2e14f6747756088df28ce",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24429",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.325Z",
+          "status": 200,
+          "ms": 133,
+          "bytes": 24097,
+          "sha256": "c174438bd2a4c18ccd89c8ac6c8d1eedcd8826c967238e1fd73f1fcac338c575",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7d6c994-492d-4f3a-895e-745596825fb4-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "24097",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d8e022cc-c262-45ac-a939-8e86e20853fd",
+      "name": "Ft Washington @ 178 St",
+      "area": "Manhattan",
+      "lat": 40.848657,
+      "lon": -73.939207,
+      "distanceMi": 0.507,
+      "bearingDeg": 249,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d8e022cc-c262-45ac-a939-8e86e20853fd",
+        "name": "Ft Washington @ 178 St",
+        "latitude": 40.848657,
+        "longitude": -73.939207,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d8e022cc-c262-45ac-a939-8e86e20853fd/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 20181,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.762Z",
+          "status": 200,
+          "ms": 584,
+          "bytes": 20064,
+          "sha256": "25b957403f808afb6e2e83c7a3f4cc416cb750aa6a4e760efb2e8740ae6c4309",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20064",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.660Z",
+          "status": 200,
+          "ms": 208,
+          "bytes": 20320,
+          "sha256": "e7e2dc734ee90f8b51917196db485e5402742d2347a1b53c0836469f752053c2",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20320",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.516Z",
+          "status": 200,
+          "ms": 398,
+          "bytes": 20164,
+          "sha256": "134096cf34bc092e1bb67c9e0282b0dbe9da6eb3211a3148de145774e940c915",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20164",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.164Z",
+          "status": 200,
+          "ms": 141,
+          "bytes": 20236,
+          "sha256": "8bdcc48c224d249413bc2f1b20d1628d77bcb69be32256a1e1fd63b799192369",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20236",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.326Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 20120,
+          "sha256": "809a7795118059173f3dc69db9f98671bf4456f923f8018c7a46f443eef17a32",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d8e022cc-c262-45ac-a939-8e86e20853fd-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "20120",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "936d479d-402f-468a-b1c6-b2c2a68a0b4c",
+      "name": "Harlem River Dr Ramp @ Before GWB & Amst_179St Exit",
+      "area": "Manhattan",
+      "lat": 40.84359,
+      "lon": -73.9315,
+      "distanceMi": 0.538,
+      "bearingDeg": 188,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "936d479d-402f-468a-b1c6-b2c2a68a0b4c",
+        "name": "Harlem River Dr Ramp @ Before GWB & Amst_179St Exit",
+        "latitude": 40.84359,
+        "longitude": -73.9315,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/936d479d-402f-468a-b1c6-b2c2a68a0b4c/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 13722,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.762Z",
+          "status": 200,
+          "ms": 582,
+          "bytes": 12257,
+          "sha256": "f4f63525053c3e72a1d6cb8561c886650fce08236a1bd8d33a406f34bafc5c14",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "12257",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.660Z",
+          "status": 200,
+          "ms": 211,
+          "bytes": 11594,
+          "sha256": "aabf5bfb49da113dee9ab0a4324fd56039eeb800663e861d07d12ad150737e40",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "11594",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:35 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.517Z",
+          "status": 200,
+          "ms": 394,
+          "bytes": 13168,
+          "sha256": "2e8e99c609f641ff34beccbc778caba1b0000adffc5589fb322702b1b57b4df3",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13168",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.164Z",
+          "status": 200,
+          "ms": 150,
+          "bytes": 16523,
+          "sha256": "52545aaa14c1fce7f8f8dfe6746f3c5b7203211aa0028a4bbcea12ddd7dde0e1",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16523",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.326Z",
+          "status": 200,
+          "ms": 120,
+          "bytes": 15070,
+          "sha256": "0055fe35c62566e28735b00ffb7d4d88d2aca484f08c25abc83f1673bd41c79b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/936d479d-402f-468a-b1c6-b2c2a68a0b4c-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15070",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9f118098-cee3-4964-8630-b932c94f70a3",
+      "name": "Under Cliff Ave @ Boscobe Pl",
+      "area": "Bronx",
+      "lat": 40.844403,
+      "lon": -73.925012,
+      "distanceMi": 0.547,
+      "bearingDeg": 151,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "9f118098-cee3-4964-8630-b932c94f70a3",
+        "name": "Under Cliff Ave @ Boscobe Pl",
+        "latitude": 40.844403,
+        "longitude": -73.925012,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/9f118098-cee3-4964-8630-b932c94f70a3/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 14562,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.763Z",
+          "status": 200,
+          "ms": 665,
+          "bytes": 12940,
+          "sha256": "74e1ddab01fd4e10883ca32dbc6be8dbc8a72439f645f160c82ffb5ba8542766",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "12940",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.661Z",
+          "status": 200,
+          "ms": 434,
+          "bytes": 14639,
+          "sha256": "b91b9df37ac697199d3a3e5aef5d3cfdcbfccbc8cdb35dc793a81f6dcd2ce1d2",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14639",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.517Z",
+          "status": 200,
+          "ms": 418,
+          "bytes": 14706,
+          "sha256": "83a5ee8ee8b6f0789561716dab0a088d03645da15557bc550037a8cd9f7c532b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "14706",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.165Z",
+          "status": 200,
+          "ms": 135,
+          "bytes": 15073,
+          "sha256": "d9ee1266a78fecd2bc9a30a14e319c81fa195afcbf562e82606d3236b3105e8b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15073",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.327Z",
+          "status": 200,
+          "ms": 130,
+          "bytes": 15451,
+          "sha256": "67827d890276b4377575a7fc80d4534ecef5ec052f5984386d7243bc19b09777",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9f118098-cee3-4964-8630-b932c94f70a3-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "15451",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "db028e65-b4b4-4f83-a427-6be6cb3f2ace",
+      "name": "Riverside DR. @ Pedestrian Crossing NOF 181 St",
+      "area": "Manhattan",
+      "lat": 40.852383,
+      "lon": -73.941088,
+      "distanceMi": 0.576,
+      "bearingDeg": 277,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "db028e65-b4b4-4f83-a427-6be6cb3f2ace",
+        "name": "Riverside DR. @ Pedestrian Crossing NOF 181 St",
+        "latitude": 40.852383,
+        "longitude": -73.941088,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/db028e65-b4b4-4f83-a427-6be6cb3f2ace/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 13342,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.763Z",
+          "status": 200,
+          "ms": 680,
+          "bytes": 13624,
+          "sha256": "82b533fa159bc19fe4e3879a677f9509f768bcddd908ce7fc036cfd351a13437",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13624",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.661Z",
+          "status": 200,
+          "ms": 430,
+          "bytes": 13231,
+          "sha256": "50699657dc9055b305d0892bbf00551ef90fa5f3e41a4d0334fa81dc29bab27e",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13231",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.518Z",
+          "status": 200,
+          "ms": 410,
+          "bytes": 13238,
+          "sha256": "f64419880aefcd21abe8abae270296d1912f95a0b8b97b91e6e655712412a11f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13238",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.165Z",
+          "status": 200,
+          "ms": 133,
+          "bytes": 13064,
+          "sha256": "f4f497199131f0f2a82ef76925fc1ae378a75b5b5eb74e7a341ecf8c0ea8ec9a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13064",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.328Z",
+          "status": 200,
+          "ms": 128,
+          "bytes": 13553,
+          "sha256": "0302945e3a4ef337739208ffa946572d5e0b3f9a9c0f7966f816d6d3eb1938cf",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/db028e65-b4b4-4f83-a427-6be6cb3f2ace-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13553",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e610bc71-9bfb-4a92-928d-ad33cd1b9afd",
+      "name": "Harlem River Dr @ Dyckman St /10 Av",
+      "area": "Manhattan",
+      "lat": 40.858893,
+      "lon": -73.923042,
+      "distanceMi": 0.643,
+      "bearingDeg": 35,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "e610bc71-9bfb-4a92-928d-ad33cd1b9afd",
+        "name": "Harlem River Dr @ Dyckman St /10 Av",
+        "latitude": 40.858893,
+        "longitude": -73.923042,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/e610bc71-9bfb-4a92-928d-ad33cd1b9afd/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 22804,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.764Z",
+          "status": 200,
+          "ms": 857,
+          "bytes": 22968,
+          "sha256": "4c364e050601d30776ef2eaf17130505e8a9021b569dbc68c1e709ff21c0db30",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22968",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.662Z",
+          "status": 200,
+          "ms": 673,
+          "bytes": 23022,
+          "sha256": "878fafef9f781df6c1c30d805d69762bbf45e3bf37adca77b74b533b4ec18512",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23022",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.518Z",
+          "status": 200,
+          "ms": 400,
+          "bytes": 22809,
+          "sha256": "5dc044b3b3dbe3e8c5a2ca65b14f99981ac5184eb935a084b6937f03315c43cc",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22809",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.166Z",
+          "status": 200,
+          "ms": 146,
+          "bytes": 22580,
+          "sha256": "cd917bc99703cb1ae1a68fd3aeb764082cb81905678158e7c02bbd5235e65f3a",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22580",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.328Z",
+          "status": 200,
+          "ms": 132,
+          "bytes": 22641,
+          "sha256": "90b9500143d0f16a8e11d6f40cfb340891b185b881a32403aed6a39e4b4c241f",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e610bc71-9bfb-4a92-928d-ad33cd1b9afd-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "22641",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4302c1d7-48aa-45a8-a9cc-93e3132c1530",
+      "name": "C1-CBE-03_N_NB_at_Nelson_Ave-Ex02A",
+      "area": "Bronx",
+      "lat": 40.844781,
+      "lon": -73.920574,
+      "distanceMi": 0.674,
+      "bearingDeg": 132,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "4302c1d7-48aa-45a8-a9cc-93e3132c1530",
+        "name": "C1-CBE-03_N_NB_at_Nelson_Ave-Ex02A",
+        "latitude": 40.844781,
+        "longitude": -73.920574,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/4302c1d7-48aa-45a8-a9cc-93e3132c1530/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 17066,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.764Z",
+          "status": 200,
+          "ms": 861,
+          "bytes": 17169,
+          "sha256": "349920d92efc21ece41ea968da3e9c4249cc66336c7c1510f1e0a38316db5860",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17169",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.662Z",
+          "status": 200,
+          "ms": 683,
+          "bytes": 16466,
+          "sha256": "d525b46f7b164355bfc85e8e10ec6ee9ba68f9335a405c9220f463b0e790e6b5",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16466",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.519Z",
+          "status": 200,
+          "ms": 390,
+          "bytes": 16685,
+          "sha256": "72431543312d33c0c31361c5559a37cfa7b36eebd69bc5b933a8271c9d0ff7d4",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16685",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:40 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.166Z",
+          "status": 200,
+          "ms": 151,
+          "bytes": 16712,
+          "sha256": "f052577b2486625f065aad77c0de6274f2db8fd8b505e944f7799fe8f04695c3",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16712",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.329Z",
+          "status": 200,
+          "ms": 148,
+          "bytes": 18296,
+          "sha256": "702e87855f4d9c8e7707df68462458719131144929b59890f80cf90063361087",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/4302c1d7-48aa-45a8-a9cc-93e3132c1530-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18296",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c8b15922-4262-459a-85d5-17442ec9c54f",
+      "name": "C1-MDE-09-SB_at_Depot_Pl-Ex7-CBX",
+      "area": "Bronx",
+      "lat": 40.84154,
+      "lon": -73.928612,
+      "distanceMi": 0.679,
+      "bearingDeg": 173,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "c8b15922-4262-459a-85d5-17442ec9c54f",
+        "name": "C1-MDE-09-SB_at_Depot_Pl-Ex7-CBX",
+        "latitude": 40.84154,
+        "longitude": -73.928612,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/c8b15922-4262-459a-85d5-17442ec9c54f/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 28830,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.765Z",
+          "status": 200,
+          "ms": 886,
+          "bytes": 28229,
+          "sha256": "7d8798f30aff6e42fadb3b210a97158114525a0f683185fa0e811118ee44b34c",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "28229",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.663Z",
+          "status": 200,
+          "ms": 834,
+          "bytes": 29135,
+          "sha256": "aa83bfe146061831cd298d0588235a4bfa4e2180061f458cb25940f5e6553d71",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "29135",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.519Z",
+          "status": 200,
+          "ms": 639,
+          "bytes": 30623,
+          "sha256": "0ececc824ed41f43ddc4d99086166e66463268a35e69028f17f33de68ca4748c",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "30623",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:41 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.167Z",
+          "status": 200,
+          "ms": 138,
+          "bytes": 27825,
+          "sha256": "28b94b623ddb1054203d82ca795afa9a447baeb7e0ad5f2f21b5d60609e4fa64",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "27825",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.329Z",
+          "status": 200,
+          "ms": 130,
+          "bytes": 28337,
+          "sha256": "859fbce3ac58f7a0ebcf14ab6dac96057983322665652fa7e111b4008b18820c",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/c8b15922-4262-459a-85d5-17442ec9c54f-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "28337",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864",
+      "name": "C1-MDE-11-NB_at_W.179th_St-Ex8",
+      "area": "Bronx",
+      "lat": 40.855126,
+      "lon": -73.918007,
+      "distanceMi": 0.688,
+      "bearingDeg": 67,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864",
+        "name": "C1-MDE-11-NB_at_W.179th_St-Ex8",
+        "latitude": 40.855126,
+        "longitude": -73.918007,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864/image"
+      },
+      "fetchedOk": 5,
+      "attempted": 5,
+      "distinctFrames": 5,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 30340,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:30.765Z",
+          "status": 200,
+          "ms": 889,
+          "bytes": 30087,
+          "sha256": "bef9e35ed1717394b81402946e5e969c866797639b35ac9e5558e0e750cb5afe",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "30087",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:31 GMT"
+          }
+        },
+        {
+          "n": 1,
+          "fetchedAt": "2026-10-07T04:26:35.663Z",
+          "status": 200,
+          "ms": 848,
+          "bytes": 29601,
+          "sha256": "525a506f7bac8175081a968f35393d4c6ef5e63258d1697b774c6e51f85e674c",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-1.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "29601",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:36 GMT"
+          }
+        },
+        {
+          "n": 2,
+          "fetchedAt": "2026-10-07T04:26:40.519Z",
+          "status": 200,
+          "ms": 629,
+          "bytes": 30037,
+          "sha256": "72a9d41b060b27706cc45f8479ea4a79587e807eb4f894f3466cb48bed12e0c4",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-2.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "30037",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:41 GMT"
+          }
+        },
+        {
+          "n": 3,
+          "fetchedAt": "2026-10-07T04:26:45.167Z",
+          "status": 200,
+          "ms": 152,
+          "bytes": 30765,
+          "sha256": "04dfd946606f42edf7b3b5f8afae558464fff1c7e1334702807180e8b1e9a204",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-3.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "30765",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:45 GMT"
+          }
+        },
+        {
+          "n": 4,
+          "fetchedAt": "2026-10-07T04:26:49.330Z",
+          "status": 200,
+          "ms": 150,
+          "bytes": 31210,
+          "sha256": "1c95f7d1f1e40829345dc1ae8d6fd8cae2192fa6bac06a4f2a44c78ad9db547f",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/b9ba6a87-0e0b-4c5a-ad6a-7ead399e0864-4.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "31210",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    }
+  ],
+  "context": [
+    {
+      "id": "ded03849-7c56-43e5-8e82-05b61c175aca",
+      "name": "C1-CBE-04_N - NB_at_Macombs Rd-Ex2A",
+      "area": "Bronx",
+      "lat": 40.844926,
+      "lon": -73.917694,
+      "distanceMi": 0.786,
+      "bearingDeg": 124,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ded03849-7c56-43e5-8e82-05b61c175aca",
+        "name": "C1-CBE-04_N - NB_at_Macombs Rd-Ex2A",
+        "latitude": 40.844926,
+        "longitude": -73.917694,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ded03849-7c56-43e5-8e82-05b61c175aca/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 1080,
+        "width": 1920
+      },
+      "avgBytes": 70031,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 29,
+          "bytes": 70031,
+          "sha256": "b83f9e4f2504823cd4114df7c84fd48c0de3eb37093e2ae7a6f72c36328044b2",
+          "jpeg": {
+            "height": 1080,
+            "width": 1920
+          },
+          "file": "frames/ded03849-7c56-43e5-8e82-05b61c175aca-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "70031",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7910856-9d2c-4142-b8cc-cbd6c4b3acac",
+      "name": "Broadway @ 169 Street",
+      "area": "Manhattan",
+      "lat": 40.841686,
+      "lon": -73.939347,
+      "distanceMi": 0.82,
+      "bearingDeg": 216,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d7910856-9d2c-4142-b8cc-cbd6c4b3acac",
+        "name": "Broadway @ 169 Street",
+        "latitude": 40.841686,
+        "longitude": -73.939347,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d7910856-9d2c-4142-b8cc-cbd6c4b3acac/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 12998,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 27,
+          "bytes": 12998,
+          "sha256": "f3ea7ac8c0465389c49db977f86313026d8940822f52ad687a5ae59cc2650935",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/d7910856-9d2c-4142-b8cc-cbd6c4b3acac-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "12998",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a9b2501d-062f-43f8-9419-f89faa4f36ba",
+      "name": "Riverside Dr @ Washington Br ENT ramp",
+      "area": "Manhattan",
+      "lat": 40.84337,
+      "lon": -73.9444,
+      "distanceMi": 0.925,
+      "bearingDeg": 234,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "a9b2501d-062f-43f8-9419-f89faa4f36ba",
+        "name": "Riverside Dr @ Washington Br ENT ramp",
+        "latitude": 40.84337,
+        "longitude": -73.9444,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/a9b2501d-062f-43f8-9419-f89faa4f36ba/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 18449,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 24,
+          "bytes": 18449,
+          "sha256": "966cd059c0edbe9fac029dba5d9e7ea3cfd0ce35de1b551bebf39fa05e43b323",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/a9b2501d-062f-43f8-9419-f89faa4f36ba-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "18449",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d23ec5fd-f956-4283-975a-623514b001a3",
+      "name": "C1-CBE-05_S_SB_at_Walton_Ave-Ex2A",
+      "area": "Bronx",
+      "lat": 40.845346,
+      "lon": -73.911976,
+      "distanceMi": 1.035,
+      "bearingDeg": 113,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "d23ec5fd-f956-4283-975a-623514b001a3",
+        "name": "C1-CBE-05_S_SB_at_Walton_Ave-Ex2A",
+        "latitude": 40.845346,
+        "longitude": -73.911976,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/d23ec5fd-f956-4283-975a-623514b001a3/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 480,
+        "width": 720
+      },
+      "avgBytes": 26288,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 26,
+          "bytes": 26288,
+          "sha256": "eacb8649ee931abe4789eef5c1d06ee0662a6327d337d7bbd51e7866ad3784d5",
+          "jpeg": {
+            "height": 480,
+            "width": 720
+          },
+          "file": "frames/d23ec5fd-f956-4283-975a-623514b001a3-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "26288",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ffae5a99-c403-41aa-9985-0633aee4aeff",
+      "name": "Henry Hudson pkwy @ Exit 14 ,165 St/ GWB  ramp",
+      "area": "Manhattan",
+      "lat": 40.84148,
+      "lon": -73.9455,
+      "distanceMi": 1.051,
+      "bearingDeg": 230,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "ffae5a99-c403-41aa-9985-0633aee4aeff",
+        "name": "Henry Hudson pkwy @ Exit 14 ,165 St/ GWB  ramp",
+        "latitude": 40.84148,
+        "longitude": -73.9455,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/ffae5a99-c403-41aa-9985-0633aee4aeff/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 12724,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 23,
+          "bytes": 12724,
+          "sha256": "81bfcf4e11106d38d97bd786d29ebdc588ed0ae1f995ca94be42fa74b22de278",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/ffae5a99-c403-41aa-9985-0633aee4aeff-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "12724",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b",
+      "name": "Harlem Rvr Dr (FDR) @ 166 St",
+      "area": "Manhattan",
+      "lat": 40.836133,
+      "lon": -73.934883,
+      "distanceMi": 1.077,
+      "bearingDeg": 193,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b",
+        "name": "Harlem Rvr Dr (FDR) @ 166 St",
+        "latitude": 40.836133,
+        "longitude": -73.934883,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 13874,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 25,
+          "bytes": 13874,
+          "sha256": "a8c83f2eef51914ea16556eaf717893f68ea4bf8b6e1f56b5c416572ecfe9b0d",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/e5f14a79-fe4c-450e-b81e-21d8c9e1ea9b-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "13874",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9cdf1f47-307d-48e8-8627-e77e189b5fed",
+      "name": "207 ST @ 9 Ave",
+      "area": "Manhattan",
+      "lat": 40.863685,
+      "lon": -73.917066,
+      "distanceMi": 1.095,
+      "bearingDeg": 39,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "9cdf1f47-307d-48e8-8627-e77e189b5fed",
+        "name": "207 ST @ 9 Ave",
+        "latitude": 40.863685,
+        "longitude": -73.917066,
+        "area": "Manhattan",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/9cdf1f47-307d-48e8-8627-e77e189b5fed/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 16099,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.482Z",
+          "status": 200,
+          "ms": 24,
+          "bytes": 16099,
+          "sha256": "ee369b72173e13150adc6d4dc37e47d48430879d4449b2efd7cd3ccdb603a7dc",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/9cdf1f47-307d-48e8-8627-e77e189b5fed-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "16099",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b591a4be-a1aa-4978-ab2c-be4a17eb190e",
+      "name": "Fordham Rd @ Major Deegan Expy",
+      "area": "Bronx",
+      "lat": 40.861906,
+      "lon": -73.912878,
+      "distanceMi": 1.163,
+      "bearingDeg": 51,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "b591a4be-a1aa-4978-ab2c-be4a17eb190e",
+        "name": "Fordham Rd @ Major Deegan Expy",
+        "latitude": 40.861906,
+        "longitude": -73.912878,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/b591a4be-a1aa-4978-ab2c-be4a17eb190e/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 23637,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.483Z",
+          "status": 200,
+          "ms": 24,
+          "bytes": 23637,
+          "sha256": "818a8f690b1b8ed9575170002a5648e90d2c56f2694b57e2f9b10c117536db5b",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/b591a4be-a1aa-4978-ab2c-be4a17eb190e-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "23637",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "572b1058-c33a-4de2-8f35-0f3e9e92bc33",
+      "name": "CBX @ Morris Ave & 174th ST",
+      "area": "Bronx",
+      "lat": 40.844785,
+      "lon": -73.909282,
+      "distanceMi": 1.18,
+      "bearingDeg": 112,
+      "catalogIsOnline": true,
+      "raw": {
+        "id": "572b1058-c33a-4de2-8f35-0f3e9e92bc33",
+        "name": "CBX @ Morris Ave & 174th ST",
+        "latitude": 40.844785,
+        "longitude": -73.909282,
+        "area": "Bronx",
+        "isOnline": "true",
+        "imageUrl": "https://webcams.nyctmc.org/api/cameras/572b1058-c33a-4de2-8f35-0f3e9e92bc33/image"
+      },
+      "fetchedOk": 1,
+      "attempted": 1,
+      "distinctFrames": 1,
+      "imageSize": {
+        "height": 240,
+        "width": 352
+      },
+      "avgBytes": 17011,
+      "frames": [
+        {
+          "n": 0,
+          "fetchedAt": "2026-10-07T04:26:49.483Z",
+          "status": 200,
+          "ms": 27,
+          "bytes": 17011,
+          "sha256": "c49fea468273f11e5a41af9bb8923b23b7298fa7a68bf5da7ae3168473565571",
+          "jpeg": {
+            "height": 240,
+            "width": 352
+          },
+          "file": "frames/572b1058-c33a-4de2-8f35-0f3e9e92bc33-0.jpg",
+          "headers": {
+            "content-type": "image/jpeg",
+            "content-length": "17011",
+            "cache-control": "no-store",
+            "date": "Wed, 07 Oct 2026 04:26:49 GMT"
+          }
+        }
+      ]
+    }
+  ],
+  "termsPages": [
+    {
+      "url": "https://webcams.nyctmc.org/",
+      "status": 200,
+      "finalUrl": "https://webcams.nyctmc.org/map",
+      "file": "raw/https_webcams_nyctmc_org_.html",
+      "bytes": 567
+    },
+    {
+      "url": "https://webcams.nyctmc.org/terms",
+      "status": 404,
+      "finalUrl": "https://webcams.nyctmc.org/terms",
+      "file": "raw/https_webcams_nyctmc_org_terms.html",
+      "bytes": 567
+    },
+    {
+      "url": "https://www.nyc.gov/main/terms-of-use",
+      "status": 403,
+      "finalUrl": "https://www.nyc.gov/main/terms-of-use",
+      "file": "raw/https_www_nyc_gov_main_terms_of_use.html",
+      "bytes": 392
+    },
+    {
+      "url": "https://www.nyc.gov/html/dot/html/motorist/atis.shtml",
+      "status": 403,
+      "finalUrl": "https://www.nyc.gov/html/dot/html/motorist/atis.shtml",
+      "file": "raw/https_www_nyc_gov_html_dot_html_motorist_atis_shtml.html",
+      "bytes": 416
+    }
+  ]
+}

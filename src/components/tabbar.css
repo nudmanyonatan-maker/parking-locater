@@ -1,0 +1,36 @@
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px calc(12px + var(--safe-right)) calc(6px + var(--safe-bottom)) calc(12px + var(--safe-left));
+  border-radius: 0;
+  border-width: 0.5px 0 0;
+}
+
+.tabbar-item {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 0;
+  color: var(--label-2);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tabbar-item[aria-current='page'] {
+  color: var(--blue);
+}
+
+/* Pages under the tab bar leave room for it. */
+.tabbed {
+  padding-bottom: calc(62px + var(--safe-bottom));
+}

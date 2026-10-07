@@ -1,1 +1,12 @@
+# Copy to .dev.vars for local development (never commit .dev.vars).
+ADMIN_TOKEN=change-me-to-a-long-random-string
+# Discord webhook for the "move your car" reminder
 DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/your-id/your-token"
+# Optional: Web Push keys from `npm run vapid`
+# VAPID_PUBLIC_KEY=
+# VAPID_PRIVATE_KEY=
+# Dev without Cloudflare login: replay recorded detections on real frames.
+# Start `npm run dev:fixtures` first, then run `PARKNEARME_LOCAL_ONLY=1 npm run dev`.
+# TMC_BASE_URL=http://localhost:8788/api/cameras
+# DETECTOR=fixture
+# FIXTURE_DETECTIONS_URL=http://localhost:8788/detections

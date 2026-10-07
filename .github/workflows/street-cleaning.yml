@@ -1,0 +1,32 @@
+name: Street-cleaning data
+
+# Refreshes src/data/street-cleaning.json from NYC DOT's parking-sign open data
+# (blocks within ~0.4 mi of home). Runs monthly or by hand; commits only on change.
+
+on:
+  schedule:
+    - cron: "17 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyproj
+      - run: python3 scripts/fetch_street_cleaning.py src/data/street-cleaning.json
+      - name: Commit if changed
+        run: |
+          # generatedAt always changes; only commit when the signs did.
+          if git diff --quiet -I '"generatedAt"' -- src/data/street-cleaning.json; then echo "No sign changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/street-cleaning.json
+          git commit -m "Refresh street-cleaning signs"
+          git push
