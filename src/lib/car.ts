@@ -1,5 +1,6 @@
 // "Where's my car" helpers: home (kept on this device), distances, the
-// Apple Maps walking link, and the move-by time from street cleaning.
+// Apple Maps walking link, the move-by time from street cleaning, and fire
+// hydrants next to the car.
 
 import {
   faceLabel,
@@ -12,7 +13,9 @@ import {
   type CleaningFace,
   type NextCleaning,
 } from '../../shared/cleaning';
+import { CAR, HYDRANT_CLEARANCE_M } from '../../shared/car';
 import type { CarSpot } from '../../shared/types';
+import hydrantsJson from '../data/hydrants.json';
 import streetCleaningJson from '../data/street-cleaning.json';
 
 export const streetCleaning = streetCleaningJson as unknown as CleaningData;
@@ -55,6 +58,31 @@ export function haversineMeters(a: LatLng, b: LatLng): number {
 export function formatDistance(m: number): string {
   const ft = m * 3.28084;
   return ft < 1000 ? `${Math.round(ft)} ft` : `${(m / 1609.34).toFixed(1)} mi`;
+}
+
+/** NYC DEP hydrants within ~1 km of home (scripts/fetch_hydrants.py). */
+export const hydrants: LatLng[] = (hydrantsJson.points as number[][]).map(([lat, lng]) => ({ lat: lat!, lng: lng! }));
+
+/** Warn about a hydrant this close to the car pin: half the car + 5 ft, plus phone GPS slack. */
+export const HYDRANT_WARN_M = 8;
+/** Closer than this the car probably sits within 5 ft of it. */
+const HYDRANT_BLOCKING_M = CAR.lengthM / 2 + HYDRANT_CLEARANCE_M;
+
+/** The nearest hydrant within HYDRANT_WARN_M of the car; 'late' when it's likely too close. */
+export function hydrantNear(p: LatLng): { at: LatLng; meters: number; tone: 'soon' | 'late' } | null {
+  let best: { at: LatLng; meters: number } | null = null;
+  for (const h of hydrants) {
+    if (Math.abs(h.lat - p.lat) > 0.0002) continue; // ~22 m: skip the far ones cheaply
+    const meters = haversineMeters(p, h);
+    if (meters <= HYDRANT_WARN_M && (!best || meters < best.meters)) best = { at: h, meters };
+  }
+  return best && { ...best, tone: best.meters <= HYDRANT_BLOCKING_M ? 'late' : 'soon' };
+}
+
+/** "Fire hydrant ~20 ft away. Keep 5+ ft clear." */
+export function hydrantText(h: { meters: number; tone: 'soon' | 'late' }): string {
+  const d = formatDistance(h.meters);
+  return `${h.tone === 'late' ? `Fire hydrant right by your car (~${d}).` : `Fire hydrant ~${d} from your car.`} Keep 5+ ft clear.`;
 }
 
 export const walkUrl = (p: LatLng) => `https://maps.apple.com/?daddr=${p.lat},${p.lng}&dirflg=w`;

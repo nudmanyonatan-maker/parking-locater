@@ -1,6 +1,7 @@
 // The app: one full-screen map with your car. A frosted card on top says how
 // far the car is and when to move it (street cleaning), with a bell for a
-// phone alert an hour before; a small card at the bottom has "Walk to car".
+// phone alert an hour before; a small card at the bottom has "Walk to car"
+// and warns when the car is next to a fire hydrant (red dots on the map).
 // "Find parking" (cameras + street cleaning near home) opens as a sheet from
 // the button on top.
 
@@ -11,7 +12,19 @@ import { sideWord } from '../../shared/cleaning';
 import type { CarMapHandle } from '../components/CarMap';
 import type { SpotState } from '../hooks/useSpot';
 import { toApiError } from '../lib/api';
-import { cleaningAt, formatDistance, getHome, haversineMeters, moveByFor, moveByStatus, walkUrl, whenText, type LatLng } from '../lib/car';
+import {
+  cleaningAt,
+  formatDistance,
+  getHome,
+  haversineMeters,
+  hydrantNear,
+  hydrantText,
+  moveByFor,
+  moveByStatus,
+  walkUrl,
+  whenText,
+  type LatLng,
+} from '../lib/car';
 import { alertsState, turnOffAlerts, turnOnAlerts, type AlertsState } from '../lib/carAlerts';
 import { toast } from '../lib/toast';
 import { HomePage } from './HomePage';
@@ -64,6 +77,7 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
   const car = spot ? { lat: spot.lat, lng: spot.lng } : null;
   const cleaning = car ? cleaningAt(car, now, spot?.faceId) : null;
   const moveBy = spot ? moveByStatus(spot, now) : null;
+  const hydrant = car ? hydrantNear(car) : null;
 
   const run = async (label: string, action: () => Promise<unknown>, failure: string) => {
     setBusy(label);
@@ -77,11 +91,16 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
     }
   };
 
-  /** Save the car here; the move-by time comes from this block's street cleaning. */
-  const park = (p: LatLng, faceId?: string | null, keepNote = true) => {
+  /** Save the car here; the move-by time comes from this block's street cleaning. Buzzes if it's next to a hydrant. */
+  const park = async (p: LatLng, faceId?: string | null, keepNote = true) => {
     const auto = moveByFor(p, Date.now(), faceId);
     // Moving the pin or switching sides keeps the note; a fresh "I parked here" clears it.
-    return save({ lat: p.lat, lng: p.lng, note: keepNote ? (spot?.note ?? '') : '', moveBy: auto.moveBy, faceId: auto.faceId });
+    await save({ lat: p.lat, lng: p.lng, note: keepNote ? (spot?.note ?? '') : '', moveBy: auto.moveBy, faceId: auto.faceId });
+    const h = hydrantNear(p);
+    if (h && (spot?.lat !== p.lat || spot?.lng !== p.lng)) {
+      navigator.vibrate?.([200, 100, 200]);
+      toast(`🚒 ${hydrantText(h)}`, 'error', 7000);
+    }
   };
 
   const toggleAlerts = () => {
@@ -215,6 +234,11 @@ export function MapScreen({ spotState }: { spotState: SpotState }) {
           </>
         ) : (
           <>
+            {hydrant && (
+              <p className={`car-hydrant tone-${hydrant.tone}`} role="alert">
+                🚒 {hydrantText(hydrant)}
+              </p>
+            )}
             {cleaning && (
               <div className="car-cleaning">
                 <Brush size={16} aria-hidden="true" />

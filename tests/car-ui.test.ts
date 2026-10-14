@@ -1,5 +1,18 @@
 import { describe, expect, it } from 'vitest';
-import { cleaningAt, cleaningNear, formatDistance, haversineMeters, longestFree, moveByFor, moveByStatus, walkUrl, whenText } from '../src/lib/car';
+import {
+  cleaningAt,
+  cleaningNear,
+  formatDistance,
+  haversineMeters,
+  hydrantNear,
+  hydrants,
+  hydrantText,
+  longestFree,
+  moveByFor,
+  moveByStatus,
+  walkUrl,
+  whenText,
+} from '../src/lib/car';
 
 const HOME = { lat: 40.851304, lng: -73.930153 }; // 403 Audubon Ave
 const wed10 = Date.parse('2026-10-07T14:00:00Z'); // Wed 10:00 AM in New York
@@ -47,5 +60,24 @@ describe('street cleaning for the car', () => {
     expect(rows.some((r) => r.label.startsWith('Audubon Ave'))).toBe(true);
     const best = longestFree(rows)!;
     for (const r of rows) if (r.next && !r.next.active) expect(best.next!.start).toBeGreaterThanOrEqual(r.next.start);
+  });
+});
+
+describe('fire hydrants by the car', () => {
+  const h = hydrants[0]!;
+  it('has the hydrants around home', () => {
+    expect(hydrants.length).toBeGreaterThan(300);
+    expect(hydrants.filter((p) => haversineMeters(p, { lat: 40.851304, lng: -73.930153 }) < 150).length).toBeGreaterThan(3);
+  });
+  it('warns when parked next to one and says how close', () => {
+    expect(hydrantNear(h)).toMatchObject({ at: h, meters: 0, tone: 'late' });
+    const near = hydrantNear({ lat: h.lat + 6 / 111_320, lng: h.lng })!; // 6 m north
+    expect(near.meters).toBeLessThanOrEqual(6.1);
+    expect(near.tone).toBe(near.meters > 3.8 ? 'soon' : 'late');
+    expect(hydrantText({ meters: 6, tone: 'soon' })).toBe('Fire hydrant ~20 ft from your car. Keep 5+ ft clear.');
+    expect(hydrantText({ meters: 1, tone: 'late' })).toBe('Fire hydrant right by your car (~3 ft). Keep 5+ ft clear.');
+  });
+  it('stays quiet away from hydrants', () => {
+    expect(hydrantNear({ lat: 40.85, lng: -73.95 })).toBeNull(); // the Hudson
   });
 });

@@ -164,6 +164,22 @@
   font-size: 14px;
 }
 
+.car-hydrant {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--orange-text);
+  background: color-mix(in srgb, var(--orange) 16%, transparent);
+}
+
+.car-hydrant.tone-late {
+  color: var(--red-text);
+  background: color-mix(in srgb, var(--red) 16%, transparent);
+}
+
 .car-note {
   margin: 0;
   padding: 0 4px;

@@ -1,11 +1,12 @@
 // MapLibre map for "My car": home 🏠, the car 🚗 (draggable), a dashed line
-// between them, your live location, and emoji place labels for orientation.
+// between them, your live location, fire hydrants (red dots), and emoji place
+// labels for orientation.
 // Loaded lazily (MapLibre is big); imperative bits are exposed via a ref.
 
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
-import type { LatLng } from '../lib/car';
+import { hydrants, type LatLng } from '../lib/car';
 import './car-map.css';
 
 export interface CarMapHandle {
@@ -115,6 +116,26 @@ function emojiImage(emoji: string): ImageData {
   ctx.textBaseline = 'middle';
   ctx.fillText(emoji, size / 2, size / 2);
   return ctx.getImageData(0, 0, size, size);
+}
+
+/** Fire hydrants as small red dots once zoomed in to street level. */
+function addHydrants(map: maplibregl.Map) {
+  map.addSource('hydrants', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: hydrants.map((h) => ({ type: 'Feature', properties: {}, geometry: { type: 'Point', coordinates: ll(h) } })) },
+  });
+  map.addLayer({
+    id: 'hydrants',
+    type: 'circle',
+    source: 'hydrants',
+    minzoom: 15,
+    paint: {
+      'circle-color': '#dc2626',
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 15, 2.5, 18, 6],
+      'circle-stroke-color': '#ffffff',
+      'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 15, 1, 18, 2],
+    },
+  });
 }
 
 function hidePois(map: maplibregl.Map) {
@@ -246,6 +267,7 @@ const CarMap = forwardRef<CarMapHandle, Props>(function CarMap({ home, car, plac
         if (look === '3d') add3dBuildings(map);
         if (look === 'clean') hidePois(map);
         else addPoiLayer(map);
+        addHydrants(map);
       } catch (e) {
         console.warn('Map layers failed', e);
       }
