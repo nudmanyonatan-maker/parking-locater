@@ -275,3 +275,8 @@
     animation: none;
   }
 }
+
+/* "Move by Tomorrow 11:30 AM" doesn't fit next to the bell and Find parking on a phone: wrap it. */
+.status-pill .status-sub {
+  white-space: normal;
+}
