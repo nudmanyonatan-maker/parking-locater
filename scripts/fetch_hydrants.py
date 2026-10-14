@@ -62,15 +62,14 @@ print(f"{len(points)} hydrants within {RADIUS_M:.0f} m", file=sys.stderr)
 if len(points) < 50:
     sys.exit("Too few hydrants; the query is probably wrong")
 
+# One hydrant per line, so the workflow's "only generatedAt changed" check works.
+meta = {
+    "source": f"NYC DEP hydrants ({DOMAIN}/d/{ds})",
+    "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    "home": [LAT, LON],
+}
 with open(OUT, "w") as f:
-    json.dump(
-        {
-            "source": f"NYC DEP hydrants ({DOMAIN}/d/{ds})",
-            "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "home": [LAT, LON],
-            "points": sorted(points),
-        },
-        f,
-        separators=(",", ":"),
-    )
-    f.write("\n")
+    f.write("{\n")
+    for k, v in meta.items():
+        f.write(f"{json.dumps(k)}: {json.dumps(v)},\n")
+    f.write('"points": [\n' + ",\n".join(json.dumps(list(p)) for p in sorted(points)) + "\n]\n}\n")
