@@ -1,6 +1,6 @@
 {
  "source": "NYC DOT Parking Regulation Locations and Signs (data.cityofnewyork.us, nfid-uabd), broom-symbol signs",
- "generatedAt": "2026-10-07T14:26:32Z",
+ "generatedAt": "2026-11-01T16:05:45Z",
  "home": {
   "lat": 40.851304,
   "lon": -73.930153,
@@ -140,8 +140,8 @@
    ],
    "points": [
     [
-     40.852304,
-     -73.927706,
+     40.852057,
+     -73.92801,
      0
     ]
    ]
@@ -430,28 +430,28 @@
    "to": "WEST 181 STREET",
    "side": "E",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8AM-8:30AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8AM-8:30AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8AM-8:30AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8AM-8:30AM"
    ],
    "points": [
     [
-     40.848343,
-     -73.932626,
+     40.848283,
+     -73.932669,
      0
     ],
     [
      40.848088,
      -73.932727,
-     1
-    ],
-    [
-     40.848283,
-     -73.932669,
-     1
+     0
     ],
     [
      40.848505,
      -73.932506,
+     0
+    ],
+    [
+     40.848343,
+     -73.932626,
      1
     ]
    ]
@@ -463,18 +463,18 @@
    "to": "WEST 181 STREET",
    "side": "W",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8:30AM-9AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8:30AM-9AM"
    ],
    "points": [
     [
-     40.848527,
-     -73.932492,
+     40.848253,
+     -73.932695,
      0
     ],
     [
-     40.848253,
-     -73.932695,
+     40.848527,
+     -73.932492,
      1
     ]
    ]
@@ -919,13 +919,13 @@
      0
     ],
     [
-     40.855595,
-     -73.927438,
+     40.855029,
+     -73.927746,
      0
     ],
     [
-     40.855035,
-     -73.927822,
+     40.855595,
+     -73.927438,
      0
     ]
    ]
@@ -1923,6 +1923,26 @@
    ],
    "points": [
     [
+     40.852488,
+     -73.927695,
+     0
+    ],
+    [
+     40.849181,
+     -73.92922,
+     0
+    ],
+    [
+     40.850265,
+     -73.92872,
+     0
+    ],
+    [
+     40.848476,
+     -73.929543,
+     0
+    ],
+    [
      40.850026,
      -73.928829,
      0
@@ -1975,26 +1995,6 @@
     [
      40.849848,
      -73.928912,
-     0
-    ],
-    [
-     40.852488,
-     -73.927695,
-     0
-    ],
-    [
-     40.849181,
-     -73.92922,
-     0
-    ],
-    [
-     40.850265,
-     -73.92872,
-     0
-    ],
-    [
-     40.848476,
-     -73.929543,
      0
     ]
    ]
@@ -3955,8 +3955,8 @@
    "to": "ST NICHOLAS AVENUE",
    "side": "N",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) THURSDAY 8:30AM-10AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) THURSDAY 8:30AM-10AM"
    ],
    "points": [
     [
@@ -3965,8 +3965,13 @@
      0
     ],
     [
-     40.847655,
-     -73.933758,
+     40.847952,
+     -73.934462,
+     0
+    ],
+    [
+     40.847889,
+     -73.934314,
      0
     ],
     [
@@ -3975,13 +3980,8 @@
      1
     ],
     [
-     40.847952,
-     -73.934462,
-     1
-    ],
-    [
-     40.847889,
-     -73.934314,
+     40.847655,
+     -73.933758,
      1
     ]
    ]
@@ -4061,23 +4061,23 @@
    "to": "WADSWORTH AVENUE",
    "side": "N",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) THURSDAY 8:30AM-10AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) THURSDAY 8:30AM-10AM"
    ],
    "points": [
     [
-     40.848367,
-     -73.935445,
-     0
-    ],
-    [
      40.848172,
      -73.935113,
-     1
+     0
     ],
     [
      40.848227,
      -73.935239,
+     0
+    ],
+    [
+     40.848367,
+     -73.935445,
      1
     ]
    ]
@@ -4410,23 +4410,23 @@
    "to": "ST NICHOLAS AVENUE",
    "side": "N",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8:30AM-9AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) SATURDAY 8:30AM-9AM"
    ],
    "points": [
     [
-     40.849049,
-     -73.933084,
-     0
-    ],
-    [
      40.848925,
      -73.932607,
-     1
+     0
     ],
     [
      40.849057,
      -73.932925,
+     0
+    ],
+    [
+     40.849049,
+     -73.933084,
      1
     ]
    ]
@@ -4771,23 +4771,23 @@
    "to": "WADSWORTH AVENUE",
    "side": "S",
    "rules": [
-    "NO PARKING (SANITATION BROOM SYMBOL) FRIDAY 8:30AM-10AM",
-    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY"
+    "NO PARKING (SANITATION BROOM SYMBOL) 8:30AM-9AM EXCEPT SUNDAY",
+    "NO PARKING (SANITATION BROOM SYMBOL) FRIDAY 8:30AM-10AM"
    ],
    "points": [
     [
+     40.850062,
+     -73.933712,
+     0
+    ],
+    [
      40.850175,
      -73.934088,
-     0
+     1
     ],
     [
      40.850304,
      -73.934399,
-     0
-    ],
-    [
-     40.850062,
-     -73.933712,
      1
     ]
    ]
@@ -5535,14 +5535,14 @@
      0
     ],
     [
-     40.852068,
-     -73.933052,
-     0
-    ],
-    [
      40.851716,
      -73.932214,
      1
+    ],
+    [
+     40.852068,
+     -73.933052,
+     0
     ]
    ]
   },
