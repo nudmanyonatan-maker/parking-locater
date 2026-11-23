@@ -5,7 +5,7 @@
 import { mkdirSync, readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 
-const [url = 'https://parking-locator.excel-capital.workers.dev', out = 'map-preview'] = process.argv.slice(2);
+const [url = 'https://parking-locator.nudman.workers.dev', out = 'map-preview'] = process.argv.slice(2);
 const LOOKS = [
   ['standard', '1. Standard (now)'],
   ['clean', '2. Clean'],

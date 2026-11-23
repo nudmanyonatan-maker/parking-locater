@@ -4,6 +4,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "parking-locator",
+  // Yonatan Personal (moved from Excel Capital's account on 2026-11-23).
+  "account_id": "5b2882e13ebf9af360e3eb3f3d265ed1",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "assets": {
@@ -12,14 +14,14 @@
     "run_worker_first": ["/api/*"],
     "binding": "ASSETS"
   },
-  "kv_namespaces": [{ "binding": "PARKING_KV", "id": "22270a1e563f4423a5a1541383df77de" }],
+  "kv_namespaces": [{ "binding": "PARKING_KV", "id": "ff6910e086db4264a7c8a85f00fa93f6" }],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "parknearme",
-      // Set by `npm run db:ensure` (finds or creates the "parknearme" D1 database).
-      // The placeholder only works for local development.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      // The "parknearme" D1 database in Yonatan Personal. `npm run db:ensure` rewrites it
+      // if the database is ever recreated.
+      "database_id": "706907e6-9945-458f-a188-32eb2a13e470",
       "migrations_dir": "migrations"
     }
   ],
@@ -33,7 +35,7 @@
   "vars": {
     "DETECTOR": "auto",
     "APP_VERSION": "0.1.0",
-    "VAPID_SUBJECT": "https://parking-locator.excel-capital.workers.dev"
+    "VAPID_SUBJECT": "https://parking-locator.nudman.workers.dev"
   },
   "observability": { "enabled": true }
 }

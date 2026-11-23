@@ -6,7 +6,7 @@ on:
     inputs:
       url:
         description: App URL
-        default: https://parking-locator.excel-capital.workers.dev
+        default: https://parking-locator.nudman.workers.dev
 
 permissions:
   contents: write # pushes the screenshots to the map-preview branch
